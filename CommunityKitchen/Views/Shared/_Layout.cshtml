@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Charity sympathy || Responsive HTML 5 Template</title>
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Assets/css/style.css" rel="stylesheet" />
+    <link href="~/Assets/css/responsive.css" rel="stylesheet" />
+    <link href="~/Assets/css/flaticon.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Assets/images/favicon/apple-touch-icon.png">
+    <link href="~/Assets/images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link rel="icon" type="image/png" href="~/Assets/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="~/Assets/images/favicon/favicon-16x16.png" sizes="16x16">
+</head>
+<body>
+    @Html.Partial("~/Views/Shared/Components/_LogIn.cshtml")
+    <div class="col-mb-12">
+        <section class="theme_menu stricky" style="background-image: url('../../Assets/Selection/lockedhands.jpg'); background-repeat: no-repeat; background-size:cover; ">
+            <div class="container">
+                <div class="row">
+                    @Html.Partial("~/Views/Shared/Components/_LogoMain.cshtml")
+                    @Html.Partial("~/Views/Shared/Components/_NavBar.cshtml")
+                    @Html.Partial("~/Views/Shared/Components/_SearchBar.cshtml")
+                </div>
+            </div> <!-- End of .conatiner -->
+        </section>
+        @RenderBody()
+        @Html.Partial("~/Views/Shared/Components/_Footer.cshtml")
+    </div>
+    <!-- jQuery js -->
+    <script src="~/Assets/js/jquery.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/Assets/js/bootstrap.min.js"></script>
+    <!-- jQuery ui js -->
+    <script src="~/Assets/js/jquery-ui.js"></script>
+    <!-- owl carousel js -->
+    <script src="~/Assets/js/owl.carousel.min.js"></script>
+    <!-- jQuery validation -->
+    <script src="~/Assets/js/jquery.validate.min.js"></script>
+    <!-- mixit up -->
+    <script src="~/Assets/js/wow.js"></script>
+    <script src="~/Assets/js/jquery.mixitup.min.js"></script>
+    <script src="~/Assets/js/jquery.fitvids.js"></script>
+    <script src="~/Assets/js/bootstrap-select.min.js"></script>
+    <!-- revolution slider js -->
+    <script src="~/Assets/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Assets/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/Assets/js/revolution.extension.actions.min.js"></script>
+    <script src="~/Assets/js/revolution.extension.carousel.min.js"></script>
+    <script src="~/Assets/js/revolution.extension.kenburn.min.js"></script>
+    <script src="~/Assets/js/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/Assets/js/revolution.extension.migration.min.js"></script>
+    <script src="~/Assets/js/revolution.extension.navigation.min.js"></script>
+    <script src="~/Assets/js/revolution.extension.parallax.min.js"></script>
+    <script src="~/Assets/js/revolution.extension.slideanims.min.js"></script>
+    <script src="~/Assets/js/revolution.extension.video.min.js"></script>
+    <!-- fancy box -->
+    <script src="~/Assets/js/jquery.fancybox.pack.js"></script>
+    <script src="~/Assets/js/jquery.polyglot.language.switcher.js"></script>
+    <script src="~/Assets/js/nouislider.js"></script>
+    <script src="~/Assets/js/jquery.bootstrap-touchspin.js"></script>
+    <script src="~/Assets/js/SmoothScroll.js"></script>
+    <script src="~/Assets/js/validation.js"></script>
+    <script src="~/Assets/js/jquery.appear.js"></script>
+    <script src="~/Assets/js/jquery.countTo.js"></script>
+    <script src="~/Assets/js/jquery.flexslider.js"></script>
+    <script src="~/Assets/js/imagezoom.js"></script>
+    <script src="~/Assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Assets/js/isotope.js"></script>
+    <script src="~/Assets/js/simplyCountdown.min.js"></script>
+    <script id="map-script" src="~/Assets/js/default-map.js"></script>
+    <script src="~/Assets/js/custom.js"></script>
+</body>
+</html>

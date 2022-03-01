@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "_NavBar";
+}
+
+
+<div class="text-justify col-md-7 d-flex menu-column">
+    <nav class="main-menu navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse clearfix">
+            <div class="row">
+                <ul class="navigation clearfix">
+                    <li class="dropdown active">
+                        @Html.ActionLink("Home", "Index", "Home")
+                        <ul>
+                            <li>@Html.ActionLink("Archive", "ArchivedEvents", "Event")</li>
+                            <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
+                            <li>@Html.ActionLink("Support A Cause", "SupportCause", "Support")</li>
+                            <li>@Html.ActionLink("Upcoming Events", "UpcomingEvents", "Event")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Organizer", "InventoryIndex", "Inventory")
+                        <ul>
+                            <li>@Html.ActionLink("Manage Inventory", "InventoryIndex", "Inventory")</li>
+                            <li>@Html.ActionLink("My Events", "EventsIndex", "Event")</li>
+                            <li>@Html.ActionLink("Organise Event", "CreateEvent", "Event")</li>
+                            <li>@Html.ActionLink("Create a Cause", "CreateCause", "Support")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("About Us", "About", "Home")
+                    </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Contact Us", "Contact", "Home")
+                    </li>
+
+                </ul>
+            </div>
+            <ul class="mobile-menu clearfix">
+                <li class="dropdown active">
+                    @Html.ActionLink("Home", "Index", "Home")
+                    <ul>
+                        <li>@Html.ActionLink("Archive", "ArchivedEvents", "Event")</li>
+                        <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
+                        <li>@Html.ActionLink("Support A Cause", "SupportCause", "Support")</li>
+                        <li> @Html.ActionLink("Upcoming Events", "UpcomingEvents", "Event")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    @Html.ActionLink("Organizer", "InventoryIndex", "Inventory")
+                    <ul>
+                        <li>@Html.ActionLink("Manage Inventory", "InventoryIndex", "Inventory")</li>
+                        <li>@Html.ActionLink("My Events", "EventsIndex", "Event")</li>
+                        <li>@Html.ActionLink("Organise Event", "CreateEvent", "Event")</li>
+                        <li>@Html.ActionLink("Create a Cause", "CreateCause", "Support")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    @Html.ActionLink("About Us", "About", "Home")
+                </li>
+                <li class="dropdown">
+                    @Html.ActionLink("Contact Us", "Contact", "Home")
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
