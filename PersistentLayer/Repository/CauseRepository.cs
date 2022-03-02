@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Entities;
+using MyDataBase;
+using PersistentLayer.IRepository;
+using PersistentLayer.Repository.GenericRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +10,40 @@ using System.Threading.Tasks;
 
 namespace PersistentLayer.Repository
 {
-    class CauseRepository
+    public class CauseRepository : GenericRepo<Cause>, ICauseRepository
     {
+        public CauseRepository(ApplicationDbContext context) : base(context)
+        {
+
+        }
+        public void Add(Cause entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<Cause> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Cause GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Guid id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

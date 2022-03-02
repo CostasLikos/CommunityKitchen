@@ -16,10 +16,7 @@ namespace MyDataBase
         {
         }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+        public static ApplicationDbContext Create()=> new ApplicationDbContext();
 
         public DbSet<Event> Events { get; set; }
         public DbSet<Cause> Causes { get; set; }
