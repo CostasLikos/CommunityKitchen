@@ -19,7 +19,7 @@ namespace PersistentLayer.Repository.GenericRepository
             _context = context;
             _table = context.Set<T>();
         }
-
+        //Implementing Interface
         public void Add(T entity)=> _table.Add(entity);
         public void Save()=>_context.SaveChanges();
         public void Delete(Guid id)

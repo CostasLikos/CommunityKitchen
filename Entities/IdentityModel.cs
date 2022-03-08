@@ -19,16 +19,18 @@ namespace Entities.IdentityModel
             // Add custom user claims here
             return userIdentity;
         }
-
+        //Observer Method
         public void Update(Event observer)
         {
             throw new NotImplementedException();
         }
-
+        //Additional Properties to IdentityUser
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
+        //Method to get FullName
         public string FullName => FirstName + " " + LastName;
+        //Navigational Properties
         public List<Story> Stories { get; set; }    
     }
 }

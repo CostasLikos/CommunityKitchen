@@ -12,12 +12,15 @@ namespace Entities
     public class Event : EventObserver,IAttributes
     {
         public Guid Id { get; set; }
+        //IAttributes Implementation
         public string Title { get; set; }
         public string Description { get; set; }
         public string Photo { get; set; }
+        //Observers
         public List<ApplicationUser> Users { get; set; }
         public Event(DateTime date):base(date)
         {
         }
+
     }
 }
