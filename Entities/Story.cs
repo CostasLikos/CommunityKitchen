@@ -11,7 +11,7 @@ namespace Entities
 {
     public class Story : IAttributes
     {
-        public Guid StoryId { get; set; }
+        public Guid Id { get; set; }
         //IAttributes Implementation
         public string Title { get; set; }
         public string Description { get; set; }

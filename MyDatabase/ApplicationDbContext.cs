@@ -14,6 +14,7 @@ namespace MyDataBase
     {
         public ApplicationDbContext() : base("MyLinkDB", throwIfV1Schema: false)
         {
+            Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseAlways<ApplicationDbContext>());
         }
 
         public static ApplicationDbContext Create()=> new ApplicationDbContext();
@@ -23,6 +24,13 @@ namespace MyDataBase
         public DbSet<Item> Items { get; set; }
         public DbSet<Inventory> Inventory { get; set; }
         public DbSet<Story> Stories { get; set; }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    //Configure primary key
+        //    modelBuilder.Entity<Cause>().HasKey<Guid>(pk => pk.Id);
+        //    modelBuilder.Entity<Event>().HasKey<Guid>(pk => pk.Id);
+        //    modelBuilder.Entity<Story>().HasKey<Guid>(pk => pk.Id);
+        //}
 
     }
 }

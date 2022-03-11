@@ -1,4 +1,5 @@
 ﻿using Entities;
+using MyDataBase;
 using PersistentLayer.IRepository;
 using PersistentLayer.Repository.GenericRepository;
 using System;
@@ -11,34 +12,10 @@ namespace PersistentLayer.Repository
 {
     public class AdminRepository : GenericRepo<Moderator>, IAdminRepository
     {
-        public void Add(Moderator entity)
+        public AdminRepository(ApplicationDbContext context) : base(context)
         {
-            throw new NotImplementedException();
         }
 
-        public void Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<Moderator> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Moderator GetById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
