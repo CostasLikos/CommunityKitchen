@@ -29,10 +29,10 @@ namespace Entities.AbstratctEntitities
         }
         public void Notify()
         {
-            foreach (IWatcher<Event> volunteer in volunteers)
-            {
-                volunteer.Update((Event)this);
-            }
+            //foreach (IWatcher<Event> volunteer in volunteers)
+            //{
+            //    volunteer.Update((Event)this);
+            //}
         }
 
         //backfield to Property get-set

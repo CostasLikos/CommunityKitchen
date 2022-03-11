@@ -110,7 +110,14 @@
     <Compile Include="AccountModels\SendCodeViewModel.cs" />
     <Compile Include="AccountModels\VerifyCodeViewModel.cs" />
     <Compile Include="Cause.cs" />
+    <Compile Include="CompositeFactoryDesign\Concrete\IConsumbale.cs" />
+    <Compile Include="CompositeFactoryDesign\Concrete\Liquid.cs" />
+    <Compile Include="CompositeFactoryDesign\Concrete\Solid.cs" />
+    <Compile Include="CompositeFactoryDesign\Factories\IConsumableFactory.cs" />
+    <Compile Include="CompositeFactoryDesign\Factories\LiquidFactory.cs" />
+    <Compile Include="CompositeFactoryDesign\Factories\SolidFactory.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="IEntities\IEventObserver.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Moderator.cs" />

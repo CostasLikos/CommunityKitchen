@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace PersistentLayer.IRepository
 {
-    public interface ICauseRepository:IGenericRepo<Cause>
+    public interface ICauseRepository : IGenericRepo<Cause>
     {
-
     }
 }

@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Entities;
+using Entities.CompositeFactoryDesign.Concrete;
+using Entities.CompositeFactoryDesign.Factories;
+using MyDataBase;
+using PersistentLayer.Repository;
+using PersistentLayer.Repository.GenericRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +16,9 @@ namespace ReposTestArea
     {
         static void Main(string[] args)
         {
+            
+            
         }
+
     }
 }
