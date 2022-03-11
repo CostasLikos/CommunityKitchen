@@ -16,34 +16,6 @@ namespace PersistentLayer.Repository
         {
 
         }
-        public void Add(Cause entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<Cause> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Cause GetById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

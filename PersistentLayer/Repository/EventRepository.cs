@@ -1,4 +1,6 @@
-﻿using PersistentLayer.IRepository;
+﻿using Entities;
+using MyDataBase;
+using PersistentLayer.IRepository;
 using PersistentLayer.Repository.GenericRepository;
 using System;
 using System.Collections.Generic;
@@ -8,36 +10,10 @@ using System.Threading.Tasks;
 
 namespace PersistentLayer.Repository
 {
-    public class Event : GenericRepo<Event>, IEventRepository
+    public class EventRepository : GenericRepo<Event>, IEventRepository
     {
-        public void Add(Entities.Event entity)
+        public EventRepository(ApplicationDbContext context) : base(context)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ICollection<Entities.Event> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Entities.Event GetById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Guid id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

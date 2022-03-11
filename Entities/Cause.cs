@@ -1,6 +1,7 @@
 ﻿using Entities.IEntities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace Entities
 {
     public class Cause : IAttributes
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         //IAttribute Implementation
         public string Title { get; set ; }

@@ -1,31 +1,14 @@
-﻿namespace MyDatabase.Migrations
+﻿using Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyDatabase.Seed
 {
-    using Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<MyDataBase.ApplicationDbContext>
+    internal class Seeding
     {
-        public Configuration()
-        {
-            AutomaticMigrationsEnabled = true;
-        }
-
-        protected override void Seed(MyDataBase.ApplicationDbContext context)
-        {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
-            var causes = CauseSeed();
-            var events = EventSeed();
-            context.Causes.AddRange(causes);
-            context.Events.AddRange(events);
-            context.SaveChanges();
-        }
         public List<Cause> CauseSeed()
         {
             List<Cause> causes = new List<Cause>()
