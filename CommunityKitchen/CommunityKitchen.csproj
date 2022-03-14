@@ -222,6 +222,7 @@
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\settings.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\css\signuplogin.css" />
     <Content Include="Assets\fonts\flaticon.css" />
     <Content Include="Assets\fonts\flaticon.html" />
     <Content Include="Assets\fonts\Flaticon.svg" />
