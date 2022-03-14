@@ -12,7 +12,7 @@ namespace PersistentLayer.IRepository
         void Add(T entity);
         void Update(Guid id);
         void Delete(Guid id);
-        ICollection<T> GetAll();
+        IEnumerable<T> GetAll();
         T GetById(Guid id);
 
     }
