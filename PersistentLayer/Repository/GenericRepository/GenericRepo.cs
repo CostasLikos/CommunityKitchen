@@ -27,7 +27,7 @@ namespace PersistentLayer.Repository.GenericRepository
             var existing = _table.Find(id);
             _context.Entry(existing).State = EntityState.Deleted;
         }
-        public ICollection<T> GetAll() => _table.ToList();
+        public IEnumerable<T> GetAll() => _table.ToList();
         public T GetById(Guid id) => _table.Find(id);
         public void Update(Guid id)
         {

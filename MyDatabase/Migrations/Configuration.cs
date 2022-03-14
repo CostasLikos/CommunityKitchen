@@ -1,6 +1,7 @@
 ﻿namespace MyDatabase.Migrations
 {
     using Entities;
+    using Entities.IdentityModel;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -22,8 +23,14 @@
             //  to avoid creating duplicate seed data.
             var causes = CauseSeed();
             var events = EventSeed();
+            var users = RegisteredUsersSeed();
             context.Causes.AddRange(causes);
             context.Events.AddRange(events);
+            //foreach (var user in users)
+            //{
+            //    context.Users.Add(user);
+            //    context.SaveChanges();
+            //}
             context.SaveChanges();
         }
         public List<Cause> CauseSeed()
@@ -41,12 +48,22 @@
         {
             List<Event> events = new List<Event>()
             {
-              new Event() {Title = "14th Street Charity Meal",Description="Offering meal at 14th Street",EventDate=new DateTime(2022,04,05) },
-              new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",EventDate=new DateTime(2022,05,07) },
-              new Event() {Title = "Bazaar of poor Souls",Description="Open Market to support the poor",EventDate=new DateTime(2022,04,05) },
-              new Event() {Title = "Lending a hand",Description="Free grooming for poor people",EventDate=new DateTime(2022,06,05) }
+              new Event() {Title = "14th Street Charity Meal",Description="Offering meal at 14th Street",Address="Agiou Meletiou 32, Athens, Pagrati 12443",EventDate=new DateTime(2022,04,05) },
+              new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",Address="Stratarxou Karaiskaki 22, Athens, Haidari 12461",EventDate=new DateTime(2022,05,07) },
+              new Event() {Title = "Bazaar of poor Souls",Description="Open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",EventDate=new DateTime(2022,04,05) },
+              new Event() {Title = "Lending a hand",Description="Free grooming for poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",EventDate=new DateTime(2022,06,05) }
             };
             return events;
+        }
+        public List<ApplicationUser> RegisteredUsersSeed()
+        {
+            List<ApplicationUser> users = new List<ApplicationUser>()
+            {
+                new ApplicationUser() {FirstName="Takis",LastName="Mpompos",Address ="Kratira 12,Athens",UserName="Helper"},
+                new ApplicationUser() {FirstName="Balya",LastName="Papaki",Address ="Xomateri 20,Traxanoplagia",UserName="Polar"},
+                new ApplicationUser() {FirstName="John",LastName="Doe",Address ="3rd Avenue 112,Manhattan",UserName="Foreigner"}
+            };
+            return users;
         }
     }
 }
