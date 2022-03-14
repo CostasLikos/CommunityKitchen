@@ -3,27 +3,100 @@
     ViewBag.Title = "_LogIn";
 }
 
-<header class="top-bar">
-    <div class="container">
-        <div class="column left">
-            <ul class="top-bar-text">
-                <li><i class="icon fa fa-envelope"></i>charitysympathy@info.com</li>
-                <li><i class="icon fa fa-phone"></i>012.9355.121</li>
-            </ul>
+<body>
+    <div class="signup-form">
+        <div class="form">
+            <div class="close" onclick="signupToggle()">&times;</div>
+            <div class="text">
+                <h2>Register Form</h2>
+            </div>
+            <form action="#">
+                <div class="inputBx">
+                    <input id="in" type="text" placeholder="FirstName">
+                    <input id="in" type="text" placeholder="Last Name">
+                </div>
+                <div class="img1">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
+                </div>
+                <div id="img1">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
+                </div>
+                <div class="inputBx">
+                    <input type="email" placeholder="Email">
+                    <div class="img2">
+                        <img src="https://img.icons8.com/external-nawicon-glyph-nawicon/64/000000/external-email-communication-nawicon-glyph-nawicon.png" />
+                    </div>
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Confirm password">
+                    <div class="img4">
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
+                    </div>
+                    <div class="inputBx">
+                        <input id="sub" type="submit" value="Register">
+                    </div>
+                    <div class="inputBx">
+                        <p>ALLRADY HAVE AN ACCOUNT?<a href="#">Sign in</a></p>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="column center">
-            <ul class="social">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            </ul>
-        </div>
-        <div class="column right">
-            <ul class="login-info">
-                <li><a href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
-                <li><a href="#"><i class="icon fa fa-user"></i>signup</a></li>
+    </div>
+    <div class="login-form">
+        <div class="form">
+            <div class="close" onclick="loginToggle()">&times;</div>
+            <div class="text">
+                <h2>Login</h2>
+            </div>
+            <form action="#">
+                <div class="inputBx">
+                    <input type="email" placeholder="UserName">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
+                </div>
+                <div class="inputBx">
+                    <input type="password" placeholder="Password">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
+                </div>
+
+                <label class="remeber"><input type="checkbox" name="">Remember me</label>
+
+                <div class="inputBx">
+                    <input id="sub" type="submit" value="Login">
+                </div>
+                <div class="inputBx">
+                    <p>Forget<a href="#">Password</a></p>
+                    <p>Dont have an account?<a href="#">Sign up</a></p>
+                </div>
+            </form>
+            <p>Login with social media</p>
+            <ul class="sci">
+                <li><img class="fb" src="https://img.icons8.com/fluency/100/000000/facebook-new.png" /></li>
+                <li><img src="https://img.icons8.com/color/48/000000/twitter--v1.png" /></li>
+                <li><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" /></li>
             </ul>
         </div>
     </div>
-</header>
+
+
+
+
+
+    <script>
+        function signupToggle() {
+            var container = document.querySelector('.container23');
+            container.classList.toggle('active');
+            var popup = document.querySelector('.signup-form');
+            popup.classList.toggle('active');
+        }
+        function loginToggle() {
+            var container = document.querySelector('.container23');
+            container.classList.toggle('active');
+            var popup = document.querySelector('.login-form');
+            popup.classList.toggle('active');
+        }
+
+    </script>
+
+</body>
+
 

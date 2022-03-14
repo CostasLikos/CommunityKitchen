@@ -18,6 +18,7 @@ namespace ReposTestArea
     {
         static void Main(string[] args)
         {
+
             ApplicationDbContext db = new ApplicationDbContext();
             CauseRepository causeService = new CauseRepository(db);
             EventRepository eventService = new EventRepository(db);
@@ -57,6 +58,7 @@ namespace ReposTestArea
             //Event FoodPlus = new Event();
             //FoodPlus.Register(watcherAlpha);
             //FoodPlus.EventDate = new DateTime(05 / 05 / 2005);
+
 
 
 
