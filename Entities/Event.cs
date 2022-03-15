@@ -20,6 +20,7 @@ namespace Entities
         public string Description { get; set; }
         public string Photo { get; set; }
         public string Address { get; set; }
+
         private DateTime date;
         public DateTime EventDate 
         {
@@ -30,6 +31,7 @@ namespace Entities
                 NotifyRegistredUsers(value);
             }
         }
+
         //Observers
         List<IWatcher> observerList = new List<IWatcher>();
         public void Register(IWatcher watcher)=>observerList.Add(watcher);

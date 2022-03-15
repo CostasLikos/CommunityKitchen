@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyDataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,14 @@ namespace Controllers
 {
     public class EventController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult EventsIndex()
         {
+            var events = db.Events;
+
             //View for organizer with all his events
-            return View();
+            return View(events);
         }
         // GET: Event
         public ActionResult UpcomingEvents()
