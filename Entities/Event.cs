@@ -20,7 +20,9 @@ namespace Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public string Photo { get; set; }
+        public string Address { get; set; }
         public DateTime EventDate { get; set; }
+
         //Observers
         public List<ApplicationUser> Users { get; set; }
         

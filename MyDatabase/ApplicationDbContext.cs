@@ -14,7 +14,7 @@ namespace MyDataBase
     {
         public ApplicationDbContext() : base("MyLinkDB", throwIfV1Schema: false)
         {
-            Database.SetInitializer<ApplicationDbContext>(new DropCreateDatabaseAlways<ApplicationDbContext>());
+           
         }
 
         public static ApplicationDbContext Create()=> new ApplicationDbContext();
