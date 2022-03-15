@@ -1,5 +1,4 @@
-﻿using Entities.AbstratctEntitities;
-using Entities.IdentityModel;
+﻿using Entities.IdentityModel;
 using Entities.IEntities;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Event :IAttributes
+    public class Event :IAttributes,ISubject
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -21,11 +20,28 @@ namespace Entities
         public string Description { get; set; }
         public string Photo { get; set; }
         public string Address { get; set; }
-        public DateTime EventDate { get; set; }
+
+        private DateTime date;
+        public DateTime EventDate 
+        {
+            get { return date; }
+            set 
+            { 
+                date = value;
+                NotifyRegistredUsers(value);
+            }
+        }
 
         //Observers
-        public List<ApplicationUser> Users { get; set; }
-        
-
+        List<IWatcher> observerList = new List<IWatcher>();
+        public void Register(IWatcher watcher)=>observerList.Add(watcher);
+        public void Unregister(IWatcher watcher)=>observerList.Remove(watcher);
+        public void NotifyRegistredUsers(DateTime date)
+        {
+            foreach (IWatcher watcher in observerList)
+            {
+                watcher.Update(date);
+            }
+        }
     }
 }

@@ -99,7 +99,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstratctEntitities\EventObserver.cs" />
     <Compile Include="AccountModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="AccountModels\ExternalLoginListViewModel.cs" />
     <Compile Include="AccountModels\ForgotPasswordViewModel.cs" />
@@ -117,7 +116,7 @@
     <Compile Include="CompositeFactoryDesign\Factories\LiquidFactory.cs" />
     <Compile Include="CompositeFactoryDesign\Factories\SolidFactory.cs" />
     <Compile Include="Event.cs" />
-    <Compile Include="IEntities\IEventObserver.cs" />
+    <Compile Include="IEntities\ISubject.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Moderator.cs" />

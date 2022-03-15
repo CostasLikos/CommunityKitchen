@@ -14,8 +14,11 @@ namespace PersistentLayer.Repository
     {
         public CauseRepository(ApplicationDbContext context) : base(context)
         {
-
+           
         }
-        
+        //Testing ASsistant
+        public Guid GetId(Cause entity) => entity.Id;
+
+
     }
 }

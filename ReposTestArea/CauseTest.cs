@@ -1,11 +1,6 @@
 ﻿using Entities;
-using Entities.CompositeFactoryDesign.Concrete;
-using Entities.CompositeFactoryDesign.Factories;
-using Entities.IdentityModel;
-using Entities.IEntities;
 using MyDataBase;
 using PersistentLayer.Repository;
-using PersistentLayer.Repository.GenericRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,22 +9,19 @@ using System.Threading.Tasks;
 
 namespace ReposTestArea
 {
-    class Program
+    public class CauseTest
     {
         static void Main(string[] args)
         {
-
             ApplicationDbContext db = new ApplicationDbContext();
             CauseRepository causeService = new CauseRepository(db);
-            EventRepository eventService = new EventRepository(db);
-
             var causes = causeService.GetAll();
             foreach (var item in causes)
             {
                 Console.WriteLine($"{item.Title,-40}{item.Description,-40}{item.TargetGoal}{item.CurrentAmmount}");
             }
             Console.WriteLine("-------------------------------------------------------------");
-            Cause NeedMoney = new Cause() { Title="Money Money",Description="Raising Funds",TargetGoal=150,CurrentAmmount=25};
+            Cause NeedMoney = new Cause() { Title = "Money Money", Description = "Raising Funds", TargetGoal = 150, CurrentAmmount = 25 };
             causeService.Add(NeedMoney);
             causeService.Save();
             foreach (var item in causes)
@@ -46,24 +38,6 @@ namespace ReposTestArea
                 Console.WriteLine($"{item?.Title,-40} {item.TargetGoal,-30}{item.CurrentAmmount,-30}");
             }
 
-
-
-
-            //var events = eventService.GetAll();
-            //foreach (var item in events)
-            //{
-            //    Console.WriteLine($"{item.Title,-40}{item.Description,-40}{item.EventDate.ToShortDateString(),-40}");
-            //}
-            //IWatcher watcherAlpha = new ApplicationUser() { FirstName= "John", LastName="Doe"};
-            //Event FoodPlus = new Event();
-            //FoodPlus.Register(watcherAlpha);
-            //FoodPlus.EventDate = new DateTime(05 / 05 / 2005);
-
-
-
-
-
         }
-
     }
 }

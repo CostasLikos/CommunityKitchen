@@ -14,7 +14,7 @@ namespace MyDataBase
     {
         public ApplicationDbContext() : base("MyLinkDB", throwIfV1Schema: false)
         {
-           
+
         }
 
         public static ApplicationDbContext Create()=> new ApplicationDbContext();

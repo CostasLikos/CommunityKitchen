@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Entities.IdentityModel
 {
-    public class ApplicationUser : IdentityUser, IWatcher<Event>
+    public class ApplicationUser : IdentityUser, IWatcher
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -20,9 +20,9 @@ namespace Entities.IdentityModel
             return userIdentity;
         }
         //Observer Method
-        public void Update(Event observer)
+        public void Update(DateTime date)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The date of an event has changed to {0}",date.ToShortDateString());
         }
         //Additional Properties to IdentityUser
         public string FirstName { get; set; }
