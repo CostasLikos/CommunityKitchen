@@ -1,4 +1,5 @@
 ﻿using MyDataBase;
+using PersistentLayer.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,17 @@ namespace Controllers
 {
     public class EventController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db;
+        private EventRepository es;
+        public EventController()
+        {
+            db = new ApplicationDbContext();
+            es = new EventRepository(db);
+        }
 
         public ActionResult EventsIndex()
         {
-            var events = db.Events;
+            var events = es.GetAll();
 
             //View for organizer with all his events
             return View(events);
@@ -38,6 +45,14 @@ namespace Controllers
         {
             //Organizers create event option
             return View();
+        }
+
+        public ActionResult OrganizeEvents()
+        {
+            //Organizers event dashboard option
+            var events = es.GetAll();
+
+            return View(events);
         }
     }
 }
