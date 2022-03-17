@@ -18,6 +18,13 @@ namespace Controllers
             //View for organizer with all his events
             return View(events);
         }
+        public ActionResult EventsIndexOrganizer()
+        {
+            var events = db.Events;
+
+            return View(events);
+        }
+
         // GET: Event
         public ActionResult UpcomingEvents()
         {

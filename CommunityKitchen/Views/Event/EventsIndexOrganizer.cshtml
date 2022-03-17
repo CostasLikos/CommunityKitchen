@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Entities.Event>
+
+@{
+    ViewBag.Title = "EventsIndexOrganizer";
+}
+
+<h1 style="text-align:center">Event Index Organizer</h1>
+
+
+<!--start upcoming-event-->
+<section class="all-event">
+    <div class="container">
+        
+
+
+        <div class="item-list">
+            <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="bg-area">
+                    <div class="image-box">
+                        <img src="images/event/5.jpg" alt="Awesome Image" />
+                        <div class="overlay">
+                            <div class="box">
+                                <div class="content">
+                                    <a href="event-details.html"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="login-form">
+                        <div class="form">
+                            <div class="close" onclick="loginToggle()">&times;</div>
+                            <div class="text">
+                                <h2>Login</h2>
+                            </div>
+                            <form action="#">
+                                <div class="inputBx">
+                                    <input type="email" placeholder="UserName">
+                                    <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
+                                </div>
+                                <div class="inputBx">
+                                    <input type="password" placeholder="Password">
+                                    <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
+                                </div>
+
+                                <label class="remeber"><input type="checkbox" name="">Remember me</label>
+
+                                <div class="inputBx">
+                                    <input id="sub" type="submit" value="Login">
+                                </div>
+                                <div class="inputBx">
+                                    <p>Forget<a href="#">Password</a></p>
+                                    <p>Dont have an account?<a href="#">Sign up</a></p>
+                                </div>
+                            </form>
+                            <p>Login with social media</p>
+                            <ul class="sci">
+                                <li><img class="fb" src="https://img.icons8.com/fluency/100/000000/facebook-new.png" /></li>
+                                <li><img src="https://img.icons8.com/color/48/000000/twitter--v1.png" /></li>
+                                <li><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    @foreach (var eve in Model)
+                    {
+                        <div class="content-box">
+                            <div class="title-area">
+                                <div class="date">@eve.EventDate.Day<br><span>@eve.EventDate.ToString("MMM")</span></div>
+                                <h3>@eve.Title</h3>
+                                <ul class="event-info">
+                                    <li><span class="fa fa-calendar"></span> @eve.EventDate.ToLongDateString()</li>
+                                    <li> &emsp; <span class="fa fa-map-marker"></span>@eve.Address</li>
+                                </ul>
+                            </div>
+                            <div class="text">
+                                <p>@eve.Description</p>
+                            </div>
+                            <div class="link"><a href="#" onclick="loginToggle()" class="thm-btn style-2">Edit Event</a><a href="#" class="thm-btn style-2">Delete  Event</a></div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+@*@section scripts{
+
+        }
+
+    `<div class="content-box">
+        <div class="title-area">
+            <div class="date">18<br><span>jan</span></div>
+            <h3><a href="#">Going for <span>Food Donation</span></a></h3>
+            <ul class="event-info">
+                <li><span class="fa fa-calendar"></span>&ensp; January 18, 2017&ensp; - </li>
+                <li><span class="fa fa-clock-o"></span>&ensp; 5;00 pm&ensp; -</li>
+                <li><span class="fa fa-map-marker"></span>&ensp; NewDelhi, IN</li>
+            </ul>
+        </div>
+        <div class="text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, incididunt ut labore et dolore.empor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, incididunt ut labore et dolore.</p>
+        </div>
+    </div>*@

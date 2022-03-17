@@ -472,6 +472,7 @@
     <Content Include="Views\Shared\Components\_NavBar.cshtml" />
     <Content Include="Views\Shared\Components\_SearchBar.cshtml" />
     <Content Include="Views\Event\EventsIndex.cshtml" />
+    <Content Include="Views\Event\EventsIndexOrganizer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
