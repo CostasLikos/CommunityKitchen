@@ -15,7 +15,7 @@
         </div>
 
         <div>
-            <button class="thm-btn style-1">    Create An Event    </button>
+            <button onclick="loginToggle()" class="thm-btn style-1">    Create An Event    </button>
             <br />
             <br />
             <br />
@@ -35,13 +35,12 @@
                             <ul class="event-info">
                                 <li><span class="fa fa-calendar"></span> @eve.EventDate.ToLongDateString()</li>
                                 <li> &emsp; <span class="fa fa-map-marker"></span>@eve.Address</li>
-                                <li class="link"><a href="#" onclick="loginToggle()" class="thm-btn style-2">Edit Event</a><a href="#" class="thm-btn style-2">Delete  Event</a></li>
+                                <li class="link"><a href="#" onclick="loginToggle()" class="thm-btn style-2">Edit Event</a><a href="#" onclick="loginToggle()" class="thm-btn style-2">Delete  Event</a></li>
                             </ul>
 
                             <div class="text">
                                 <p>@eve.Description</p>
                             </div>
-
 
                         </div>
                     }
