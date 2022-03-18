@@ -17,6 +17,8 @@
     <link rel="icon" type="image/png" href="~/Assets/images/favicon/favicon-16x16.png" sizes="16x16">
 </head>
 <body>
+    @*Meta Login*@
+    <script src="~/Scripts/MetaLogin.js"></script>
     <div class="container23">
         <div class="col-mb-12">
             <section class="theme_menu stricky" style="background-image: url('../../Assets/Selection/lockedhands.jpg'); background-repeat: no-repeat; background-size:cover; ">
@@ -28,7 +30,7 @@
                             <li><i class="icon fa fa-phone"></i>012.9355.121</li>
                         </ul>
                     </div>
-                    <div class="column center">
+                    <div id="status" class="column center">
                         <ul id="soc">
                             <li id="soc1"><a style="color: #ff2e3d" href="#"><i class="fa fa-facebook"></i></a></li>
                             <li id="soc1"><a style="color: #ff2e3d" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -96,6 +98,8 @@
         <script src="~/Assets/js/simplyCountdown.min.js"></script>
         <script id="map-script" src="~/Assets/js/default-map.js"></script>
         <script src="~/Assets/js/custom.js"></script>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+        <script src="~/Scripts/LoginRegister.js"></script>
     </div>
     @Html.Partial("~/Views/Shared/Components/_LogIn.cshtml")
 </body>

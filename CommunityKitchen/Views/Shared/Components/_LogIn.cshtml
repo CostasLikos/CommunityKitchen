@@ -4,6 +4,7 @@
 }
 
 <body>
+
     <div class="signup-form">
         <div class="form">
             <div class="close" onclick="signupToggle()">&times;</div>
@@ -53,6 +54,7 @@
                     <input type="email" placeholder="UserName">
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
                 </div>
+                
                 <div class="inputBx">
                     <input type="password" placeholder="Password">
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
@@ -70,7 +72,10 @@
             </form>
             <p>Login with social media</p>
             <ul class="sci">
-                <li><img class="fb" src="https://img.icons8.com/fluency/100/000000/facebook-new.png" /></li>
+                <li>
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button>
+                </li>
                 <li><img src="https://img.icons8.com/color/48/000000/twitter--v1.png" /></li>
                 <li><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" /></li>
             </ul>
@@ -80,21 +85,8 @@
 
 
 
-
     <script>
-        function signupToggle() {
-            var container = document.querySelector('.container23');
-            container.classList.toggle('active');
-            var popup = document.querySelector('.signup-form');
-            popup.classList.toggle('active');
-        }
-        function loginToggle() {
-            var container = document.querySelector('.container23');
-            container.classList.toggle('active');
-            var popup = document.querySelector('.login-form');
-            popup.classList.toggle('active');
-        }
-
+        
     </script>
 
 </body>
