@@ -423,6 +423,8 @@
     <Content Include="Assets\fonts\revicons.woff" />
     <Content Include="Assets\fonts\_flaticon.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\LoginRegister.js" />
+    <Content Include="Scripts\MetaLogin.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -478,6 +480,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Inventory\" />
+    <Folder Include="Views\MetaLogin\" />
     <Folder Include="Views\Story\" />
     <Folder Include="Views\Support\" />
   </ItemGroup>
