@@ -383,6 +383,7 @@
     <Content Include="Assets\js\SmoothScroll.js" />
     <Content Include="Assets\js\validation.js" />
     <Content Include="Assets\js\wow.js" />
+    <Content Include="Assets\Selection\events1.jpg" />
     <Content Include="Assets\Selection\BlueBar.jpg" />
     <Content Include="Assets\Selection\heartWithHands.jpg" />
     <Content Include="Assets\Selection\lockedhands.jpg" />

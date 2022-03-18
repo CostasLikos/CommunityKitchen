@@ -6984,8 +6984,8 @@ default-form style-three
         transform: scale(1.1);
     }
 
-    .all-event .item .overlay {
-        background-color: rgba(255, 46, 61, 0.67);
+    /*.all-event .item .overlay {
+        background-color: #848484;
         text-align: center;
         position: absolute;
         left: 0;
@@ -6997,7 +6997,7 @@ default-form style-three
         filter: alpha(opacity=0);
         transition: all 450ms ease-out 0s;
         transform: rotateY(180deg) scale(0.5,0.5);
-    }
+    }*/
 
     .all-event .item:hover .image-box .overlay {
         opacity: 1;
