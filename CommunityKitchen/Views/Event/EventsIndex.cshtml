@@ -7,22 +7,6 @@
 <h2>View KAI KALALALALA</h2>
 
 
-<section class="page-banner">
-    <div class="container">
-        <div class="title">
-            <h1>all <span>event</span></h1>
-        </div>
-        <div class="text">
-            <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p>
-        </div>
-        <div class="breadcumb-wrapper">
-            <ul class="list-inline link-list">
-                <li><a href="index.html">Home</a></li>
-                <li>Event</li>
-            </ul>
-        </div>
-    </div>
-</section>
 
 <!--start upcoming-event-->
 <section class="all-event">
@@ -38,33 +22,34 @@
             <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                 <div class="bg-area">
                     <div class="image-box">
-                        <img src="images/event/5.jpg" alt="Awesome Image" />
+                        <img src="~/Assets/Selection/events1.jpg" />
                         <div class="overlay">
                             <div class="box">
-                                <div class="content">
-                                    <a href="event-details.html"><i class="fa fa-link"></i></a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
 
-                    @foreach (var eve in Model)
+                    @foreach (var eve in Model.OrderBy(x=>x.EventDate))
                     {
                         <div class="content-box">
                             <div class="title-area">
-                                <div class="date">@eve.EventDate.Day<br><span>@eve.EventDate.ToString("MMM")</span></div>
-                                <h3>@eve.Title</h3>
-                                <ul class="event-info">
-                                    <li><span class="fa fa-calendar"></span> @eve.EventDate.ToLongDateString()</li>
-                                    <li> &emsp; <span class="fa fa-map-marker"></span>@eve.Address</li>
-                                </ul>
-                            </div>
-                            <div class="text">
-                                <p>@eve.Description</p>
+                                @if (eve.EventDate >= DateTime.Now)
+                                {
+                                    <div class="date">@eve.EventDate.Day<br><span>@eve.EventDate.ToString("MMM")</span></div>
+                                    <h3>@eve.Title</h3>
+                                    <ul class="event-info">
+                                        <li><span class="fa fa-calendar"></span> @eve.EventDate.ToLongDateString()</li>
+                                        <li> &emsp; <span class="fa fa-map-marker"></span>@eve.Address</li>
+                                    </ul>
+
+                                    <div class="text">
+                                        <p>@eve.Description</p>
+                                    </div>
+                                }
                             </div>
                         </div>
                     }
-
                 </div>
             </div>
         </div>
