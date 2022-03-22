@@ -1060,7 +1060,6 @@ input, textarea {
 
 .theme_menu.stricky-fixed {
     margin: 0;
-    position: fixed;
     background: #252525;
     top: 0;
     left: 0;
@@ -1239,7 +1238,6 @@ input, textarea {
     text-transform: uppercase;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     z-index: 1;
-    pointer-events: none;
     transition: bottom 0.5s, z-index 0s,transform 0.5s, padding 0.5s;
     transition-delay: 0.5s,0.5s,0s,0.5s;
     color: #fff;
