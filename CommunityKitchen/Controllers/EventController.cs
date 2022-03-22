@@ -1,8 +1,11 @@
-﻿using MyDataBase;
+﻿using Entities;
+using MyDataBase;
 using PersistentLayer.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -31,21 +34,41 @@ namespace Controllers
             //All upcoming events
             return View();
         }
-        public ActionResult EventDetails()
+        public ActionResult EventDetails(Guid id)
         {
-            //event Details
-            return View();
+            Event ev = es.GetById(id);
+            return View(ev);
         }
         public ActionResult ArchivedEvents()
         {
             //Completed Events
             return View();
         }
-        public ActionResult CreateEvent()
+        public ActionResult CreateEvent(Event ev)
         {
-            //Organizers create event option
+            //if (ModelState.IsValid)
+            //{
+            //    es.Add(ev);
+            //    es.Save();
+            //    TempData["Message"] = "Event Created";
+            //    return RedirectToAction("OrganizeEvents");
+            //}
             return View();
         }
+        public ActionResult DeleteEvent(Guid id)
+        {
+            es.Delete(id);
+            es.Save();
+            return RedirectToAction("OrganizeEvents");
+        }
+
+        public ActionResult EditEvent(Guid id)
+        {
+            Event ev = es.GetById(id);
+            es.Update(id);
+            return View(ev);
+        }
+
 
         public ActionResult OrganizeEvents()
         {

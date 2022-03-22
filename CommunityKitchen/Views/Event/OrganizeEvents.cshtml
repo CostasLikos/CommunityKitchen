@@ -30,18 +30,18 @@
 
                         <div class="content-box">
 
-                            <h3>Titlosss</h3>
-                            <h3>@eve.Title</h3>
+                            <a href="@Url.Action("EventDetails","Event",new {id = @eve.Id})"> <h3>@eve.Title</h3></a>
                             <ul class="event-info">
                                 <li><span class="fa fa-calendar"></span> @eve.EventDate.ToLongDateString()</li>
                                 <li> &emsp; <span class="fa fa-map-marker"></span>@eve.Address</li>
-                                <li class="link"><a href="#" onclick="loginToggle()" class="thm-btn style-2">Edit Event</a><a href="#" onclick="loginToggle()" class="thm-btn style-2">Delete  Event</a></li>
+                                
                             </ul>
-
                             <div class="text">
                                 <p>@eve.Description</p>
                             </div>
-
+                            <div>
+                                <span><a href="#" class="thm-btn style-2">Edit Event</a><a href="@Url.Action("DeleteEvent","Event",new {id = @eve.Id})" class="thm-btn style-2">Delete  Event</a></span>
+                            </div>
                         </div>
                     }
 
