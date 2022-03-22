@@ -7,9 +7,6 @@
 <h2>CreateEvent</h2>
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
         <h4>Event</h4>
@@ -61,12 +58,4 @@
             </div>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
