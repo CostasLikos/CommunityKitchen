@@ -1,4 +1,5 @@
-﻿using MyDataBase;
+﻿using Entities;
+using MyDataBase;
 using PersistentLayer.Repository;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,18 @@ namespace Controllers
             //Organizers create event option
             return View();
         }
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve)
+        {
+            if (ModelState.IsValid)
+            {
+                es.Add(eve);
+                es.Save();
+                return RedirectToAction("EventsIndex");
+            }
+            return View("EventsIndex");
+        }
         public ActionResult OrganizeEvents()
         {
             //Organizers event dashboard option
