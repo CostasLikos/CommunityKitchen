@@ -1,4 +1,4 @@
-﻿using Entities;
+using Entities;
 using MyDataBase;
 using PersistentLayer.Repository;
 using System;
@@ -44,17 +44,20 @@ namespace Controllers
             //Completed Events
             return View();
         }
-        public ActionResult CreateEvent(Event ev)
+       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    es.Add(ev);
-            //    es.Save();
-            //    TempData["Message"] = "Event Created";
-            //    return RedirectToAction("OrganizeEvents");
-            //}
-            return View();
+            if (ModelState.IsValid)
+            {
+                es.Add(eve);
+                es.Save();
+                return RedirectToAction("EventsIndex");
+            }
+            return View("EventsIndex");
         }
+
         public ActionResult DeleteEvent(Guid id)
         {
             es.Delete(id);

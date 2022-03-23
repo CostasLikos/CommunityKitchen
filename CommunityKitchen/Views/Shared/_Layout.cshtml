@@ -55,6 +55,11 @@
             @RenderBody()
             @Html.Partial("~/Views/Shared/Components/_Footer.cshtml")
         </div>
+        @Html.Partial("~/Views/Shared/Components/_LogIn.cshtml")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
         <!-- jQuery js -->
         <script src="~/Assets/js/jquery.js"></script>
         <!-- bootstrap js -->
@@ -101,7 +106,6 @@
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
         <script src="~/Scripts/LoginRegister.js"></script>
     </div>
-    @Html.Partial("~/Views/Shared/Components/_LogIn.cshtml")
 </body>
 
 </html>
