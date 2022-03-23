@@ -2838,13 +2838,7 @@ default-form style-two
         color: #ff0000;
         font-size: 14px;
     }
-
-.default-form input[type="text"],
-.default-form input[type="email"],
-.default-form input[type="password"],
-.default-form input[type="number"],
-.default-form select,
-.default-form textarea {
+    .default-form input[type="text"], .default-form input[type="email"], .default-form input[type="password"], .default-form input[type="number"], .default-form select, .default-form textarea {
     display: block;
     width: 100%;
     line-height: 24px;
@@ -2890,6 +2884,35 @@ default-form style-two
 .default-form .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
     background-color: #ff2e3d;
     color: #fff;
+}
+#Description,
+#Title,
+#Photo,
+#Address,
+#EventDate {
+    display: block;
+    width: 100%;
+    line-height: 24px;
+    height: 46px;
+    font-size: 16px;
+    box-shadow: none;
+    border: 1px solid #dbdbdb;
+    padding: 12px 15px;
+    background: #fff;
+    border-radius: 20px;
+    transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    }
+
+#Description:focus,
+#Title:focus,
+#Photo:focus,
+#Address:focus,
+#EventDate:focus {
+    border-color: #ff2e3d;
+    box-shadow: none;
 }
 
 .default-form .form-control:focus {

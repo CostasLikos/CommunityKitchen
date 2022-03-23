@@ -56,6 +56,9 @@
             @Html.Partial("~/Views/Shared/Components/_Footer.cshtml")
         </div>
         @Html.Partial("~/Views/Shared/Components/_LogIn.cshtml")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 
         <!-- jQuery js -->
         <script src="~/Assets/js/jquery.js"></script>
