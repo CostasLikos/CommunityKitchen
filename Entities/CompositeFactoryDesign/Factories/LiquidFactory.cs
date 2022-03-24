@@ -1,4 +1,5 @@
 ﻿using Entities.CompositeFactoryDesign.Concrete;
+using Entities.IEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,11 @@ namespace Entities.CompositeFactoryDesign.Factories
 {
     public class LiquidFactory : IConsumableFactory
     {
-        public override IConsumable CreateConsumable()
+        public override IConsumable CreateConsumable(string name,int quantity)
         {
-            return new Liquid();
+            return new Liquid(name,quantity);
         }
+
+        
     }
 }

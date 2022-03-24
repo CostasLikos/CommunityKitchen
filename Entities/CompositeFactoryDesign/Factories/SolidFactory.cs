@@ -9,9 +9,11 @@ namespace Entities.CompositeFactoryDesign.Factories
 {
     public class SolidFactory : IConsumableFactory
     {
-        public override IConsumable CreateConsumable()
+        public override IConsumable CreateConsumable(string name, int quantity)
         {
             return new Solid();
         }
+
+        
     }
 }
