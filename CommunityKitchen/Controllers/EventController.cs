@@ -44,7 +44,14 @@ namespace Controllers
             //Completed Events
             return View();
         }
-       
+
+        // GET: Event/Create
+        public ActionResult CreateEvent()
+        {
+            return View();
+        }
+
+        // POST: Event/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve)
@@ -65,10 +72,27 @@ namespace Controllers
             return RedirectToAction("OrganizeEvents");
         }
 
+        // GET: Event/Edit
         public ActionResult EditEvent(Guid id)
         {
             Event ev = es.GetById(id);
-            es.Update(id);
+
+            if (ev == null)
+                return HttpNotFound();
+
+            return View(ev);
+        }
+        // POST: Event/Edit
+        [HttpPost]
+        public ActionResult Edit(Event ev)
+        {
+            if (ModelState.IsValid)
+            {
+                es.Update(ev.Id);
+                es.Save();
+                TempData["message"] = "Edited!";
+                return RedirectToAction("OrganizeEvents");
+            }
             return View(ev);
         }
 

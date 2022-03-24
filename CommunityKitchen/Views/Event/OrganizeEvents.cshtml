@@ -15,7 +15,7 @@
         </div>
 
         <div>
-            <button onclick="loginToggle()" class="thm-btn style-1">    Create An Event    </button>
+            <span><a href="@Url.Action("CreateEvent","Event")" class="thm-btn style-1">Create An Event</a></span>
             <br />
             <br />
             <br />
@@ -40,7 +40,7 @@
                                 <p>@eve.Description</p>
                             </div>
                             <div>
-                                <span><a href="#" class="thm-btn style-2">Edit Event</a><a href="@Url.Action("DeleteEvent","Event",new {id = @eve.Id})" class="thm-btn style-2">Delete  Event</a></span>
+                                <span><a href="@Url.Action("EditEvent","Event",new {id = @eve.Id})" class="thm-btn style-2">Edit Event</a><a href="@Url.Action("DeleteEvent","Event",new {id = @eve.Id})" class="thm-btn style-2">Delete  Event</a></span>
                             </div>
                         </div>
                     }
