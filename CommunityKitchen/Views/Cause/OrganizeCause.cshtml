@@ -1,4 +1,4 @@
-﻿@model Entities.Cause
+﻿@model IEnumerable<Entities.Cause>
 
 @{
     ViewBag.Title = "OrganizeCause";
@@ -9,7 +9,6 @@
 <section class="all-causes">
     <div class="container">
         <div class="section-title">
-            <h5>going to raise humanity</h5>
             <h1>organize <span>cause</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
         </div>
@@ -30,17 +29,16 @@
 
                         <div class="content-box">
 
-                            <a href="@Url.Action("EventDetails","Event",new {id = @cause.Id})"> <h3>@eve.Title</h3></a>
-                            <ul class="event-info">
-                                <li><span class="fa fa-calendar"></span> @eve.EventDate.ToLongDateString()</li>
-                                <li> &emsp; <span class="fa fa-map-marker"></span>@eve.Address</li>
+                            <a href="@Url.Action("CauseDetails","Cause",new {id = @cause.Id})"> <h3>@cause.Title</h3></a>
+                            <ul class="cause-info">
+                                
 
                             </ul>
                             <div class="text">
-                                <p>@eve.Description</p>
+                                <p>@cause.Description</p>
                             </div>
                             <div>
-                                <span><a href="@Url.Action("EditEvent","Event",new {id = @eve.Id})" class="thm-btn style-2">Edit Event</a><a href="@Url.Action("DeleteEvent","Event",new {id = @eve.Id})" class="thm-btn style-2">Delete  Event</a></span>
+                                <span><a href="@Url.Action("EditCause","Cause",new {id = @cause.Id})" class="thm-btn style-2">Edit Cause</a><a href="@Url.Action("DeleteCause","Cause",new {id = cause.Id})" class="thm-btn style-2">Delete  Cause</a></span>
                             </div>
                         </div>
                     }
