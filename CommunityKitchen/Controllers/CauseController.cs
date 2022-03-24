@@ -30,5 +30,80 @@ namespace CommunityKitchen.Controllers
 
             return View(causes);
         }
+
+        public ActionResult CauseIndex()
+        {
+            var events = causeService.GetAll();
+
+            //View for organizer with all his events
+            return View(events);
+        }
+        // GET: Cause
+        public ActionResult UpcomingCauses()
+        {
+            //All upcoming events
+            return View();
+        }
+        public ActionResult CauseDetails(Guid id)
+        {
+            Cause cause = causeService.GetById(id);
+            return View(cause);
+        }
+        public ActionResult ArchivedCauses()
+        {
+            //Completed Causes
+            return View();
+        }
+
+        // GET: Cause/Create
+        public ActionResult CreateCause()
+        {
+            return View();
+        }
+
+        // POST: Cause/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateCause([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Cause cause)
+        {
+            if (ModelState.IsValid)
+            {
+                causeService.Add(cause);
+                causeService.Save();
+                return RedirectToAction("EventsIndex");
+            }
+            return View("EventsIndex");
+        }
+
+        public ActionResult DeleteCause(Guid id)
+        {
+            causeService.Delete(id);
+            causeService.Save();
+            return RedirectToAction("OrganizeEvents");
+        }
+
+        // GET: Cause/Edit
+        public ActionResult EditCause(Guid id)
+        {
+            Cause cause = causeService.GetById(id);
+
+            if (cause == null)
+                return HttpNotFound();
+
+            return View(cause);
+        }
+        // POST: Cause/Edit
+        [HttpPost]
+        public ActionResult EditCause(Cause ev)
+        {
+            if (ModelState.IsValid)
+            {
+                causeService.Update(ev.Id);
+                causeService.Save();
+                TempData["message"] = "Edited!";
+                return RedirectToAction("OrganizeEvents");
+            }
+            return View(ev);
+        }
     }
 }
