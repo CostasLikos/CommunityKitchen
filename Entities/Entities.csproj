@@ -116,6 +116,7 @@
     <Compile Include="CompositeFactoryDesign\Factories\LiquidFactory.cs" />
     <Compile Include="CompositeFactoryDesign\Factories\SolidFactory.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="IEntities\IItem.cs" />
     <Compile Include="IEntities\ISubject.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />

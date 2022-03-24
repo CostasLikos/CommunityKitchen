@@ -1,4 +1,5 @@
 ﻿using Entities.CompositeFactoryDesign.Concrete;
+using Entities.IEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Entities.CompositeFactoryDesign.Factories
 {
     public abstract class IConsumableFactory
     {
-        public abstract IConsumable CreateConsumable();
+        public abstract IConsumable CreateConsumable(string name,int quantity);
     }
 }
