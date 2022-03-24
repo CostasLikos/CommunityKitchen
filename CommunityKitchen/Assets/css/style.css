@@ -556,6 +556,7 @@ input, textarea {
         width: 33.33333333%;
         float: left;
         margin-bottom: 19px;
+        color:#fff;
     }
 
     /*============ top bar text ========*/
@@ -651,7 +652,8 @@ input, textarea {
 }
 /*============ login info ========*/
 #log1 {
-    margin: -17px 30px -17px;
+    margin: -20% -30%;
+    display: inline-flex;
 }
 
 #log {
@@ -664,6 +666,7 @@ input, textarea {
     font-size: 15px;
     height: 30px;
     width: 30px;
+    color:#fff;
     background: #fff;
     line-height: 30px;
     border-radius: 50%;
@@ -672,7 +675,7 @@ input, textarea {
     transition: .5s;
 }
 
-    #log1 #logi:before {
+/*    #log1 #logi:before {
         position: absolute;
         content: '';
         top: 0;
@@ -684,12 +687,12 @@ input, textarea {
         z-index: -1;
         transform: scale(0.9);
     }
-
-    #log1 #logi:hover::before {
+*/
+/*    #log1 #logi:hover::before {
         transform: scale(1.2);
         box-shadow: 0 0 15px #e86262;
     }
-
+*/
     #log1 #logi:hover {
         color: #e86262;
         box-shadow: 0 0 15px #e86262;
@@ -725,6 +728,10 @@ input, textarea {
 
 .theme_menu .container {
     position: relative;
+}
+#status {
+    margin-bottom: -17px;
+    color:#fff;
 }
 /*
 ===================================================
@@ -1061,6 +1068,7 @@ input, textarea {
 .theme_menu.stricky-fixed {
     margin: 0;
     background: #252525;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -5908,22 +5916,13 @@ Project styles
 
     .main-footer .footer-title {
         font-size: 22px;
-        color: #fff;
+        color: #ff2e3d;
         margin-bottom: 50px;
         text-transform: uppercase;
         position: relative;
     }
 
-        .main-footer .footer-title:after {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom: -25px;
-            width: 30px;
-            height: 100%;
-            background: url(../images/resources/noksha.png) center left no-repeat;
-        }
-
+       
     .main-footer .section-title p {
         margin-top: 10px;
         font-size: 15px;

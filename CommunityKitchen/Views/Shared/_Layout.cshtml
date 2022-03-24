@@ -21,41 +21,33 @@
     <script src="~/Scripts/MetaLogin.js"></script>
     <div class="container23">
         <div class="col-mb-12">
-            <section class="theme_menu stricky" style="background-image: url('../../Assets/Selection/lockedhands.jpg'); background-repeat: no-repeat; background-size:cover; ">
-                <header class="top-bar">
+            <!--<header class="top-bar">
 
-                    <div class="column left">
-                        <ul class="top-bar-text">
-                            <li><i class="icon fa fa-envelope"></i>charitysympathy@info.com</li>
-                            <li><i class="icon fa fa-phone"></i>012.9355.121</li>
-                        </ul>
-                    </div>
-                    <div id="status" class="column center">
-                        <ul id="soc">
-                            <li id="soc1"><a style="color: #ff2e3d" href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li id="soc1"><a style="color: #ff2e3d" href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li id="soc1"><a style="color: #ff2e3d" href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="column right">
-                        <ul id="log1" class="login-info">
-                            <li onclick="loginToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
-                            <li onclick="signupToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-user"></i>signup</a></li>
-                        </ul>
-                    </div>
-                </header>
+                <div class="column left">
+                </div>
+
+                <div id="status" class="column center">
+                </div>
+                <div class="column right">-->
+                    @*<ul id="log1" class="login-info">
+                        <li onclick="loginToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
+                        <li onclick="signupToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-user"></i>signup</a></li>
+                    </ul>*@
+                <!--</div>
+            </header>-->
+            <section class="theme_menu stricky" style="background-color:#333;  background-repeat: no-repeat; background-size:cover; ">
+                <div id="status" class="column center"></div>
                 <div class="container">
                     <div class="row">
                         @Html.Partial("~/Views/Shared/Components/_LogoMain.cshtml")
                         @Html.Partial("~/Views/Shared/Components/_NavBar.cshtml")
-                        @*@Html.Partial("~/Views/Shared/Components/_SearchBar.cshtml")*@
+                        @Html.Partial("~/Views/Shared/Components/_SearchBar.cshtml")
                     </div>
                 </div> <!-- End of .conatiner -->
             </section>
             @RenderBody()
             @Html.Partial("~/Views/Shared/Components/_Footer.cshtml")
         </div>
-        @Html.Partial("~/Views/Shared/Components/_LogIn.cshtml")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
@@ -106,6 +98,8 @@
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
         <script src="~/Scripts/LoginRegister.js"></script>
     </div>
+    @Html.Partial("~/Views/Shared/Components/_LogIn.cshtml")
+
 </body>
 
 </html>
