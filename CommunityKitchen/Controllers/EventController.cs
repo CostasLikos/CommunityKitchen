@@ -84,7 +84,7 @@ namespace Controllers
         }
         // POST: Event/Edit
         [HttpPost]
-        public ActionResult Edit(Event ev)
+        public ActionResult EditEvent(Event ev)
         {
             if (ModelState.IsValid)
             {
