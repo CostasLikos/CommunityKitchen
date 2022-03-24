@@ -14,16 +14,16 @@ namespace Controllers
     public class EventController : Controller
     {
         private ApplicationDbContext db;
-        private EventRepository es;
+        private EventRepository eventService;
         public EventController()
         {
             db = new ApplicationDbContext();
-            es = new EventRepository(db);
+            eventService = new EventRepository(db);
         }
 
         public ActionResult EventsIndex()
         {
-            var events = es.GetAll();
+            var events = eventService.GetAll();
 
             //View for organizer with all his events
             return View(events);
@@ -36,7 +36,7 @@ namespace Controllers
         }
         public ActionResult EventDetails(Guid id)
         {
-            Event ev = es.GetById(id);
+            Event ev = eventService.GetById(id);
             return View(ev);
         }
         public ActionResult ArchivedEvents()
@@ -58,8 +58,8 @@ namespace Controllers
         {
             if (ModelState.IsValid)
             {
-                es.Add(eve);
-                es.Save();
+                eventService.Add(eve);
+                eventService.Save();
                 return RedirectToAction("EventsIndex");
             }
             return View("EventsIndex");
@@ -67,15 +67,15 @@ namespace Controllers
 
         public ActionResult DeleteEvent(Guid id)
         {
-            es.Delete(id);
-            es.Save();
+            eventService.Delete(id);
+            eventService.Save();
             return RedirectToAction("OrganizeEvents");
         }
 
         // GET: Event/Edit
         public ActionResult EditEvent(Guid id)
         {
-            Event ev = es.GetById(id);
+            Event ev = eventService.GetById(id);
 
             if (ev == null)
                 return HttpNotFound();
@@ -88,8 +88,8 @@ namespace Controllers
         {
             if (ModelState.IsValid)
             {
-                es.Update(ev.Id);
-                es.Save();
+                eventService.Update(ev.Id);
+                eventService.Save();
                 TempData["message"] = "Edited!";
                 return RedirectToAction("OrganizeEvents");
             }
@@ -100,7 +100,7 @@ namespace Controllers
         public ActionResult OrganizeEvents()
         {
             //Organizers event dashboard option
-            var events = es.GetAll();
+            var events = eventService.GetAll();
 
             return View(events);
         }
