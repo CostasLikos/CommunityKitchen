@@ -182,6 +182,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\CauseController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -482,6 +483,7 @@
     <Content Include="Views\Causes\_Causes.cshtml" />
     <Content Include="Views\Causes\_SingleCause.cshtml" />
     <Content Include="Views\Cause\OrganizeCause.cshtml" />
+    <Content Include="Views\Archive\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
