@@ -1,0 +1,48 @@
+﻿@using PersistentLayer.Repository;
+@using MyDataBase;
+@model dynamic
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Archive Models</h4>
+<br style="padding:40px;">
+<h5>Events</h5>
+<hr>
+<table class="table table-striped table-light table-hover">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Address</th>
+    </tr>
+    @foreach (var ev in Model.eventsList)
+    {
+        <tr>
+            <td>@ev.Title</td>
+            <td>@ev.Description</td>
+            <td>@ev.Address</td>
+        </tr>
+    }
+</table>
+<br style="padding:40px;">
+
+<h5>Causes</h5>
+<hr>
+<table class="table table-striped table-light table-hover">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Target Goal</th>
+        <th>Current Amount</th>
+    </tr>
+    @foreach (var cause in Model.eventsList)
+    {
+        <tr>
+            <td>@cause.Title</td>
+            <td>@cause.Description</td>
+            @*<td>@cause.TargetGoal</td>*@
+            @*<td>@cause.CurrentAmount</td>*@
+        </tr>
+    }
+</table>
