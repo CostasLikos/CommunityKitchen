@@ -3,6 +3,7 @@ using MyDataBase;
 using PersistentLayer.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -44,11 +45,21 @@ namespace CommunityKitchen.Controllers
             //All upcoming events
             return View();
         }
-        public ActionResult CauseDetails(Guid id)
+        public ActionResult CauseDetails(Guid? id)
         {
-            Cause cause = causeService.GetById(id);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var kati = db.Causes.Find(id);
+            Cause cause = kati;
+            if (cause == null)
+            {
+                return HttpNotFound();
+            }
             return View(cause);
         }
+       
         public ActionResult ArchivedCauses()
         {
             //Completed Causes
