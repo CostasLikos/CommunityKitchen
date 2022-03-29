@@ -184,6 +184,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\CauseController.cs" />
+    <Compile Include="Controllers\CausesController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
@@ -484,6 +485,12 @@
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Cause\CauseIndex.cshtml" />
     <Content Include="Views\Cause\CauseDetails.cshtml" />
+    <Content Include="Views\Causes\Create.cshtml" />
+    <Content Include="Views\Causes\Delete.cshtml" />
+    <Content Include="Views\Causes\Details.cshtml" />
+    <Content Include="Views\Causes\Edit.cshtml" />
+    <Content Include="Views\Causes\Index.cshtml" />
+    <Content Include="Views\Event\DeleteEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
