@@ -65,7 +65,27 @@ namespace Controllers
             return View("EventsIndex");
         }
 
+        // GET: Event/Delete
         public ActionResult DeleteEvent(Guid id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Event ev = eventService.GetById(id);
+            if (ev == null)
+            {
+                return HttpNotFound();
+            }
+            return View(ev);
+
+        }
+
+        // POST: Edit/Delete/5
+        [HttpPost, ActionName("DeleteEvent")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(Guid id)
         {
             eventService.Delete(id);
             eventService.Save();
