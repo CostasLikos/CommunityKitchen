@@ -6788,7 +6788,7 @@ Project styles
             position: relative;
         }
 
-            .single-cause .content-box .title h2:after {
+/*            .single-cause .content-box .title h2:after {
                 position: absolute;
                 content: "";
                 left: 50%;
@@ -6798,7 +6798,7 @@ Project styles
                 height: 100%;
                 background: url(../images/resources/noksha.png) center left no-repeat;
             }
-
+*/
         .single-cause .content-box .title span {
             color: #ff2e3d;
         }
