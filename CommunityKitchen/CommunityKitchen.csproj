@@ -480,10 +480,10 @@
     <Content Include="Views\Event\OrganizeEvents.cshtml" />
     <Content Include="Views\Event\EventDetails.cshtml" />
     <Content Include="Views\Event\CreateEvent.cshtml" />
-    <Content Include="Views\Causes\_Causes.cshtml" />
-    <Content Include="Views\Causes\_SingleCause.cshtml" />
     <Content Include="Views\Cause\OrganizeCause.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
+    <Content Include="Views\Cause\CauseIndex.cshtml" />
+    <Content Include="Views\Cause\CauseDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
