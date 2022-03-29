@@ -98,22 +98,21 @@ namespace Controllers
             Event ev = eventService.GetById(id);
 
             if (ev == null)
-                return HttpNotFound();
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             return View(ev);
         }
         // POST: Event/Edit
-        [HttpPost]
-        public ActionResult EditEvent(Event ev)
+        [HttpPost, ActionName("EditEvent")]
+        public async Task<ActionResult> EditEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve)
         {
             if (ModelState.IsValid)
             {
-                eventService.Update(ev.Id);
-                eventService.Save();
-                TempData["message"] = "Edited!";
+                db.Entry(eve).State = System.Data.Entity.EntityState.Modified;
+                await db.SaveChangesAsync();
                 return RedirectToAction("OrganizeEvents");
             }
-            return View(ev);
+            return View(eve);
         }
 
 
