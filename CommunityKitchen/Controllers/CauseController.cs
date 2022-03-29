@@ -33,10 +33,10 @@ namespace CommunityKitchen.Controllers
 
         public ActionResult CauseIndex()
         {
-            var events = causeService.GetAll();
+            var causes = causeService.GetAll();
 
             //View for organizer with all his events
-            return View(events);
+            return View(causes);
         }
         // GET: Cause
         public ActionResult UpcomingCauses()

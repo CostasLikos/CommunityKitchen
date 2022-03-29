@@ -491,6 +491,7 @@
     <Content Include="Views\Causes\Edit.cshtml" />
     <Content Include="Views\Causes\Index.cshtml" />
     <Content Include="Views\Event\DeleteEvent.cshtml" />
+    <Content Include="Views\Event\EditEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
