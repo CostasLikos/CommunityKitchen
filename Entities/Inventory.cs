@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.IdentityModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,6 +15,6 @@ namespace Entities
         public List<Item> Items { get; set; }
         public Guid ModeratorId { get; set; }
         [Required]
-        public Moderator Moderator { get; set; }
+        public ApplicationUser Moderator { get; set; }
     }
 }
