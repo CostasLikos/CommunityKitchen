@@ -27,20 +27,31 @@
                     @foreach (var cause in Model)
                     {
 
-                        <div class="content-box">
+                    <div class="content-box">
 
-                            <a href="@Url.Action("CauseDetails","Cause",new {id = @cause.Id})"> <h3>@cause.Title</h3></a>
-                            <ul class="cause-info">
-                                
-
-                            </ul>
-                            <div class="text">
-                                <p>@cause.Description</p>
-                            </div>
-                            <div>
-                                <span><a href="@Url.Action("EditCause","Cause",new {id = @cause.Id})" class="thm-btn style-2">Edit Cause</a><a href="@Url.Action("DeleteCause","Cause",new {id = cause.Id})" class="thm-btn style-2">Delete  Cause</a></span>
-                            </div>
+                        <a href="@Url.Action("CauseDetails","Cause",new {id = @cause.Id})"> <h3>@cause.Title</h3></a>
+                        <ul class="cause-info">
+                        </ul>
+                        <div class="text">
+                            <p>@cause.Description</p>
                         </div>
+                        <div>
+                            @Html.DisplayFor(modelItem => @cause.Photo)
+                        </div>
+                        <div>
+                            <strong>Target Goal - </strong>
+                            @Html.DisplayFor(modelItem => @cause.TargetGoal)
+                        </div>
+                        <div>
+                            <strong>Current Ammount - </strong>
+                            @Html.DisplayFor(modelItem => @cause.CurrentAmmount)
+                        </div>
+                        <div>
+                            <span><a href="@Url.Action("EditCause","Cause",new {id = @cause.Id})" class="thm-btn style-2">Edit Cause</a><a href="@Url.Action("DeleteCause","Cause",new {id = cause.Id})" class="thm-btn style-2">Delete  Cause</a></span>
+                        </div>
+                    </div>
+                    <hr />
+                    <br />
                     }
 
                 </div>

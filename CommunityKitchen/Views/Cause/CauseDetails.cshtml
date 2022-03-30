@@ -1,0 +1,66 @@
+﻿@model Entities.Cause
+
+@{
+    ViewBag.Title = "CauseDetails";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cause</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetGoal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetGoal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentAmmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentAmmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeratorId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModeratorId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditCause", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "OrganizeCause")
+</p>

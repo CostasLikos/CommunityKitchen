@@ -186,7 +186,7 @@
     <Compile Include="Controllers\CauseController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StoryController.cs" />
     <Compile Include="Global.asax.cs">
@@ -479,14 +479,24 @@
     <Content Include="Views\Event\OrganizeEvents.cshtml" />
     <Content Include="Views\Event\EventDetails.cshtml" />
     <Content Include="Views\Event\CreateEvent.cshtml" />
-    <Content Include="Views\Causes\_Causes.cshtml" />
-    <Content Include="Views\Causes\_SingleCause.cshtml" />
     <Content Include="Views\Cause\OrganizeCause.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
+    <Content Include="Views\Cause\CauseIndex.cshtml" />
+    <Content Include="Views\Cause\CauseDonate.cshtml" />
+    <Content Include="Views\Event\DeleteEvent.cshtml" />
+    <Content Include="Views\Event\EditEvent.cshtml" />
+    <Content Include="Views\Cause\CreateCause.cshtml" />
+    <Content Include="Views\Cause\DeleteCause.cshtml" />
+    <Content Include="Views\Cause\EditCause.cshtml" />
+    <Content Include="Views\Cause\CauseDetails.cshtml" />
+    <Content Include="Views\Item\Create.cshtml" />
+    <Content Include="Views\Item\Delete.cshtml" />
+    <Content Include="Views\Item\Details.cshtml" />
+    <Content Include="Views\Item\Edit.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Inventory\" />
     <Folder Include="Views\MetaLogin\" />
     <Folder Include="Views\Story\" />
     <Folder Include="Views\Support\" />

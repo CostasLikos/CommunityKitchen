@@ -1,4 +1,12 @@
-﻿
+﻿@model Entities.Cause
+
+@{
+    ViewBag.Title = "CauseDonate";
+}
+@{
+    var res = Math.Round((100 * Model.CurrentAmmount) / Model.TargetGoal);
+}
+
 <section class="page-banner">
     <div class="container">
         <div class="title">
@@ -27,25 +35,26 @@
                 <img src="images/causes/1.png" alt="" />
             </div>
             <div class="title">
-                <h2>Helping for <span>education</span> to syrian child & <span>food planting</span></h2>
+                <h2> @Html.DisplayFor(model => model.Title)</h2>
             </div>
             <div class="text">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making  like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like as their default model text.</p>
+                <p>  @Html.DisplayFor(model => model.Description)</p>
             </div>
             <div class="progress-levels">
                 <div class="progress-box">
                     <div class="inner">
                         <div class="bar">
                             <div class="bar-innner">
-                                <div class="bar-fill" data-percent="45">
-                                    <span class="percent">45%</span>
+                                <div class="bar-fill" data-percent=" @res">
+                                    <span class="percent">@res%</span>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="donate-price"><b>$44,210 </b>&nbsp; Raised of  <span> $99,541 </span> Goal</div>
+            <div class="donate-price"><b> @Html.DisplayFor(model => model.CurrentAmmount)€ </b>&nbsp; Raised of  <span>  @Html.DisplayFor(model => model.TargetGoal)€ </span> Goal</div>
 
             <div class="donate-amount">
                 <div class="title">
@@ -57,7 +66,7 @@
                             <div class="col-md-12 col-sm-12 col-xs-12">
 
                                 <div class="form-group style-three">
-                                    <input type="text" name="form_name" class="form-control" value="" placeholder="$20" required="">
+                                    <input type="text" name="form_name" class="form-control" value="" placeholder="20€" required="">
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
