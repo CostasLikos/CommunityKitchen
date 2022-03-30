@@ -45,76 +45,102 @@ namespace CommunityKitchen.Controllers
             //All upcoming events
             return View();
         }
-        public ActionResult CauseDetails(Guid? id)
+        // GET: Causes/Details
+        public async Task<ActionResult> CauseDetails(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var kati = db.Causes.Find(id);
-            Cause cause = kati;
+            Cause cause = await db.Causes.FindAsync(id);
             if (cause == null)
             {
                 return HttpNotFound();
             }
             return View(cause);
         }
-       
+
         public ActionResult ArchivedCauses()
         {
             //Completed Causes
             return View();
         }
 
-        // GET: Cause/Create
+        // GET: Causes/Create
         public ActionResult CreateCause()
         {
             return View();
         }
 
-        // POST: Cause/Create
+        // POST: Causes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateCause([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Cause cause)
+        public async Task<ActionResult> CreateCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause)
         {
             if (ModelState.IsValid)
             {
-                causeService.Add(cause);
-                causeService.Save();
-                return RedirectToAction("EventsIndex");
+                cause.Id = Guid.NewGuid();
+                db.Causes.Add(cause);
+                await db.SaveChangesAsync();
+                return RedirectToAction("OrganizeCause");
             }
-            return View("EventsIndex");
-        }
-
-        public ActionResult DeleteCause(Guid id)
-        {
-            causeService.Delete(id);
-            causeService.Save();
-            return RedirectToAction("OrganizeEvents");
-        }
-
-        // GET: Cause/Edit
-        public ActionResult EditCause(Guid id)
-        {
-            Cause cause = causeService.GetById(id);
-
-            if (cause == null)
-                return HttpNotFound();
 
             return View(cause);
         }
-        // POST: Cause/Edit
+
+        // GET: Causes/Delete
+        public async Task<ActionResult> DeleteCause(Guid? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cause cause = await db.Causes.FindAsync(id);
+            if (cause == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cause);
+        }
+
+        // POST: Causes/Delete
+        [HttpPost, ActionName("DeleteCause")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DeleteConfirmed(Guid id)
+        {
+            Cause cause = await db.Causes.FindAsync(id);
+            db.Causes.Remove(cause);
+            await db.SaveChangesAsync();
+            return RedirectToAction("OrganizeCause");
+        }
+
+        // GET: Causes/Edit
+        public async Task<ActionResult> EditCause(Guid? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cause cause = await db.Causes.FindAsync(id);
+            if (cause == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cause);
+        }
+
+        // POST: Causes/Edit
         [HttpPost]
-        public ActionResult EditCause(Cause ev)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> EditCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause)
         {
             if (ModelState.IsValid)
             {
-                causeService.Update(ev.Id);
-                causeService.Save();
-                TempData["message"] = "Edited!";
-                return RedirectToAction("OrganizeEvents");
+                db.Entry(cause).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+                return RedirectToAction("OrganizeCause");
             }
-            return View(ev);
+            return View(cause);
         }
         protected override void Dispose(bool disposing)
         {

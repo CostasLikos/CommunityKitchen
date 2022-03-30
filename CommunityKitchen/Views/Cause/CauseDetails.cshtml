@@ -3,120 +3,64 @@
 @{
     ViewBag.Title = "CauseDetails";
 }
-@{
-    var res = Math.Round((100 * Model.CurrentAmmount) / Model.TargetGoal);
-}
 
-<section class="page-banner">
-    <div class="container">
-        <div class="title">
-            <h1>Single <span>Cause</span></h1>
-        </div>
-        <div class="text">
-            <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p>
-        </div>
-        <div class="breadcumb-wrapper">
-            <ul class="list-inline link-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html">Causes</a></li>
-                <li>Single Cause</li>
-            </ul>
-        </div>
-    </div>
-</section>
+<h2>Details</h2>
 
-<section class="single-cause">
-    <div class="container">
-        <figure class="image-box">
-            <img src="images/causes/s1.jpg" alt="" />
-        </figure>
-        <div class="content-box">
-            <div class="icon-box">
-                <img src="images/causes/1.png" alt="" />
-            </div>
-            <div class="title">
-                <h2> @Html.DisplayFor(model => model.Title)</h2>
-            </div>
-            <div class="text">
-                <p>  @Html.DisplayFor(model => model.Description)</p>
-            </div>
-            <div class="progress-levels">
-                <div class="progress-box">
-                    <div class="inner">
-                        <div class="bar">
-                            <div class="bar-innner">
-                                <div class="bar-fill" data-percent=" @res">
-                                    <span class="percent">@res%</span>
-                                </div>
+<div>
+    <h4>Cause</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="donate-price"><b> @Html.DisplayFor(model => model.CurrentAmmount)€ </b>&nbsp; Raised of  <span>  @Html.DisplayFor(model => model.TargetGoal)€ </span> Goal</div>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
 
-            <div class="donate-amount">
-                <div class="title">
-                    <h5><i class="fa fa-arrow-circle-right"></i>Enter an amount to Donate</h5>
-                </div>
-                <div class="default-form-area">
-                    <form id="contact-form" name="contact_form" class="default-form style-three" action="sendmail.php" method="post">
-                        <div class="row clearfix">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
 
-                                <div class="form-group style-three">
-                                    <input type="text" name="form_name" class="form-control" value="" placeholder="20€" required="">
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group style-three">
-                                    <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                                    <button class="thm-btn" type="submit" data-loading-text="Please wait...">Donate now</button>
-                                </div>
-                            </div>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
 
-                        </div>
-                    </form>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="ship-same-address">
-                        <span>Make this as a monthly gift</span>
-                    </label>
-                </div>
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
 
-            </div>
+        <dd>
+            @Html.DisplayFor(model => model.Photo)
+        </dd>
 
-            <div class="clients-section style-two">
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetGoal)
+        </dt>
 
-                <div class="clients-carousel">
-                    <div class="item">
-                        <div class="image-box">
-                            <img src="images/clients/1.png" alt="">
-                        </div>
-                    </div>
+        <dd>
+            @Html.DisplayFor(model => model.TargetGoal)
+        </dd>
 
-                    <div class="item">
-                        <div class="image-box">
-                            <img src="images/clients/2.png" alt="">
-                        </div>
-                    </div>
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentAmmount)
+        </dt>
 
-                    <div class="item">
-                        <div class="image-box">
-                            <img src="images/clients/3.png" alt="">
-                        </div>
-                    </div>
+        <dd>
+            @Html.DisplayFor(model => model.CurrentAmmount)
+        </dd>
 
-                    <div class="item">
-                        <div class="image-box">
-                            <img src="images/clients/2.png" alt="">
-                        </div>
-                    </div>
-                </div>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModeratorId)
+        </dt>
 
-            </div>
-        </div>
-    </div>
-</section>
+        <dd>
+            @Html.DisplayFor(model => model.ModeratorId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditCause", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "OrganizeCause")
+</p>
