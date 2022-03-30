@@ -24,10 +24,10 @@
             var causes = CauseSeed();
             var events = EventSeed();
             var users = RegisteredUsersSeed();
-            var items=ItemSeed();
+            //var items=ItemSeed();
             context.Causes.AddRange(causes);
             context.Events.AddRange(events);
-            context.Items.AddRange(items);
+            //context.Items.AddRange(items);
             //foreach (var user in users)
             //{
             //    context.Users.Add(user);
@@ -73,17 +73,17 @@
         {
             List<Item> items = new List<Item>()
             {
-                new Item() {ItemName = "Makaronia",Quantity = 1,Price=1.95m},
-                new Item() {ItemName = "Aggouria",Quantity = 1,Price=1.7m},
-                new Item() {ItemName = "Ntomates",Quantity = 1,Price=1.5m},
-                new Item() {ItemName = "Feta",Quantity = 1,Price=3.95m},
-                new Item() {ItemName = "Orange Juice",Quantity = 1,Price=1.85m},
-                new Item() {ItemName = "Water",Quantity = 1,Price=1.75m},
-                new Item() {ItemName = "Chicken",Quantity = 1,Price=1.95m},
-                new Item() {ItemName = "Beef",Quantity = 1,Price=2.95m},
-                new Item() {ItemName = "Salt",Quantity = 1,Price=0.75m},
-                new Item() {ItemName = "Flour",Quantity = 1,Price=1.15m},
-                new Item() {ItemName = "Tost Bread",Quantity = 1,Price=2.10m}
+                new Item() {ItemName = "Makaronia",Quantity = 1,Price=1.95},
+                new Item() {ItemName = "Aggouria",Quantity = 1,Price=1.7},
+                new Item() {ItemName = "Ntomates",Quantity = 1,Price=1.5},
+                new Item() {ItemName = "Feta",Quantity = 1,Price=3.95},
+                new Item() {ItemName = "Orange Juice",Quantity = 1,Price=1.85},
+                new Item() {ItemName = "Water",Quantity = 1,Price=1.75},
+                new Item() {ItemName = "Chicken",Quantity = 1,Price=1.95},
+                new Item() {ItemName = "Beef",Quantity = 1,Price=2.95},
+                new Item() {ItemName = "Salt",Quantity = 1,Price=0.75},
+                new Item() {ItemName = "Flour",Quantity = 1,Price=1.15},
+                new Item() {ItemName = "Tost Bread",Quantity = 1,Price=2.10}
             };
             return items;
         }
