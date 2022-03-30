@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.CompositeFactoryDesign.Concrete
 {
-    public class Solid : IConsumable,IItem
+    public class Solid : IConsumable
     {
         private string type;
         public string ConsumableType { get => type; set => type="Solid"; }

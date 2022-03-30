@@ -42,5 +42,23 @@ namespace MyDatabase.Seed
             };
             return users;
         }
+        public List<Item> ItemSeed()
+        {
+            List<Item> items = new List<Item>()
+            {
+                new Item() {ItemName = "Makaronia",Quantity = 1,Price=1.95m},
+                new Item() {ItemName = "Aggouria",Quantity = 1,Price=1.7m},
+                new Item() {ItemName = "Ntomates",Quantity = 1,Price=1.5m},
+                new Item() {ItemName = "Feta",Quantity = 1,Price=3.95m},
+                new Item() {ItemName = "Orange Juice",Quantity = 1,Price=1.85m},
+                new Item() {ItemName = "Water",Quantity = 1,Price=1.75m},
+                new Item() {ItemName = "Chicken",Quantity = 1,Price=1.95m},
+                new Item() {ItemName = "Beef",Quantity = 1,Price=2.95m},
+                new Item() {ItemName = "Salt",Quantity = 1,Price=0.75m},
+                new Item() {ItemName = "Flour",Quantity = 1,Price=1.15m},
+                new Item() {ItemName = "Tost Bread",Quantity = 1,Price=2.10m}
+            };
+            return items;
+        }
     }
 }
