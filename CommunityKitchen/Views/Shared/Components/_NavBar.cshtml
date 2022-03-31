@@ -20,16 +20,16 @@
                     <li class="dropdown active">
                         @Html.ActionLink("Home", "Index", "Home")
                         <ul>
-                            <li>@Html.ActionLink("Archive", "ArchivedEvents", "Event")</li>
+                            <li>@Html.ActionLink("Archive", "Index", "Archive")</li>
                             <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
                             <li>@Html.ActionLink("Support A Cause", "CauseIndex", "Cause")</li>
                             <li>@Html.ActionLink("Upcoming Events", "EventsIndex", "Event")</li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        @Html.ActionLink("Organizer", "InventoryIndex", "Inventory")
+                        @Html.ActionLink("Organizer", "Index", "Item")
                         <ul>
-                            <li>@Html.ActionLink("Manage Inventory", "InventoryIndex", "Inventory")</li>
+                            <li>@Html.ActionLink("Manage Inventory", "Index", "Item")</li>
                             <li>@Html.ActionLink("Organize Event", "OrganizeEvents", "Event")</li>
                             <li>@Html.ActionLink("Organize Cause", "OrganizeCause", "Cause")</li>
                         </ul>
@@ -47,7 +47,7 @@
                 <li class="dropdown active">
                     @Html.ActionLink("Home", "Index", "Home")
                     <ul>
-                        <li>@Html.ActionLink("Archive", "ArchivedEvents", "Event")</li>
+                        <li>@Html.ActionLink("Archive", "Index", "Archive")</li>
                         <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
                         <li>@Html.ActionLink("Support A Cause", "SupportCause", "Support")</li>
                         <li> @Html.ActionLink("Upcoming Events", "UpcomingEvents", "Event")</li>
@@ -56,7 +56,7 @@
                 <li class="dropdown">
                     @Html.ActionLink("Organizer", "InventoryIndex", "Inventory")
                     <ul>
-                        <li>@Html.ActionLink("Manage Inventory", "InventoryIndex", "Inventory")</li>
+                        <li>@Html.ActionLink("Manage Inventory", "Index", "Item")</li>
                         <li>@Html.ActionLink("Organize Event", "OrganizeEvents", "Event")</li>
                         <li>@Html.ActionLink("Organize Cause", "OrganizeCause", "Cause")</li>
                     </ul>

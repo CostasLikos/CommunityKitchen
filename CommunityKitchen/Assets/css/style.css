@@ -1233,7 +1233,7 @@ input, textarea {
 
 #kati6 {
     position: absolute;
-    bottom: -42px;
+    bottom: 150px;
     left: 50%;
     transform: translate(-50%);
     text-align: center;
@@ -1266,7 +1266,7 @@ input, textarea {
 }
 
 #imgdi {
-    width: 1005px;
+    width: 1166px;
 }
 
 #lett {
@@ -7099,16 +7099,6 @@ default-form style-three
             position: relative;
         }
 
-            .single-event .content-box .title h2:after {
-                position: absolute;
-                content: "";
-                left: 50%;
-                margin-left: -15px;
-                bottom: -45px;
-                width: 30px;
-                height: 100%;
-                background: url(../images/resources/noksha.png) center left no-repeat;
-            }
 
         .single-event .content-box .title span {
             color: #ff2e3d;

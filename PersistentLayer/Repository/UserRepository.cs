@@ -10,5 +10,6 @@ namespace PersistentLayer.Repository
 {
     public class UserRepository 
     {
+
     }
 }

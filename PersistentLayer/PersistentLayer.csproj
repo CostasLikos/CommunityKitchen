@@ -85,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="IRepository\IAdminRepository.cs" />
     <Compile Include="IRepository\IEventRepository.cs" />
     <Compile Include="IRepository\IGenericRepo\IGenericRepo.cs" />
     <Compile Include="IRepository\ICauseRepository.cs" />
@@ -93,7 +92,6 @@
     <Compile Include="IRepository\IItemReposiory.cs" />
     <Compile Include="IRepository\IStoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\AdminRepository.cs" />
     <Compile Include="Repository\CauseRepository.cs" />
     <Compile Include="Repository\EventRepository.cs" />
     <Compile Include="Repository\GenericRepository\GenericRepo.cs" />

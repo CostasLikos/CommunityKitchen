@@ -1,4 +1,5 @@
-﻿using Entities.IEntities;
+﻿using Entities.IdentityModel;
+using Entities.IEntities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,6 +24,6 @@ namespace Entities
         public double CurrentAmmount { get; set; }
         //Navigation Properties---Creator Link
         public Guid ModeratorId { get; set; }
-        public Moderator Moderator { get; set; }
+        public ApplicationUser Moderator { get; set; }
     }
 }
