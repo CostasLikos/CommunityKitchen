@@ -60,6 +60,20 @@ namespace CommunityKitchen.Controllers
             return View(cause);
         }
 
+        public ActionResult CauseDonate(Guid id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cause cause = causeService.GetById(id);
+            if (cause == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cause);
+        }
+
         public ActionResult ArchivedCauses()
         {
             //Completed Causes
