@@ -4,39 +4,50 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="default-form-area" style="display: flex; justify-content: center">
+        <div id="contact-form" class="default-form">
+            <div class="row clearfix" style="justify-content: center">
+                <h1 style="justify-content:center">Creating Cause</h1>
+                <div class="col-md-8 col-sm-12 col-xs-6">
+                    <hr />
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.ItemName)
+                    <strong> - </strong>
+                        @Html.DisplayFor(model => model.ItemName)
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.Quantity)
+                        <strong> - </strong>
+                        @Html.DisplayFor(model => model.Quantity)
+                    </div>
+                    <div class="form-group">
+                        @Html.DisplayNameFor(model => model.Price)
+                        <strong> - </strong>
+                        @Html.DisplayFor(model => model.Price)
+                    </div>
 
-<div>
-    <h4>Item</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ItemName)
-        </dt>
+                    <div class="form-group">
+                        <div>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
 
-        <dd>
-            @Html.DisplayFor(model => model.ItemName)
-        </dd>
+}
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
