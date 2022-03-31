@@ -4,28 +4,34 @@
     ViewBag.Title = "EventDetails";
 }
 
-<section class="all-event">
+
+<section class="single-event">
     <div class="container">
-        <div class="item-list">
-            <div class="item wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                <div class="bg-area">
-                    <div class="content-box">
+        <figure class="image-box">
+            <img src="images/event/8.jpg" alt="" />
+        </figure>
+        <div class="content-box">
 
-                        <h3>@Model.Title</h3>
-                        <br />
-                        <br />
-                        <ul class="event-info">
-                            <li><span class="fa fa-calendar"></span>@Model.EventDate.ToLongDateString()</li>
-                            <li> &emsp; <span class="fa fa-map-marker"></span>@Model.Address</li>
+            <div class="title">
+                <h2>@Model.Title</h2>
+            </div>
+            <ul class="event-info">
+                <li><span class="fa fa-calendar"></span>@Model.EventDate.ToLongDateString()</li>
+                <li> &emsp; <span class="fa fa-map-marker"></span>@Model.Address</li>
 
-                        </ul>
-                        <div class="text">
-                            <p>@Model.Description</p>
-                        </div>
-                    </div>
+            </ul>
+
+            <div class="text">
+                <p>@Model.Description</p>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    @Html.ActionLink("Back to List", "EventsIndex")
                 </div>
             </div>
+
+
         </div>
     </div>
-
 </section>
