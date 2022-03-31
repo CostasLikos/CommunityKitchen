@@ -1233,7 +1233,7 @@ input, textarea {
 
 #kati6 {
     position: absolute;
-    bottom: -42px;
+    bottom: 150px;
     left: 50%;
     transform: translate(-50%);
     text-align: center;
