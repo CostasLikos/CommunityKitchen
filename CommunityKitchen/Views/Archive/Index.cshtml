@@ -36,13 +36,13 @@
         <th>Target Goal</th>
         <th>Current Amount</th>
     </tr>
-    @foreach (var cause in Model.eventsList)
+    @foreach (var cause in Model.causesList)
     {
         <tr>
             <td>@cause.Title</td>
             <td>@cause.Description</td>
-            @*<td>@cause.TargetGoal</td>*@
-            @*<td>@cause.CurrentAmount</td>*@
+            <td>@cause.TargetGoal</td>
+            <td>@cause.CurrentAmmount</td>
         </tr>
     }
 </table>

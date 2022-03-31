@@ -28,14 +28,17 @@
                         </div>
                     </div>
 
-                    @foreach (var eve in Model.OrderBy(x=>x.EventDate))
-                    {
-                        <div class="content-box">
-                            <div class="title-area">
-                                @if (eve.EventDate >= DateTime.Now)
-                                {
+                   
+                    <div class="content-box">
+                        @foreach (var eve in Model.OrderBy(x => x.EventDate))
+                        {
+
+                            if (eve.EventDate >= DateTime.Now)
+                            {
+                                <div class="title-area">
+
                                     <div class="date">@eve.EventDate.Day<br><span>@eve.EventDate.ToString("MMM")</span></div>
-                                    <h3>@eve.Title</h3>
+                                    <a href="@Url.Action("EventDetails","Event",new {id = @eve.Id})"> <h3>@eve.Title</h3></a>
                                     <ul class="event-info">
                                         <li><span class="fa fa-calendar"></span> @eve.EventDate.ToLongDateString()</li>
                                         <li> &emsp; <span class="fa fa-map-marker"></span>@eve.Address</li>
@@ -44,10 +47,14 @@
                                     <div class="text">
                                         <p>@eve.Description</p>
                                     </div>
-                                }
-                            </div>
-                        </div>
-                    }
+                                    
+
+                                </div>
+                            }
+                        }
+
+                     </div>
+                    
                 </div>
             </div>
         </div>
