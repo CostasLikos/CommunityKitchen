@@ -54,10 +54,16 @@ namespace Controllers
         // POST: Event/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve)
+        public ActionResult CreateEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
         {
             if (ModelState.IsValid)
             {
+                if (!(photo == null))
+                {
+                    eve.Photo = photo.FileName;
+                    photo.SaveAs(Server.MapPath("~/Assets/images/ImagesSaved/" + photo.FileName));
+                }
+
                 eventService.Add(eve);
                 eventService.Save();
                 return RedirectToAction("EventsIndex");
@@ -98,16 +104,22 @@ namespace Controllers
             Event ev = eventService.GetById(id);
 
             if (ev == null)
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);            
 
             return View(ev);
         }
         // POST: Event/Edit
         [HttpPost, ActionName("EditEvent")]
-        public async Task<ActionResult> EditEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve)
+        public async Task<ActionResult> EditEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
         {
             if (ModelState.IsValid)
             {
+                if (!(photo == null))
+                {
+                    eve.Photo = photo.FileName;
+                    photo.SaveAs(Server.MapPath("~/Assets/images/ImagesSaved/" + photo.FileName));
+                }
+
                 db.Entry(eve).State = System.Data.Entity.EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("OrganizeEvents");
