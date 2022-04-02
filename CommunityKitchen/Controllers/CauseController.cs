@@ -32,12 +32,25 @@ namespace CommunityKitchen.Controllers
             return View(causes);
         }
 
-        public ActionResult CauseIndex()
+        public ActionResult CauseIndex(string sortOrder,string searchString)
         {
+            ViewBag.CurrentSortOrder = sortOrder == "AS" ? "DE" : "AS";
+            ViewBag.SearchString = searchString;
+
             var causes = causeService.GetAll();
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                causes = causes.Where(x => x.Title.ToUpper().Contains(searchString.ToUpper())).ToList();
+            }
+            
+            switch (sortOrder?.ToUpper())
+            {
+                case "AS": causes = causes.OrderBy(x => x.CurrentAmmount).ToList();break;
+                case "DE": causes =causes.OrderByDescending(x => x.CurrentAmmount).ToList(); break;
+            }
 
             //View for organizer with all his events
-            return View(causes);
+            return View(causes.ToList());
         }
         // GET: Cause
         public ActionResult UpcomingCauses()
