@@ -19,6 +19,12 @@ namespace Entities.IdentityModel
             // Add custom user claims here
             return userIdentity;
         }
+
+        public ApplicationUser()
+        {
+
+        }
+
         //Observer Method
         public void Update(DateTime date)
         {
