@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyDataBase;
+using PersistentLayer.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,19 @@ namespace CommunityKitchen.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db;
+        private CauseRepository causeService;
+        public HomeController()
+        {
+            db = new ApplicationDbContext();
+            causeService = new CauseRepository(db);
+        }
         public ActionResult Index()
         {
-            return View();
+
+            var causes = causeService.GetAll();
+
+            return View(causes);
         }
 
         public ActionResult About()

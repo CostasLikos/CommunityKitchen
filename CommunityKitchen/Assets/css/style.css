@@ -1238,7 +1238,7 @@ input, textarea {
     transform: translate(-50%);
     text-align: center;
     padding: 0px 0px 0px;
-    background: #fff;
+    background: #ff2e3d;
     border-radius: 30px;
     font-weight: 700;
     font-size: 15px;
@@ -1249,6 +1249,7 @@ input, textarea {
     transition: bottom 0.5s, z-index 0s,transform 0.5s, padding 0.5s;
     transition-delay: 0.5s,0.5s,0s,0.5s;
     color: #fff;
+    transition: all .5s cubic-bezier(0.4, 0, 1, 1);
 }
 
 #kati2:hover #kati6 {
@@ -1312,10 +1313,21 @@ input, textarea {
 }
 
 #lod {
-    color: #ff0000;
-    border: 1px solid #000000;
+    color: #fff;
     border-radius: 30px;
     padding: 20px;
+    transition: all .5s cubic-bezier(0.4, 0, 1, 1);
+    border: 2px solid #ff2e3d;
+}
+    #lod:hover {
+        background: transparent;
+        color: #ff2e3d;
+        transition: all .5s cubic-bezier(0.4, 0, 1, 1);
+    }
+#kati6:hover {
+    background: transparent;
+    color: #ff2e3d;
+    transition: all .5s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .urgent-cause .item {

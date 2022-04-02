@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<Entities.Cause>
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -137,68 +142,45 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-md-offset-1">
                     <div class="urgent-cause-slide">
+                        @foreach (var cause in Model)
+                        {
 
-                        <div class="item">
+                            var res = Math.Round((100 * cause.CurrentAmmount) / cause.TargetGoal);
 
-                            <div class="clearfix bg-area">
+                            <div class="item">
 
-                                <div id="imgdi" class="content">
-                                    <img id="imgkat" src="~/Assets/images/missions/pr.jpg" alt="" />
-                                    <div id="kati2">
+                                <div class="clearfix bg-area">
 
-                                        <div id="logia"><h4 style="color: black;">Helping for <span style="color: red">education</span> to syrian <br>child & <span style="color: red">food planting</span></h4></div>
+                                    <div id="imgdi" class="content">
+                                        <img id="imgkat" src="~/Assets/images/missions/pr.jpg" alt="" />
+                                        <div id="kati2">
 
-                                        <div id="kati3">
-                                            <div>
+                                            <div id="logia"><h4 style="color: black;">@cause.Title</h4><br/><h4 style="color: red;"><span style="color: black;">Descriprion:</span> <br/>@cause.Description</h4> </div>
 
-                                                <div id="kati4">
-                                                    <svg class="tama">
-                                                        <circle cx="70" cy="70" r="70"></circle>
-                                                        <circle cx="70" cy="70" r="70"></circle>
-                                                    </svg>
+                                            <div id="kati3">
+                                                <div>
 
-                                                    <div id="kati5">
-                                                        <h2>90<span>%</span></h2>
+                                                    <div id="kati4">
+                                                        <svg class="tama">
+                                                            <circle style="stroke-dashoffset: calc(440px - (440px * @res) / 100);" cx="70" cy="70" r="70"></circle>
+                                                            <circle cx="70" cy="70" r="70"></circle>
+                                                        </svg>
+
+                                                        <div id="kati5">
+                                                            <h2>@res<span>%</span></h2>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
-                                        
+                                        <div id="lett" class="donate-price"><b>@cause.CurrentAmmount€</b>&nbsp;  Raised of <span id="lett1">@cause.TargetGoal€</span> Goal</div>
+
                                     </div>
-                                    <div id="lett" class="donate-price"><b>$44,210</b>&nbsp;  Raised of <span id="lett1">$99,541</span> Goal</div>
-
                                 </div>
+
                             </div>
-
-                        </div>
-                        <div class="item">
-                            <div class="clearfix bg-area">
-
-                                <div id="imgdi" class="content">
-                                    <img id="imgkat" src="~/Assets/images/missions/ph.jpg" alt="" />
-
-                                    <div id="kati2">
-                                        <div id="logia"><h4 style="color: black;">Helping for <span style="color: red">education</span> to syrian <br>child & <span style="color: red">food planting</span></h4></div>
-                                        <div id="kati3">
-                                            <div>
-                                                <div id="kati4">
-                                                    <svg class="tama">
-                                                        <circle cx="70" cy="70" r="70"></circle>
-                                                        <circle cx="70" cy="70" r="70"></circle>
-
-                                                    </svg>
-
-                                                    <div id="kati5">
-                                                        <h2>70<span>%</span></h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="lett" class="donate-price"><b>$44,210</b>&nbsp;  Raised of <span id="lett1">$99,541</span> Goal</div>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
