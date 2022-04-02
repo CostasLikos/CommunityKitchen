@@ -188,6 +188,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\APICausesController.cs" />
+    <Compile Include="Controllers\API\APIEventsController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\CauseController.cs" />
     <Compile Include="Controllers\EventController.cs" />
@@ -504,6 +506,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\images\ImagesSaved\" />
     <Folder Include="Views\MetaLogin\" />
     <Folder Include="Views\Story\" />
     <Folder Include="Views\Support\" />
