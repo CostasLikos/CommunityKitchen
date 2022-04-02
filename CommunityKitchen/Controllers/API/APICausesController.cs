@@ -11,9 +11,12 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Entities;
 using MyDataBase;
+using System.Web.Http.Cors;
+
 
 namespace CommunityKitchen.Controllers.API
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")] // PREPRODUCTION STAGE <----EDITABLE!!!!
     public class APICausesController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
