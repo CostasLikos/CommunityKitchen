@@ -89,10 +89,16 @@ namespace CommunityKitchen.Controllers
         // POST: Causes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> CreateCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause)
+        public async Task<ActionResult> CreateCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause, HttpPostedFileBase photo)
         {
             if (ModelState.IsValid)
             {
+                if (!(photo == null))
+                {
+                    cause.Photo = photo.FileName;
+                    photo.SaveAs(Server.MapPath("~/Assets/images/ImagesSaved/" + photo.FileName));
+                }
+
                 cause.Id = Guid.NewGuid();
                 db.Causes.Add(cause);
                 await db.SaveChangesAsync();
@@ -146,10 +152,16 @@ namespace CommunityKitchen.Controllers
         // POST: Causes/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> EditCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause)
+        public async Task<ActionResult> EditCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause, HttpPostedFileBase photo)
         {
             if (ModelState.IsValid)
             {
+                if (!(photo == null))
+                {
+                    cause.Photo = photo.FileName;
+                    photo.SaveAs(Server.MapPath("~/Assets/images/ImagesSaved/" + photo.FileName));
+                }
+
                 db.Entry(cause).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("OrganizeCause");
