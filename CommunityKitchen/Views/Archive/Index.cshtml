@@ -9,13 +9,5 @@
     ViewBag.Title = "Index";
 }
 
+<meta http-equiv="Refresh" content="0; url='http://localhost:4200/'" />
 
-<div>
-    <a href="http://localhost:4200/">Link text</a>
-</div>
-
-
-@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-
-    @Html.PagedListPager(Model, page => Url.Action("Index",
-        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
