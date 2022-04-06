@@ -9,17 +9,60 @@ using System.Web;
 using System.Web.Mvc;
 using Entities;
 using MyDataBase;
+using PersistentLayer.IRepository;
+using PersistentLayer.Repository;
 
 namespace CommunityKitchen.Controllers
 {
     public class ItemController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db;
+        private ItemRepository itemService;
+
+        public ItemController()
+        {
+            db = new ApplicationDbContext();
+            itemService = new ItemRepository(db);
+        }
 
         // GET: Item
-        public async Task<ActionResult> Index()
+        //public async Task<ActionResult> Index()
+        //{
+        //    return View(await db.Items.ToListAsync());
+        //}
+
+        public ActionResult Index()
         {
-            return View(await db.Items.ToListAsync());
+            var items = itemService.GetAll();
+
+            return View(items);
+        }
+
+
+        public ActionResult AddQuantity(Guid id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Item item = itemService.GetById(id);
+            item.Quantity += 1;
+            itemService.Save();
+            
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult RemoveQuantity(Guid id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Item item = itemService.GetById(id);
+            item.Quantity -= 1;
+            itemService.Save();
+
+            return RedirectToAction("Index");
         }
 
         // GET: Item/Details/5

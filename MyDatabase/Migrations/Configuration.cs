@@ -24,10 +24,11 @@
             var causes = CauseSeed();
             var events = EventSeed();
             var users = RegisteredUsersSeed();
-            //var items=ItemSeed();
+            var items=ItemSeed();
             context.Causes.AddRange(causes);
             context.Events.AddRange(events);
-            //context.Items.AddRange(items);
+            context.Items.AddRange(items);
+            
             //foreach (var user in users)
             //{
             //    context.Users.Add(user);
@@ -73,17 +74,17 @@
         {
             List<Item> items = new List<Item>()
             {
-                new Item() {ItemName = "Makaronia",Quantity = 1,Price=1.95m},
-                new Item() {ItemName = "Aggouria",Quantity = 1,Price=1.7m},
-                new Item() {ItemName = "Ntomates",Quantity = 1,Price=1.5m},
-                new Item() {ItemName = "Feta",Quantity = 1,Price=3.95m},
-                new Item() {ItemName = "Orange Juice",Quantity = 1,Price=1.85m},
-                new Item() {ItemName = "Water",Quantity = 1,Price=1.75m},
-                new Item() {ItemName = "Chicken",Quantity = 1,Price=1.95m},
-                new Item() {ItemName = "Beef",Quantity = 1,Price=2.95m},
-                new Item() {ItemName = "Salt",Quantity = 1,Price=0.75m},
-                new Item() {ItemName = "Flour",Quantity = 1,Price=1.15m},
-                new Item() {ItemName = "Tost Bread",Quantity = 1,Price=2.10m}
+                new Item() {Id = Guid.NewGuid(), ItemName = "Makaronia",Quantity = 3,Price=1.95m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Aggouria",Quantity = 1,Price=1.7m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Ntomates",Quantity = 4,Price=1.5m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Feta",Quantity = 1,Price=3.95m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Orange Juice",Quantity = 1,Price=1.85m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Water",Quantity = 2,Price=1.75m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Chicken",Quantity = 3,Price=1.95m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Beef",Quantity = 1,Price=2.95m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Salt",Quantity = 5,Price=0.75m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Flour",Quantity = 1,Price=1.15m},
+                new Item() {Id = Guid.NewGuid(), ItemName = "Tost Bread",Quantity = 6,Price=2.10m}
             };
             return items;
         }

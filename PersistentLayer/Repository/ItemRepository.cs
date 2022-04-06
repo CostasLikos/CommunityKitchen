@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PersistentLayer.Repository
 {
-    class ItemRepository : GenericRepo<Item>, IItemReposiory
+    public class ItemRepository : GenericRepo<Item>, IItemReposiory
     {
         public ItemRepository(ApplicationDbContext context) : base(context)
         {

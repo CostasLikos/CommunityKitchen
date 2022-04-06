@@ -10,6 +10,9 @@ namespace Entities
 {
     public class Item
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+
         public Guid Id { get; set; }
         public string ItemName { get; set; }
         public int Quantity { get; set; }
