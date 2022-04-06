@@ -2697,16 +2697,7 @@ input, textarea {
         position: relative;
     }
 
-        .contact_us .section-title h2:after {
-            position: absolute;
-            content: "";
-            left: 50%;
-            margin-left: -15px;
-            bottom: -37px;
-            width: 30px;
-            height: 100%;
-            background: url(../images/resources/noksha.png) center left no-repeat;
-        }
+       
 
 .contact_us .default-form-area {
     padding: 0px 0px 50px;
@@ -2912,7 +2903,7 @@ default-form style-two
 #EventDate {
     display: block;
     width: 100%;
-    line-height: 24px;
+    line-height: 17px;
     height: 46px;
     font-size: 16px;
     box-shadow: none;
