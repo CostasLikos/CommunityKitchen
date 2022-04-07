@@ -48,51 +48,6 @@
 ****************************************************************************************************************
 ||||||||||||||||||||||||||||            End TABLE OF CONTENT                ||||||||||||||||||||||||||||||||||||
 ****************************************************************************************************************/
-/*Test*/
-
-/*#soc
-{
-    display: flex;
-}
-#soc #soc1{
-    position: relative;
-    display: block;
-    color: #666;
-    font-size: 30px;
-    height: 60px;
-    width: 60px;
-    background:#171515;
-    line-height: 60px;
-    border-radius: 50%;
-    margin: 0 15px;
-    cursor: pointer;
-    transition: .5s;
-}
-#soc #soc1:before
-{
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    background: #d35400;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    z-index: -1;
-    transform: scale(0.9);
-}
-#soc #soc1:hover::before
-{
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #d35400;
-}
-#soc #soc1:hover
-{
-    color: #ffa502;
-    box-shadow: 0 0 15px #d35400;
-}
-*/
-/*end test*/
 /*
 ============================================
    1. Imported styles
@@ -441,7 +396,7 @@ input, textarea {
         margin-bottom: 40px;
     }
 
-       
+
 
     .section-title span {
         color: #ff2e3d;
@@ -556,7 +511,7 @@ input, textarea {
         width: 33.33333333%;
         float: left;
         margin-bottom: 19px;
-        color:#fff;
+        color: #fff;
     }
 
     /*============ top bar text ========*/
@@ -666,7 +621,7 @@ input, textarea {
     font-size: 15px;
     height: 30px;
     width: 30px;
-    color:#fff;
+    color: #fff;
     background: #fff;
     line-height: 30px;
     border-radius: 50%;
@@ -675,7 +630,7 @@ input, textarea {
     transition: .5s;
 }
 
-/*    #log1 #logi:before {
+    /*    #log1 #logi:before {
         position: absolute;
         content: '';
         top: 0;
@@ -688,7 +643,7 @@ input, textarea {
         transform: scale(0.9);
     }
 */
-/*    #log1 #logi:hover::before {
+    /*    #log1 #logi:hover::before {
         transform: scale(1.2);
         box-shadow: 0 0 15px #e86262;
     }
@@ -729,9 +684,10 @@ input, textarea {
 .theme_menu .container {
     position: relative;
 }
+
 #status {
     margin-bottom: -17px;
-    color:#fff;
+    color: #fff;
 }
 /*
 ===================================================
@@ -1068,7 +1024,7 @@ input, textarea {
 .theme_menu.stricky-fixed {
     margin: 0;
     background: #252525;
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -1319,11 +1275,13 @@ input, textarea {
     transition: all .5s cubic-bezier(0.4, 0, 1, 1);
     border: 2px solid #ff2e3d;
 }
+
     #lod:hover {
         background: transparent;
         color: #ff2e3d;
         transition: all .5s cubic-bezier(0.4, 0, 1, 1);
     }
+
 #kati6:hover {
     background: transparent;
     color: #ff2e3d;
@@ -2697,7 +2655,7 @@ input, textarea {
         position: relative;
     }
 
-       
+
 
 .contact_us .default-form-area {
     padding: 0px 0px 50px;
@@ -2849,7 +2807,8 @@ default-form style-two
         color: #ff0000;
         font-size: 14px;
     }
-    .default-form input[type="text"], .default-form input[type="email"], .default-form input[type="password"], .default-form input[type="number"], .default-form select, .default-form textarea {
+
+.default-form input[type="text"], .default-form input[type="email"], .default-form input[type="password"], .default-form input[type="number"], .default-form select, .default-form textarea {
     display: block;
     width: 100%;
     line-height: 24px;
@@ -2896,6 +2855,7 @@ default-form style-two
     background-color: #ff2e3d;
     color: #fff;
 }
+
 #Description,
 #Title,
 #Photo,
@@ -2915,16 +2875,16 @@ default-form style-two
     -webkit-transition: all 500ms ease;
     -ms-transition: all 500ms ease;
     -o-transition: all 500ms ease;
-    }
-
-#Description:focus,
-#Title:focus,
-#Photo:focus,
-#Address:focus,
-#EventDate:focus {
-    border-color: #ff2e3d;
-    box-shadow: none;
 }
+
+    #Description:focus,
+    #Title:focus,
+    #Photo:focus,
+    #Address:focus,
+    #EventDate:focus {
+        border-color: #ff2e3d;
+        box-shadow: none;
+    }
 
 .default-form .form-control:focus {
     border-color: #ff2e3d;
@@ -5925,7 +5885,7 @@ Project styles
         position: relative;
     }
 
-       
+
     .main-footer .section-title p {
         margin-top: 10px;
         font-size: 15px;
@@ -6791,7 +6751,7 @@ Project styles
             position: relative;
         }
 
-/*            .single-cause .content-box .title h2:after {
+        /*            .single-cause .content-box .title h2:after {
                 position: absolute;
                 content: "";
                 left: 50%;
@@ -7221,3 +7181,34 @@ default-form style-three
     color: #fff;
 }
 
+.logoffname {
+    color: #ffffff;
+    margin-left: 73px !important;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 50px;
+    padding: 30px 0px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.logoff {
+    position: absolute !important;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 50px;
+    padding: 30px 0px;
+    margin: 0 0px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+    .logoff a {
+        color: #ff2e3d !important;
+        padding: 0px 0px !important;
+    }
+
+        .logoff a:hover {
+            color: #fff !important;
+        }
