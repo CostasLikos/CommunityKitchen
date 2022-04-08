@@ -155,7 +155,7 @@
                                         <img id="imgkat" src="~/Assets/images/missions/pr.jpg" alt="" />
                                         <div id="kati2">
 
-                                            <div id="logia"><h4 style="color: black;">@cause.Title</h4><br/><h4 style="color: red;"><span style="color: black;">Descriprion:</span> <br/>@cause.Description</h4> </div>
+                                            <div id="logia"><h4 style="color: black;">@cause.Title</h4><br /><h4 style="color: red;"><span style="color: black;">Descriprion:</span> <br />@cause.Description</h4> </div>
 
                                             <div id="kati3">
                                                 <div>
@@ -193,7 +193,10 @@
     <section class="our-missions">
         <div class="container">
             <div class="section-title">
-                <div id="kati6"><a id="lod" href="/Cause/CauseIndex">donate now</a></div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div id="kati6"><a id="lod" href="/Cause/CauseIndex">donate now</a></div>
+                }
                 <h1>our <span>missions</span></h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
             </div>
