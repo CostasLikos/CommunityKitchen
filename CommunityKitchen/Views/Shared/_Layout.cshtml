@@ -17,34 +17,14 @@
 
 </head>
 <body>
-    @*Meta Login*@
     <script src="~/Scripts/MetaLogin.js"></script>
     <div class="container23">
         <div class="col-mb-12">
-            <!--<header class="top-bar">
-
-            <div class="column left">
-            </div>
-
-            <div id="status" class="column center">
-            </div>
-            <div class="column right">-->
-            @*<ul id="log1" class="login-info">
-                    <li onclick="loginToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
-                    <li onclick="signupToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-user"></i>signup</a></li>
-                </ul>*@
-            <!--</div>
-            </header>-->
             <section class="theme_menu stricky" style="background-color:#333;  background-repeat: no-repeat; background-size:cover; ">
-                @*<div id="status" class="column center"></div>*@
                 <div class="container">
                     <div class="row">
                         @Html.Partial("~/Views/Shared/Components/_LogoMain.cshtml")
                         @Html.Partial("~/Views/Shared/Components/_NavBar.cshtml")
-                        @if (!User.Identity.IsAuthenticated)
-                        {
-                            @Html.Partial("~/Views/Shared/Components/_SearchBar.cshtml")
-                        }
                     </div>
                 </div> <!-- End of .conatiner -->
             </section>

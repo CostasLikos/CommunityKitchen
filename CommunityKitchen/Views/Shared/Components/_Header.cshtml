@@ -1,0 +1,30 @@
+﻿<div class="boxed_wrapper">
+    <header class="top-bar">
+        <div class="container">
+            <div class="column left">
+                <ul class="top-bar-text">
+                    <li><i class="icon fa fa-envelope"></i>charitysympathy@info.com</li>
+                    <li><i class="icon fa fa-phone"></i>012.9355.121</li>
+                </ul>
+            </div>
+            <div class="column center">
+                <ul class="social">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+            <div class="column right">
+                <ul class="login-info">
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                    <li><a onclick="loginToggle()" id="logi" href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
+                    <li><a onclick="signupToggle()" id="logi" href="#"><i class="icon fa fa-user"></i>signup</a></li>
+                    }
+                </ul>
+            </div>
+
+
+        </div>
+    </header>
+</div>
