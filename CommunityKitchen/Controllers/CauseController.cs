@@ -22,7 +22,7 @@ namespace CommunityKitchen.Controllers
             db = new ApplicationDbContext();
             causeService = new CauseRepository(db);
         }
-
+        [Authorize]
         // GET: Cause
         public ActionResult OrganizeCause()
         {

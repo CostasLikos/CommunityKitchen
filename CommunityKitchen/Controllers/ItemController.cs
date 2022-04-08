@@ -14,6 +14,7 @@ using PersistentLayer.Repository;
 
 namespace CommunityKitchen.Controllers
 {
+    [Authorize]
     public class ItemController : Controller
     {
         private ApplicationDbContext db;
