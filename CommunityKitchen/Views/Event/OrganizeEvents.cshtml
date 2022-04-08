@@ -30,7 +30,7 @@
 
                         <div class="content-box">
 
-                            <a href="@Url.Action("EventDetails","Event",new {id = @eve.Id})"> <h3>@eve.Title</h3></a>
+                            <a href="@Url.Action("EventDetails","Event",new {id = @eve.Id})"> <h3 class="RedTitle">@eve.Title</h3></a>
                             <ul class="event-info">
                                 <li><span class="fa fa-calendar"></span> @eve.EventDate.ToLongDateString()</li>
                                 <li> &emsp; <span class="fa fa-map-marker"></span>@eve.Address</li>
@@ -41,6 +41,9 @@
                             </div>
                             <div>
                                 <span><a href="@Url.Action("EditEvent","Event",new {id = @eve.Id})" class="thm-btn style-2">Edit Event</a><a href="@Url.Action("DeleteEvent","Event",new {id = @eve.Id})" class="thm-btn style-2">Delete  Event</a></span>
+                            </div>
+                            <div>
+                                <img src="~/Assets/images/ImagesSaved/" + @eve.Photo/>
                             </div>
                         </div>
                     }

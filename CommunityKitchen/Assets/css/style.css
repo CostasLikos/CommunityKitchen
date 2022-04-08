@@ -6866,7 +6866,7 @@ default-form style-three
 =================================================
 */
 .all-event {
-    padding: 100px 0px 0px;
+    padding: 80px 0px 0px;
 }
 
     .all-event .section-title {
@@ -7181,6 +7181,7 @@ default-form style-three
     color: #fff;
 }
 
+
 .logoffname {
     color: #ffffff;
     margin-left: 73px !important;
@@ -7212,3 +7213,14 @@ default-form style-three
         .logoff a:hover {
             color: #fff !important;
         }
+
+.RedTitle {
+    color: #272727;
+    transition: font-size .3s;
+}
+
+    .RedTitle:hover {
+        color: #fe5a5a;
+        font-size: 30px;
+    }
+

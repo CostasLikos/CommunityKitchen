@@ -16,13 +16,14 @@
         <div class="navbar-collapse collapse clearfix">
             <div class="row">
                 <ul class="navigation clearfix">
+
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="dropdown active">
                             @Html.ActionLink("Home", "Index", "Home")
 
                             <ul>
-                                <li>@Html.ActionLink("Archive", "Index", "Archive")</li>
+                               <li><a href="http://localhost:4200/">Archive</a></li>
                                 <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
                                 <li>@Html.ActionLink("Support A Cause", "CauseIndex", "Cause")</li>
                                 <li>@Html.ActionLink("Upcoming Events", "EventsIndex", "Event")</li>
@@ -46,6 +47,7 @@
                             </ul>
                         </li>
                     }
+
                     <li class="dropdown">
                         @Html.ActionLink("About Us", "About", "Home")
                     </li>
@@ -68,10 +70,10 @@
                 <li class="dropdown active">
                     @Html.ActionLink("Home", "Index", "Home")
                     <ul>
-                        <li>@Html.ActionLink("Archive", "Index", "Archive")</li>
+                        <li><a href="http://localhost:4200/">Archive</a></li>
                         <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
                         <li>@Html.ActionLink("Support A Cause", "SupportCause", "Support")</li>
-                        <li> @Html.ActionLink("Upcoming Events", "UpcomingEvents", "Event")</li>
+                        <li>@Html.ActionLink("Upcoming Events", "UpcomingEvents", "Event")</li>
                     </ul>
                 </li>
                 <li class="dropdown">

@@ -38,7 +38,7 @@
                                 <div class="title-area">
 
                                     <div class="date">@eve.EventDate.Day<br><span>@eve.EventDate.ToString("MMM")</span></div>
-                                    <a href="@Url.Action("EventDetails","Event",new {id = @eve.Id})"> <h3>@eve.Title</h3></a>
+                                    <a href="@Url.Action("EventDetails","Event",new {id = @eve.Id})"> <h3 class="RedTitle">@eve.Title</h3></a>
                                     <ul class="event-info">
                                         <li><span class="fa fa-calendar"></span> @eve.EventDate.ToLongDateString()</li>
                                         <li> &emsp; <span class="fa fa-map-marker"></span>@eve.Address</li>
