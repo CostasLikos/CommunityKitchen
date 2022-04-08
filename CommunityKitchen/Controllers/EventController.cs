@@ -127,7 +127,7 @@ namespace Controllers
             return View(eve);
         }
 
-
+        [Authorize]
         public ActionResult OrganizeEvents()
         {
             //Organizers event dashboard option
