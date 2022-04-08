@@ -48,51 +48,6 @@
 ****************************************************************************************************************
 ||||||||||||||||||||||||||||            End TABLE OF CONTENT                ||||||||||||||||||||||||||||||||||||
 ****************************************************************************************************************/
-/*Test*/
-
-/*#soc
-{
-    display: flex;
-}
-#soc #soc1{
-    position: relative;
-    display: block;
-    color: #666;
-    font-size: 30px;
-    height: 60px;
-    width: 60px;
-    background:#171515;
-    line-height: 60px;
-    border-radius: 50%;
-    margin: 0 15px;
-    cursor: pointer;
-    transition: .5s;
-}
-#soc #soc1:before
-{
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    background: #d35400;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    z-index: -1;
-    transform: scale(0.9);
-}
-#soc #soc1:hover::before
-{
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #d35400;
-}
-#soc #soc1:hover
-{
-    color: #ffa502;
-    box-shadow: 0 0 15px #d35400;
-}
-*/
-/*end test*/
 /*
 ============================================
    1. Imported styles
@@ -7226,6 +7181,39 @@ default-form style-three
     color: #fff;
 }
 
+
+.logoffname {
+    color: #ffffff;
+    margin-left: 73px !important;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 50px;
+    padding: 30px 0px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.logoff {
+    position: absolute !important;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 50px;
+    padding: 30px 0px;
+    margin: 0 0px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+    .logoff a {
+        color: #ff2e3d !important;
+        padding: 0px 0px !important;
+    }
+
+        .logoff a:hover {
+            color: #fff !important;
+        }
+
 .RedTitle {
     color: #272727;
     transition: font-size .3s;
@@ -7235,3 +7223,4 @@ default-form style-three
         color: #fe5a5a;
         font-size: 30px;
     }
+

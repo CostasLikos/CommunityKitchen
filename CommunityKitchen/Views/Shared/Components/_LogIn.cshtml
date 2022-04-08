@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "_LogIn";
 }
 
@@ -11,10 +10,12 @@
             <div class="text">
                 <h2>Register Form</h2>
             </div>
-            <form action="#">
+            <form method="post" action="/Account/Register">
+                @Html.AntiForgeryToken()
+
                 <div class="inputBx">
-                    <input id="in" type="text" placeholder="FirstName">
-                    <input id="in" type="text" placeholder="Last Name">
+                    <input id="in" type="text" name="FirstName" required placeholder="FirstName">
+                    <input id="in" type="text" name="LastName" required placeholder="Last Name">
                 </div>
                 <div class="img1">
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
@@ -23,12 +24,13 @@
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
                 </div>
                 <div class="inputBx">
-                    <input type="email" placeholder="Email">
+                    <input type="email" name="Email" placeholder="Email" required>
                     <div class="img2">
                         <img src="https://img.icons8.com/external-nawicon-glyph-nawicon/64/000000/external-email-communication-nawicon-glyph-nawicon.png" />
                     </div>
-                    <input type="password" placeholder="Password">
-                    <input type="password" placeholder="Confirm password">
+                    <input id="password" type="password" name="Password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$!%*?&])[A-Za-z\d$!%*?&]{6,}$"
+                           title="Must contain at least one number and one uppercase letter and one special character,minimum 6 characters" required >
+                    <input id="confpassword" type="password" name="ConfirmPassword" placeholder="Confirm password" minlength="6"  >
                     <div class="img4">
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
@@ -49,18 +51,19 @@
             <div class="text">
                 <h2>Login</h2>
             </div>
-            <form action="#">
+            <form method="post" action="/Account/Login">
+                @Html.AntiForgeryToken()
                 <div class="inputBx">
-                    <input type="email" placeholder="UserName">
+                    <input type="text" name="Email" placeholder="UserName">
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
                 </div>
-                
+
                 <div class="inputBx">
-                    <input type="password" placeholder="Password">
+                    <input type="password" name="Password" placeholder="Password">
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
                 </div>
 
-                <label class="remeber"><input type="checkbox" name="">Remember me</label>
+                <label class="remeber"><input type="checkbox"  name="RememberMe">Remember me</label>
 
                 <div class="inputBx">
                     <input id="sub" type="submit" value="Login">
@@ -86,7 +89,19 @@
 
 
     <script>
-        
+        var password = document.getElementById("password");
+        var confirmpassword = document.getElementById("confpassword");
+        var message = document.getElementById("message");
+        function validatePassword() {
+            if (password.value != confirmpassword.value) {
+                confirmpassword.setCustomValidity("Passwords Don't Match");
+            }
+            else {
+                confirmpassword.setCustomValidity('');
+            }
+        }
+        password.onchange = validatePassword;
+        confirmpassword.onkeyup = validatePassword;
     </script>
 
 </body>

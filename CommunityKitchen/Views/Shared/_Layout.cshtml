@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Charity sympathy || Responsive HTML 5 Template</title>
@@ -15,6 +14,7 @@
     <link href="~/Assets/images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
     <link rel="icon" type="image/png" href="~/Assets/images/favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="~/Assets/images/favicon/favicon-16x16.png" sizes="16x16">
+
 </head>
 <body>
     @*Meta Login*@
@@ -23,25 +23,28 @@
         <div class="col-mb-12">
             <!--<header class="top-bar">
 
-        <div class="column left">
-        </div>
+            <div class="column left">
+            </div>
 
-        <div id="status" class="column center">
-        </div>
-        <div class="column right">-->
+            <div id="status" class="column center">
+            </div>
+            <div class="column right">-->
             @*<ul id="log1" class="login-info">
-                <li onclick="loginToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
-                <li onclick="signupToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-user"></i>signup</a></li>
-            </ul>*@
+                    <li onclick="loginToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
+                    <li onclick="signupToggle()" id="log"><a id="logi" href="#"><i class="icon fa fa-user"></i>signup</a></li>
+                </ul>*@
             <!--</div>
-        </header>-->
+            </header>-->
             <section class="theme_menu stricky" style="background-color:#333;  background-repeat: no-repeat; background-size:cover; ">
                 @*<div id="status" class="column center"></div>*@
                 <div class="container">
                     <div class="row">
                         @Html.Partial("~/Views/Shared/Components/_LogoMain.cshtml")
                         @Html.Partial("~/Views/Shared/Components/_NavBar.cshtml")
-                        @Html.Partial("~/Views/Shared/Components/_SearchBar.cshtml")
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            @Html.Partial("~/Views/Shared/Components/_SearchBar.cshtml")
+                        }
                     </div>
                 </div> <!-- End of .conatiner -->
             </section>
