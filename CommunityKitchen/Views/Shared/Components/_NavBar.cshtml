@@ -17,8 +17,7 @@
             <div class="row">
                 <ul class="navigation clearfix">
 
-                    @if (User.Identity.IsAuthenticated)
-                    {
+                    
                         <li class="dropdown active">
                             @Html.ActionLink("Home", "Index", "Home")
 
@@ -29,13 +28,8 @@
                                 <li>@Html.ActionLink("Upcoming Events", "EventsIndex", "Event")</li>
                             </ul>
                         </li>
-                    }
-                    else
-                    {
-                        <li class="dropdown active">
-                            @Html.ActionLink("Home", "Index", "Home")
-                        </li>
-                    }
+                    
+                    
                     @if (admin == "Admin" || admin == "admin")
                     {
                         <li class="dropdown">
@@ -57,10 +51,10 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="logoffname" >
-                            Dear - @User.Identity.Name
+                            Hello @User.Identity.Name
                         </li>
                         <li class="logoff">
-                            @Html.ActionLink("LogOff", "LogOff", "Account")
+                            @Html.ActionLink("Logout", "LogOff", "Account")
                         </li>
                     }
 
