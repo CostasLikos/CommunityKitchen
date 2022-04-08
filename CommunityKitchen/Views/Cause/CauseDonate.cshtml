@@ -66,24 +66,18 @@
                             <div class="col-md-12 col-sm-12 col-xs-12">
 
                                 <div class="form-group style-three">
-                                    <input type="text" name="form_name" class="form-control" value="" placeholder="20€" required="">
+                                    <input id="foo" type="text" name="form_name" class="form-control" value="" placeholder="20€" required="">
+                                    <input id="koo" type="hidden" name="name" value="@Model.Id" />
                                 </div>
+
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group style-three">
-                                    <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                                    <button class="thm-btn" type="submit" data-loading-text="Please wait...">Donate now</button>
-                                </div>
+
+                                <div id="paypal-button-container"></div>
                             </div>
 
                         </div>
                     </form>
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="ship-same-address">
-                        <span>Make this as a monthly gift</span>
-                    </label>
                 </div>
 
             </div>
@@ -116,7 +110,64 @@
                     </div>
                 </div>
 
+
             </div>
         </div>
     </div>
+
+
+
+    @section scripts{
+        <script src="https://www.paypal.com/sdk/js?client-id=AV42MDljTyYz4PnD2iB4Kbjcxy7NF1Lena85f8qW3M_hCHuxRX1LHg4y04IU9Khq8qH1eCCEnYnZNUIM"></script>
+        <script>
+
+            //console.log("paypal eisaiedwreBRO??")
+
+            paypal.Buttons({
+                createOrder: function (data, actions) {
+                    // This function sets up the details of the transaction, including the amount and line item details.
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: document.getElementById("foo").value
+                            }
+                        }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    // This function captures the funds from the transaction.
+                    return actions.order.capture().then(function (details) {
+                                // This function shows a transaction success message to your buyer.
+                              alert('Transaction completed by ' + details.payer.name.given_name);
+                          //console.log(data);
+                        //console.log(actions);
+
+                    }).then(callAjax());
+                }
+            }).render('#paypal-button-container');
+                        //This function displays payment buttons on your web page.
+
+            function callAjax() {
+
+                //-----------------------------malakies xazes vlakeis AISXOS
+                $.ajax({
+                    type: "put",
+                    url: "@Url.Action("EditCauseJson","Cause")",
+                    data: JSON.stringify({ "Id": document.getElementById("koo").value, "amount": document.getElementById("foo").value }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+                        console.log("to console log den douleyei edw pera ... kai oute kai to alert aop katw")
+                        alert("Successfully Donated To Cause");
+                        console.log(editedCause);
+                    },
+                    failure: function () {
+                        alert("Did not save");
+                        console.log(editedCause);
+                    }
+                });
+            }
+
+        </script>
+    }
 </section>

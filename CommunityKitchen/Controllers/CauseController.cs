@@ -32,6 +32,19 @@ namespace CommunityKitchen.Controllers
             return View(causes);
         }
 
+        public ActionResult EditCauseJson(string id, string amount)
+        {
+            var cause = causeService.GetById(Guid.Parse(id));
+            double convertedAmount = Convert.ToDouble(amount);
+
+
+            cause.CurrentAmmount += convertedAmount;
+            //causeService.Update(Guid.Parse(id));
+            causeService.Save();
+
+            return View("CauseIndex");
+        }
+
         public ActionResult CauseIndex(string sortOrder,string searchString)
         {
             ViewBag.CurrentSortOrder = sortOrder == "AS" ? "DE" : "AS";
