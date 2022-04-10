@@ -49,7 +49,7 @@ namespace CommunityKitchen.Controllers
             Item item = itemService.GetById(id);
             item.Quantity += 1;
             itemService.Save();
-            
+
             return RedirectToAction("Index");
         }
 
@@ -59,9 +59,18 @@ namespace CommunityKitchen.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Item item = itemService.GetById(id);
-            item.Quantity -= 1;
-            itemService.Save();
+
+            if (item.Quantity > 1)
+            {
+                item.Quantity -= 1;
+                itemService.Save();
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
 
             return RedirectToAction("Index");
         }

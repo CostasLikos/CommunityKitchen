@@ -32,7 +32,9 @@
                         @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                     </div>
 
+                    @*photo*@
                     <div class="form-group">
+                        @*@{string fullpath = Path.GetFullPath(Model.Photo);}*@
                         @Html.LabelFor(model => model.Photo)
                         @Html.EditorFor(model => model.Photo, new { htmlAttributes = new { @class = "form-control", type = "file"} })
                         @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })

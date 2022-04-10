@@ -3,6 +3,7 @@ using MyDataBase;
 using PersistentLayer.Repository;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -103,25 +104,36 @@ namespace Controllers
         {
             Event ev = eventService.GetById(id);
 
+            //var fullPath = Path.GetFullPath(ev.Photo);
+            
             if (ev == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);            
 
             return View(ev);
         }
         // POST: Event/Edit
-        [HttpPost, ActionName("EditEvent")]
-        public async Task<ActionResult> EditEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
+
+
+        [HttpPost, ActionName("EditEvent")]                                                                 //tODO: edwpera den fernei to photo
+        public ActionResult EditEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
         {
+            var tempPhoto = eve.Photo;
+
             if (ModelState.IsValid)
             {
-                if (!(photo == null))
+                if (photo != null)
                 {
                     eve.Photo = photo.FileName;
                     photo.SaveAs(Server.MapPath("~/Assets/images/ImagesSaved/" + photo.FileName));
+                    db.Entry(eve).State = System.Data.Entity.EntityState.Modified;
                 }
-
-                db.Entry(eve).State = System.Data.Entity.EntityState.Modified;
-                await db.SaveChangesAsync();
+                else
+                {
+                    eve.Photo = eve.Photo;
+                    db.Entry(eve).State = System.Data.Entity.EntityState.Modified;
+                }  
+                
+                db.SaveChangesAsync();
                 return RedirectToAction("OrganizeEvents");
             }
             return View(eve);
