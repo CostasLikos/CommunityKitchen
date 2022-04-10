@@ -513,7 +513,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\images\ImagesSaved\" />
     <Folder Include="Views\MetaLogin\" />
     <Folder Include="Views\Story\" />
     <Folder Include="Views\Support\" />
@@ -544,6 +543,11 @@
       <Project>{71f00586-65cd-4065-9c58-cf02840c8be3}</Project>
       <Name>PersistentLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\CommunityKitchen\Assets\images\ImagesSaved\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

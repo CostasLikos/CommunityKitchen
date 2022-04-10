@@ -32,17 +32,16 @@ namespace CommunityKitchen.Controllers
             return View(causes);
         }
 
-        public ActionResult EditCauseJson(string id, string amount)
+        public ActionResult EditCauseJson(Guid id, string amount)
         {
-            var cause = causeService.GetById(Guid.Parse(id));
+            var cause = causeService.GetById(id);
             double convertedAmount = Convert.ToDouble(amount);
-
 
             cause.CurrentAmmount += convertedAmount;
             //causeService.Update(Guid.Parse(id));
             causeService.Save();
-
-            return View("CauseIndex");
+            return RedirectToAction("Cause","CauseIndex");
+            //return View("CauseIndex");
         }
 
         public ActionResult CauseIndex(string sortOrder,string searchString)
