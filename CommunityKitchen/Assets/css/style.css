@@ -723,9 +723,6 @@ input, textarea {
         display: inline-block;
     }
 
-    .navigation > li.active > a {
-        color: #ff2e3d;
-    }
 
     .navigation > li > a {
         color: #ffffff;
