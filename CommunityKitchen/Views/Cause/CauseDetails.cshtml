@@ -5,10 +5,10 @@
 }
 
 <div>
-    <hr />
-    <h4 style="display:center;">Cause Details</h4>
     <section class="single-event">
         <div class="container">
+            <h4 style="display:center;">Cause Details</h4>
+            <hr />
             <figure class="image-box">
                 <img src="images/event/8.jpg" alt="" />
             </figure>
@@ -20,8 +20,8 @@
                 </div>
 
                 @*<div class="icon-box">
-                    <img style="object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
-                </div>*@
+            <img style="object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
+        </div>*@
                 <div class="title">
                     <h2>@Html.DisplayFor(model => model.Title)</h2>
                 </div>
@@ -30,15 +30,8 @@
                 </div>
 
                 <div class="donate-price"><b>@Html.DisplayFor(model => model.CurrentAmmount)€ </b>&nbsp; Raised of  <span> @Html.DisplayFor(model => model.TargetGoal)€ </span> Goal</div>
-
-
-
-
+                @Html.ActionLink("Back to List", "OrganizeCause","",new {@class= "thm-btn style-2" })
             </div>
         </div>
     </section>
 </div>
-<p>
-    @Html.ActionLink("Edit", "EditCause", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "OrganizeCause")
-</p>
