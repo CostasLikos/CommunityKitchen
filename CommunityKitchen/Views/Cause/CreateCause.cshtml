@@ -3,26 +3,6 @@
 @{
     ViewBag.Title = "CreateCause";
 }
-<style>
-
-    ::-webkit-file-upload-button {
-        margin-left:-15px;
-        margin-top:-15px;
-        position: relative;
-        background: #ff2e3d;
-        font-size: 11px;
-        line-height: 34px;
-        font-weight: 600;
-        border-radius: 18px;
-        color: #ffffff;
-        border: 2px solid #ff2e3d;
-        text-transform: uppercase;
-        font-family: 'Montserrat', sans-serif;
-        display: inline-block;
-        padding: 0 22px;
-        transition: all .5s cubic-bezier(0.4, 0, 1, 1);
-    }
-</style>
 
 @using (Html.BeginForm("CreateCause", "Cause", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -30,14 +10,14 @@
 
     <div class="default-form-area" style="display: flex; justify-content: center">
         <div id="contact-form" class="default-form">
+            <h1 style="margin-left:45px">Creating Cause</h1>
             <div class="row clearfix" style="justify-content: center">
-                <h1 style="justify-content:center">Creating Cause</h1>
                 <div class="col-md-12 col-sm-12 col-xs-6">
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                     <div class="form-group">
-                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" , placeholder = "Cause's Title"} })
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Cause's Title" } })
                         @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                     </div>
 
@@ -69,7 +49,7 @@
 
                     </div>
                     <div class="form-group">
-                        <div >
+                        <div>
                             @Html.ActionLink("Back to List", "OrganizeCause")
                         </div>
                     </div>
