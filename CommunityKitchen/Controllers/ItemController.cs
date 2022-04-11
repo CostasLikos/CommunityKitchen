@@ -62,7 +62,7 @@ namespace CommunityKitchen.Controllers
 
             Item item = itemService.GetById(id);
 
-            if (item.Quantity > 1)
+            if (item.Quantity > 0)
             {
                 item.Quantity -= 1;
                 itemService.Save();
