@@ -3,62 +3,82 @@
 @{
     ViewBag.Title = "DeleteEvent";
 }
-
-<h2>DeleteEvent</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Event</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Photo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EventDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EventDate)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "OrganizeEvents")
-        </div>
+<style>
+    .description {
+        color: black !important;
+        background-color: #fff;
+        width: 785px;
+        height: 226px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        margin-left: 151px;
     }
+</style>
+<div class="default-form-area" style="display: flex; justify-content: center">
+    <div id="contact-form" class="default-form">
+        <div class="section-title">
+            <h1 style="margin-left:45px">Are you sure you want to <span>delete</span> this Event?</h1>
+        </div>
+        <div class="row clearfix" style="justify-content: center">
+            <div class="col-md-12 col-sm-12 col-xs-6">
+                <hr />
+
+                <div class="form-group">
+                    <div class="section-title">
+                        <h2>Title</h2>
+                    </div>
+                    @Html.DisplayFor(model => model.Title)
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="section-title">
+                        <h2>Description</h2>
+                    </div>
+                    <div class="form-group">
+                        <p class="description">@Html.DisplayFor(model => model.Description)</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="section-title">
+                        <h2>Photo</h2>
+                    </div>
+                    @Html.DisplayFor(model => model.Photo)
+                </div>
+
+                <div class="form-group">
+                    <div class="section-title">
+                        <h2>Address</h2>
+                    </div>
+                    @Html.DisplayFor(model => model.Address)
+                </div>
+
+                <div class="form-group">
+                    <div class="section-title">
+                        <h2>EventDate</h2>
+                    </div>
+                    @Html.DisplayFor(model => model.EventDate)
+                </div>
+                <div class="form-group">
+                    <div>
+                        <input type="submit" value="Delete" class="thm-btn style-1" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div>
+
+                            @Html.ActionLink("Back to List", "OrganizeEvents")
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

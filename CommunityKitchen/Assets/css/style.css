@@ -7221,3 +7221,34 @@ default-form style-three
         font-size: 30px;
     }
 
+.imgpie {
+    margin-top: 223px;
+    margin-left: 229px;
+    position: absolute;
+    width: 100px;
+}
+
+#myChart {
+    width: 555px !important;
+    height: 276px !important;
+    margin-top: 107px;
+    position: absolute;
+}
+::-webkit-file-upload-button {
+    margin-left: -15px;
+    margin-top: -15px;
+    position: relative;
+    background: #ff2e3d;
+    font-size: 11px;
+    line-height: 34px;
+    font-weight: 600;
+    border-radius: 18px;
+    color: #ffffff;
+    border: 2px solid #ff2e3d;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    padding: 0 22px;
+    transition: all .5s cubic-bezier(0.4, 0, 1, 1);
+}
+

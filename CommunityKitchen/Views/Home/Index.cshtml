@@ -6,8 +6,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
 </head>
 <body>
 
@@ -48,7 +48,10 @@
                          data-start="1500">
                         <div class="slide-content-box">
                             <div class="button">
-                                <a class="thm-btn" href="#">join with us today</a>
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <a class="thm-btn" onclick="signupToggle()" href="#">join with us today</a>
+                                }
                             </div>
                         </div>
                     </div>
@@ -221,7 +224,7 @@
                             </div>
                             <div class="content-box">
                                 <ul class="default-list">
-                                    <li><i class="flaticon-check-mark-square-button"></i><span>60% </span>money goes for <span>Food Donation</span> in <span>Syria</span></li>
+                                    <li><i  class="flaticon-check-mark-square-button"></i><span>60% </span>money goes for <span>Food Donation</span> in <span>Syria</span></li>
                                     <li><i class="flaticon-check-mark-square-button"></i><span>35%</span> money goes for <span>Educational Fund </span>in <span>Bihar</span></li>
                                     <li><i class="flaticon-check-mark-square-button"></i><span>15%</span> money goes for <span>Health Donation </span>in <span>Bangladesh</span></li>
                                     <li><i class="flaticon-check-mark-square-button"></i><span>20% </span>money goes for <span>Building house </span>for shelter</li>
@@ -233,15 +236,12 @@
                     </div>
                     <div class="col-md-6">
                         <div class="item">
-                            <div class="image-box">
-                                <img src="~/Assets/images/feature/4.png" alt="">
+                            <div>
+
+                                <img class="imgpie" src="~/Assets/images/feature/24.png" />
+                                <canvas id="myChart"></canvas>
                             </div>
-                            <ul class="list">
-                                <li><i class="icon flaticon-stop"></i>Food Donation</li>
-                                <li><i class="icon flaticon-stop"></i>Educational Fund</li>
-                                <li><i class="icon flaticon-stop"></i>Health Donation</li>
-                                <li><i class="icon flaticon-stop"></i>Building Shelter</li>
-                            </ul>
+
                         </div>
 
                     </div>
@@ -267,194 +267,6 @@
         </div>
     </section>
     <!--end parallax-sec-one-->
-    <!--start our-team-->
-    <section class="our-team">
-        <div class="container">
-            <div class="section-title">
-                <h5>meet our team to help today</h5>
-                <h1>our<span> volunteer</span></h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-            </div>
-
-            <div class="item-box">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="item">
-                            <div class="bg-area">
-                                <div class="image-box">
-                                    <img src="~/Assets/images/missions/per.jpg" alt="" />
-                                </div>
-                                <div class="content-box">
-                                    <h4>Dr. Adam Chohan</h4>
-                                    <div class="progress-levels">
-                                        <!--Skill Box-->
-                                        <div class="progress-box">
-                                            <div class="inner">
-                                                <div class="bar">
-                                                    <div class="bar-innner">
-                                                        <div class="bar-fill" data-percent="70"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, adipiscing elit, sed do edu.</p>
-                                    </div>
-                                    <ul class="social">
-                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-behance"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="item">
-                            <div class="bg-area">
-                                <div class="image-box">
-                                    <img src="~/Assets/images/missions/person2.jpg" alt="" />
-                                </div>
-                                <div class="content-box">
-                                    <h4>Prof. Fredric Roman</h4>
-                                    <div class="progress-levels">
-                                        <!--Skill Box-->
-                                        <div class="progress-box">
-                                            <div class="inner">
-                                                <div class="bar">
-                                                    <div class="bar-innner">
-                                                        <div class="bar-fill" data-percent="79"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, adipiscing elit, sed do edu.</p>
-                                    </div>
-                                    <ul class="social">
-                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-behance"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="item">
-                            <div class="bg-area">
-                                <div class="image-box">
-                                    <img src="~/Assets/images/missions/person3.jpg" alt="" />
-                                </div>
-                                <div class="content-box">
-                                    <h4>Dr. Adam Chohan</h4>
-                                    <div class="progress-levels">
-                                        <!--Skill Box-->
-                                        <div class="progress-box">
-                                            <div class="inner">
-                                                <div class="bar">
-                                                    <div class="bar-innner">
-                                                        <div class="bar-fill" data-percent="70"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, adipiscing elit, sed do edu.</p>
-                                    </div>
-                                    <ul class="social">
-                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-behance"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="item">
-                            <div class="bg-area">
-                                <div class="image-box">
-                                    <img src="~/Assets/images/missions/person4.jpg" alt="" />
-                                </div>
-                                <div class="content-box">
-                                    <h4>Sara Lian</h4>
-                                    <div class="progress-levels">
-                                        <!--Skill Box-->
-                                        <div class="progress-box">
-                                            <div class="inner">
-                                                <div class="bar">
-                                                    <div class="bar-innner">
-                                                        <div class="bar-fill" data-percent="36"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, adipiscing elit, sed do edu.</p>
-                                    </div>
-                                    <ul class="social">
-                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-behance"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="item">
-                            <div class="bg-area">
-                                <div class="image-box">
-                                    <img src="~/Assets/images/missions/person5.jpg" alt="" />
-                                </div>
-                                <div class="content-box">
-                                    <h4>Sara Lian</h4>
-                                    <div class="progress-levels">
-                                        <!--Skill Box-->
-                                        <div class="progress-box">
-                                            <div class="inner">
-                                                <div class="bar">
-                                                    <div class="bar-innner">
-                                                        <div class="bar-fill" data-percent="36"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet, adipiscing elit, sed do edu.</p>
-                                    </div>
-                                    <ul class="social">
-                                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-behance"></span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!--end our-team-->
-
-
-
 
 </body>
 </html>

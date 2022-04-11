@@ -6,7 +6,7 @@
 
 @*Organize Cause*@
 
-<section class="all-causes">
+<section class="all-event">
     <div class="container">
         <div class="section-title">
             <h1>organize <span>cause</span></h1>
@@ -14,7 +14,7 @@
         </div>
 
         <div>
-            <span><a href="@Url.Action("CreateCause","Cause")" class="thm-btn style-1">Create A Cause</a></span>
+            <a href="@Url.Action("CreateCause","Cause")" class="thm-btn style-1">Create A Cause</a>
             <br />
             <br />
             <br />
@@ -40,14 +40,13 @@
                         </div>
                         <div>
                             <strong>Target Goal: </strong>
-                            @Html.DisplayFor(modelItem => @cause.TargetGoal)
-                        </div>
-                        <div>
+                            @Html.DisplayFor(modelItem => @cause.TargetGoal)                        
                             <strong>Current Ammount: </strong>
                             @Html.DisplayFor(modelItem => @cause.CurrentAmmount)
                         </div>
                         <div>
-                            <span><a href="@Url.Action("EditCause","Cause",new {id = @cause.Id})" class="thm-btn style-2">Edit Cause</a><a href="@Url.Action("DeleteCause","Cause",new {id = cause.Id})" class="thm-btn style-2">Delete  Cause</a></span>
+                            <a href="@Url.Action("EditCause","Cause",new {id = @cause.Id})" class="thm-btn style-2">Edit Cause</a>
+                            <a href="@Url.Action("DeleteCause","Cause",new {id = cause.Id})" class="thm-btn style-1">Delete  Cause</a>
                         </div>
                     </div>
                     <hr />
