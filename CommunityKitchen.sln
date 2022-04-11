@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityKitchen", "CommunityKitchen\CommunityKitchen.csproj", "{1B6C14F8-FE43-4C28-9D28-DAB81C6C9DB6}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistentLayer", "PersistentLayer\PersistentLayer.csproj", "{71F00586-65CD-4065-9C58-CF02840C8BE3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReposTestArea", "ReposTestArea\ReposTestArea.csproj", "{3870DAFD-DBCC-4CC0-A0E6-5F355CADCB2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChat", "SignalRChat\SignalRChat.csproj", "{583F2A8F-2ACD-4357-9C37-91AA867912CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3870DAFD-DBCC-4CC0-A0E6-5F355CADCB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3870DAFD-DBCC-4CC0-A0E6-5F355CADCB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3870DAFD-DBCC-4CC0-A0E6-5F355CADCB2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583F2A8F-2ACD-4357-9C37-91AA867912CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583F2A8F-2ACD-4357-9C37-91AA867912CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583F2A8F-2ACD-4357-9C37-91AA867912CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583F2A8F-2ACD-4357-9C37-91AA867912CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
