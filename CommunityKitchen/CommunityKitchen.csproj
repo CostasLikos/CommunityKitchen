@@ -297,6 +297,7 @@
     <Content Include="Assets\images\feature\1.png" />
     <Content Include="Assets\images\feature\2.jpg" />
     <Content Include="Assets\images\feature\2.png" />
+    <Content Include="Assets\images\feature\24.png" />
     <Content Include="Assets\images\feature\3.jpg" />
     <Content Include="Assets\images\feature\3.png" />
     <Content Include="Assets\images\feature\4.png" />
@@ -439,6 +440,7 @@
     <Content Include="Assets\fonts\revicons.woff" />
     <Content Include="Assets\fonts\_flaticon.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\ChartPie.js" />
     <Content Include="Scripts\LoginRegister.js" />
     <Content Include="Scripts\MetaLogin.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

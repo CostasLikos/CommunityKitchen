@@ -7224,3 +7224,16 @@ default-form style-three
         font-size: 30px;
     }
 
+.imgpie {
+    margin-top: 223px;
+    margin-left: 229px;
+    position: absolute;
+    width: 100px;
+}
+
+#myChart {
+    width: 555px !important;
+    height: 276px !important;
+    margin-top: 107px;
+    position: absolute;
+}
