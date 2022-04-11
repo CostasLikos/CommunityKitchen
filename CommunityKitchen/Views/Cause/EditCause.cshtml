@@ -10,9 +10,9 @@
 
     <div class="default-form-area" style="display: flex; justify-content: center">
         <div id="contact-form" class="default-form">
+            <h1 style="margin-left:100px">Edit Cause</h1>
             <div class="row clearfix" style="justify-content: center">
-                <h1 style="justify-content:center">Edit Cause</h1>
-                <div class="col-md-8 col-sm-12 col-xs-6">
+                <div class="col-md-12 col-sm-12 col-xs-6">
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.HiddenFor(model => model.Id)
