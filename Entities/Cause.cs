@@ -15,12 +15,16 @@ namespace Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+
         //IAttribute Implementation
+        [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$"), Required, StringLength(30)]
         public string Title { get; set ; }
         public string Description { get ; set ; }
         public string Photo { get; set; }
         //Additional Properties
+        [Range(1, 1000000), DataType(DataType.Currency)]
         public double TargetGoal { get; set; }
+        [Range(1, 1000000), DataType(DataType.Currency)]
         public double CurrentAmmount { get; set; }
         //Navigation Properties---Creator Link
         public Guid ModeratorId { get; set; }

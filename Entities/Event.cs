@@ -16,12 +16,15 @@ namespace Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         //IAttributes Implementation
+
         public string Title { get; set; }
         public string Description { get; set; }
         public string Photo { get; set; }
         public string Address { get; set; }
 
         private DateTime date;
+
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime EventDate 
         {
             get { return date; }
