@@ -31,7 +31,7 @@ namespace CommunityKitchen.Controllers
         //{
         //    return View(await db.Items.ToListAsync());
         //}
-
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult Index()
         {
             var items = itemService.GetAll();
@@ -39,7 +39,7 @@ namespace CommunityKitchen.Controllers
             return View(items);
         }
 
-
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult AddQuantity(Guid id)
         {
             if (id == null)
@@ -52,7 +52,7 @@ namespace CommunityKitchen.Controllers
 
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult RemoveQuantity(Guid id)
         {
             if (id == null)
@@ -76,6 +76,7 @@ namespace CommunityKitchen.Controllers
         }
 
         // GET: Item/Details/5
+        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -91,6 +92,7 @@ namespace CommunityKitchen.Controllers
         }
 
         // GET: Item/Create
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult Create()
         {
             return View();
@@ -99,6 +101,7 @@ namespace CommunityKitchen.Controllers
         // POST: Item/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> Create([Bind(Include = "Id,ItemName,Quantity,Price")] Item item)
         {
             if (ModelState.IsValid)
@@ -113,6 +116,7 @@ namespace CommunityKitchen.Controllers
         }
 
         // GET: Item/Edit/5
+        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -130,6 +134,7 @@ namespace CommunityKitchen.Controllers
         // POST: Item/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> Edit([Bind(Include = "Id,ItemName,Quantity,Price")] Item item)
         {
             if (ModelState.IsValid)
@@ -142,6 +147,7 @@ namespace CommunityKitchen.Controllers
         }
 
         // GET: Item/Delete/5
+        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -159,6 +165,7 @@ namespace CommunityKitchen.Controllers
         // POST: Item/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> DeleteConfirmed(Guid id)
         {
             Item item = await db.Items.FindAsync(id);

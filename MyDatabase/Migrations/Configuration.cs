@@ -2,9 +2,10 @@
 {
     using Entities;
     using Entities.IdentityModel;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -28,7 +29,76 @@
             context.Causes.AddRange(causes);
             context.Events.AddRange(events);
             context.Items.AddRange(items);
-            
+
+            if (!context.Roles.Any(r => r.Name == "Guest"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole() { Name = "guest" };
+                manager.Create(role);
+            }
+            if (!context.Roles.Any(r => r.Name == "SuperAdmin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole() { Name = "SuperAdmin" };
+                manager.Create(role);
+            }
+            if (!context.Roles.Any(r => r.Name == "Admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole() { Name = "Admin" };
+
+                manager.Create(role);
+            }
+            if (!context.Roles.Any(r => r.Name == "Member"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole() { Name = "Member" };
+
+                manager.Create(role);
+            }
+            if (!context.Roles.Any(r => r.Name == "Donor"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole() { Name = "Donor" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Users.Any(u => u.UserName == "admin@gmail.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(store);
+
+                var passwordHash = new PasswordHasher();
+                var user = new ApplicationUser() { UserName = "admin@gmail.com", Email = "admin@gmail.com", PasswordHash = passwordHash.HashPassword("Admin1234!") };
+                userManager.Create(user);
+                userManager.AddToRole(user.Id, "SuperAdmin");
+            }
+            if (!context.Users.Any(u => u.UserName == "member@gmail.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(store);
+
+                var passwordHash = new PasswordHasher();
+                var user = new ApplicationUser() { UserName = "member@gmail.com", Email = "member@gmail.com", PasswordHash = passwordHash.HashPassword("Member1234!") };
+                userManager.Create(user);
+                userManager.AddToRole(user.Id, "Member");
+            }
+            if (!context.Users.Any(u => u.UserName == "organizer@gmail.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(store);
+
+                var passwordHash = new PasswordHasher();
+                var user = new ApplicationUser() { UserName = "organizer@gmail.com", Email = "organizer@gmail.com", PasswordHash = passwordHash.HashPassword("Organizer1234!") };
+                userManager.Create(user);
+                userManager.AddToRole(user.Id, "Admin");
+            }
             //foreach (var user in users)
             //{
             //    context.Users.Add(user);
@@ -87,6 +157,63 @@
                 new Item() {Id = Guid.NewGuid(), ItemName = "Tost Bread",Quantity = 6,Price=2.10m}
             };
             return items;
+        }
+        public void CreateRoles(MyDataBase.ApplicationDbContext context)
+        {
+            // ***** New Role ***** \\
+            if (!context.Roles.Any(r => r.Name == "Guest"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole() { Name = "guest" };
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole() { Name = "Admin" };
+
+                manager.Create(role);
+            }
+            if (!context.Roles.Any(r => r.Name == "Member"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole() { Name = "Member" };
+
+                manager.Create(role);
+            }
+            if (!context.Roles.Any(r => r.Name == "Donor"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole() { Name = "Donor" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Users.Any(u => u.UserName == "admin@gmail.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(store);
+
+                var passwordHash = new PasswordHasher();
+                var user = new ApplicationUser() { UserName = "admin@gmail.com", Email = "admin@gmail.com", PasswordHash = passwordHash.HashPassword("Admin1234!") };
+                userManager.Create(user);
+                userManager.AddToRole(user.Id, "Admin");
+            }
+            if (!context.Users.Any(u => u.UserName == "member@gmail.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(store);
+
+                var passwordHash = new PasswordHasher();
+                var user = new ApplicationUser() { UserName = "member@gmail.com", Email = "member@gmail.com", PasswordHash = passwordHash.HashPassword("Member1234!") };
+                userManager.Create(user);
+                userManager.AddToRole(user.Id, "Member");
+            }
         }
     }
 }

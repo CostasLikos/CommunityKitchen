@@ -1,7 +1,8 @@
 ﻿
 @{
     ViewBag.Title = "_NavBar";
-    var admin = User.Identity.Name;
+    var user = User.Identity.Name;
+    var role = User.IsInRole("SuperAdmin") || User.IsInRole("Admin");
 }
 <div class="text-justify col-md-7 d-flex menu-column">
     <nav class="main-menu navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
@@ -30,7 +31,7 @@
                         </li>
                     
                     
-                    @if (admin == "Admin" || admin == "admin")
+                    @if (role)
                     {
                         <li class="dropdown">
                             @Html.ActionLink("Organizer", "Index", "Item")

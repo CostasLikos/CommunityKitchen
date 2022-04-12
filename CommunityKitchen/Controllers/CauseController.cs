@@ -24,6 +24,7 @@ namespace CommunityKitchen.Controllers
         }
         [Authorize]
         // GET: Cause
+        [Authorize(Roles =SetRoles.SAdminMember)]
         public ActionResult OrganizeCause()
         {
             //Organizers cause dashboard option
@@ -31,7 +32,7 @@ namespace CommunityKitchen.Controllers
 
             return View(causes);
         }
-
+        [Authorize(Roles = SetRoles.Admin)]
         public ActionResult EditCauseJson(Guid id, string amount)
         {
             var cause = causeService.GetById(id);
@@ -43,7 +44,7 @@ namespace CommunityKitchen.Controllers
             return RedirectToAction("Cause","CauseIndex");
             //return View("CauseIndex");
         }
-
+        
         public ActionResult CauseIndex(string sortOrder,string searchString)
         {
             ViewBag.CurrentSortOrder = sortOrder == "AS" ? "DE" : "AS";
@@ -65,7 +66,7 @@ namespace CommunityKitchen.Controllers
             return View(causes.ToList());
         }
         // GET: Cause
-        public ActionResult UpcomingCauses()
+        public ActionResult UpcomingCauses()   //na mpei filter by current date
         {
             //All upcoming events
             return View();
@@ -98,7 +99,7 @@ namespace CommunityKitchen.Controllers
             }
             return View(cause);
         }
-
+        [Authorize(Roles = SetRoles.Donator)]
         public ActionResult ArchivedCauses()
         {
             //Completed Causes
@@ -106,6 +107,7 @@ namespace CommunityKitchen.Controllers
         }
 
         // GET: Causes/Create
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult CreateCause()
         {
             return View();
@@ -114,6 +116,7 @@ namespace CommunityKitchen.Controllers
         // POST: Causes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> CreateCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause, HttpPostedFileBase photo)
         {
             if (ModelState.IsValid)
@@ -134,6 +137,7 @@ namespace CommunityKitchen.Controllers
         }
 
         // GET: Causes/Delete
+        [Authorize(Roles = SetRoles.SuperAdmin)]
         public async Task<ActionResult> DeleteCause(Guid? id)
         {
             if (id == null)
@@ -151,6 +155,7 @@ namespace CommunityKitchen.Controllers
         // POST: Causes/Delete
         [HttpPost, ActionName("DeleteCause")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = SetRoles.SuperAdmin)]
         public async Task<ActionResult> DeleteConfirmed(Guid id)
         {
             Cause cause = await db.Causes.FindAsync(id);
@@ -160,6 +165,7 @@ namespace CommunityKitchen.Controllers
         }
 
         // GET: Causes/Edit
+        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> EditCause(Guid? id)
         {
             if (id == null)
@@ -177,6 +183,7 @@ namespace CommunityKitchen.Controllers
         // POST: Causes/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> EditCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause, HttpPostedFileBase photo)
         {
             if (ModelState.IsValid)

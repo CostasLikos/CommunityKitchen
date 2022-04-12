@@ -17,6 +17,7 @@ using System.Web.Http.Cors;
 namespace CommunityKitchen.Controllers.API
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")] // PREPRODUCTION STAGE <----EDITABLE!!!!
+    [Authorize(Roles = SetRoles.Donator)]
     public class APIEventsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
