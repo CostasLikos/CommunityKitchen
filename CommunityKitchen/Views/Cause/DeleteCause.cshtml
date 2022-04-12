@@ -48,20 +48,20 @@
                 </div>
 
                 @*<div class="form-group">
-                    <div class="section-title">
-                        <h2>ModeratorId</h2>
-                    </div>
-                    @Html.DisplayFor(model => model.ModeratorId)
-                </div>*@
-                <div class="form-group">
-                    <div>
-                        <input type="submit" value="Delete" class="thm-btn style-1" />
-                    </div>
-                </div>
+                        <div class="section-title">
+                            <h2>ModeratorId</h2>
+                        </div>
+                        @Html.DisplayFor(model => model.ModeratorId)
+                    </div>*@
                 <div class="form-group">
                     @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <div>
+                                <input type="submit" value="Delete" class="thm-btn style-1" />
+                            </div>
+                        </div>
 
                         <div>
 
