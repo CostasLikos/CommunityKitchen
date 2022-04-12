@@ -217,7 +217,7 @@ input, textarea {
     padding: 10px;
     transition: all 700ms ease;
     -webkit-transition: all 700ms ease;
-    -ms-transition: all 700ms ease;
+    -ms-transition: all 500ms ease;
     -o-transition: all 700ms ease;
     -moz-transition: all 700ms ease;
 }
@@ -734,7 +734,7 @@ input, textarea {
         margin: 0 20px;
         position: relative;
         text-transform: uppercase;
-        transition: all 500ms ease 0s;
+        transition: all 5000ms ease 0s;
     }
 
     .navigation > li:first-child > a {
@@ -751,7 +751,7 @@ input, textarea {
         margin: 0 20px;
         position: relative;
         text-transform: uppercase;
-        transition: all 500ms ease 0s;
+        transition: all 5000ms ease 0s;
     }
 
 
@@ -5063,7 +5063,7 @@ Project styles
     background-attachment: fixed;
     background-position: center center;
     color: #ffffff;
-    background-image: url("../images/missions/zmp.jpg");
+    background-image: url("../images/missions/help-getty.jpg");
     z-index: 1;
 }
 

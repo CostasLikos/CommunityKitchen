@@ -24,7 +24,7 @@ namespace Entities
         //Additional Properties
         [Range(1, 1000000), DataType(DataType.Currency)]
         public double TargetGoal { get; set; }
-        [Range(1, 1000000), DataType(DataType.Currency)]
+        [Range(0, 1000000), DataType(DataType.Currency)]
         public double CurrentAmmount { get; set; }
         //Navigation Properties---Creator Link
         public Guid ModeratorId { get; set; }
