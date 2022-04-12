@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Windows;
 using Entities.IdentityModel;
 using Entities.IdentityModel.AccountViewModel;
 using Microsoft.AspNet.Identity;
@@ -72,7 +73,8 @@ namespace CommunityKitchen.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                //edw prepei na mpei error msg
+                return RedirectToAction("Index", "Home");
             }
 
             // This doesn't count login failures towards account lockout
@@ -89,7 +91,9 @@ namespace CommunityKitchen.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+
+                    //edw prepei na mpei error msg
+                    return RedirectToAction("Index", "Home");
             }
         }
 
