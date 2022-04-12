@@ -40,6 +40,7 @@ namespace Controllers
             Event ev = eventService.GetById(id);
             return View(ev);
         }
+        [Authorize(Roles = SetRoles.Donator)]
         public ActionResult ArchivedEvents()
         {
             //Completed Events
@@ -47,6 +48,7 @@ namespace Controllers
         }
 
         // GET: Event/Create
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult CreateEvent()
         {
             return View();
@@ -55,6 +57,7 @@ namespace Controllers
         // POST: Event/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult CreateEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
         {
             if (ModelState.IsValid)
@@ -73,6 +76,7 @@ namespace Controllers
         }
 
         // GET: Event/Delete
+        [Authorize(Roles = SetRoles.SuperAdmin)]
         public ActionResult DeleteEvent(Guid id)
         {
 
@@ -92,6 +96,7 @@ namespace Controllers
         // POST: Edit/Delete/5
         [HttpPost, ActionName("DeleteEvent")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = SetRoles.SuperAdmin)]
         public ActionResult DeleteConfirmed(Guid id)
         {
             eventService.Delete(id);
@@ -100,6 +105,7 @@ namespace Controllers
         }
 
         // GET: Event/Edit
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult EditEvent(Guid id)
         {
             Event ev = eventService.GetById(id);
@@ -114,7 +120,8 @@ namespace Controllers
         // POST: Event/Edit
 
 
-        [HttpPost, ActionName("EditEvent")]                                                                 //tODO: edwpera den fernei to photo
+        [HttpPost, ActionName("EditEvent")]
+        [Authorize(Roles = SetRoles.SAdmin)] //tODO: edwpera den fernei to photo
         public ActionResult EditEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
         {
             var tempPhoto = eve.Photo;
@@ -139,7 +146,7 @@ namespace Controllers
             return View(eve);
         }
 
-        [Authorize]
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult OrganizeEvents()
         {
             //Organizers event dashboard option
