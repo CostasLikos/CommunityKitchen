@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "ChatIndex";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat Room</title>
+    <style type="text/css">
+        .container {
+            width: 200px;
+            height: 150px;
+            background-color: #fff;
+            border: thick solid #9c1a23cb;
+            outline: none;
+            padding: 20px;
+            margin: 20px;
+        }
+
+            .container :focus {
+                outline: 1px solid #9c1a23cb;
+            }
+
+        #chat-label {
+            color: #9c1a23cb;
+            font-size: medium;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to our Chat Room!</h2>
+    <div class="container">
+        <label for="message"><span id="chat-label">C</span>hat</label>
+        <input type="text" id="message" />
+        <input type="button" id="sendmessage" value="Send" />
+        @if (User.Identity.IsAuthenticated) { 
+            <input type="hidden" id="displayname" value="@User.Identity.Name" />
+        }
+        else
+        {
+    <input type="hidden" id="displayname" value="Anonymous" />
+        }
+        <ul id="discussion">
+        </ul>
+    </div>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.4.3.min.js"></script>
+    <script src="signalr/hubs"></script>
+    <!--Add script to update the page and send messages.-->
+    <script type="text/javascript">
+        $(function () {
+            // Declare a proxy to reference the hub.
+            var chat = $.connection.chatHub;
+            // Create a function that the hub can call to broadcast messages.
+            chat.client.broadcastMessage = function (name, message) {
+                // Html encode display name and message.
+                var encodedName = $('<div />').text(name).html();
+                var encodedMsg = $('<div />').text(message).html();
+                // Add the message to the page.
+                $('#discussion').append('<li><strong>' + encodedName
+                    + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+            };
+            // Get the user name and store it to prepend to messages.
+            //$('#displayname').val(prompt('Enter your name:', ''));
+            // Set initial focus to message input box.
+            $('#message').focus();
+            // Start the connection.
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    // Call the Send method on the hub.
+                    chat.server.send($('#displayname').val(), $('#message').val());
+                    // Clear text box and reset focus for next comment.
+                    $('#message').val('').focus();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
