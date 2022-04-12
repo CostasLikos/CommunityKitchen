@@ -21,15 +21,15 @@
                         <li class="dropdown">
                             @Html.ActionLink("Home", "Index", "Home")
 
-                            <ul>
-                               <li><a href="http://localhost:4200/">Archive</a></li>
-                                <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
-                                <li>@Html.ActionLink("Support A Cause", "CauseIndex", "Cause")</li>
-                                <li>@Html.ActionLink("Upcoming Events", "EventsIndex", "Event")</li>
-                            </ul>
-                        </li>
-                    
-                    
+                        <ul>
+                            <li><a href="http://localhost:4200/">Archive</a></li>
+                            <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
+                            <li>@Html.ActionLink("Support A Cause", "CauseIndex", "Cause")</li>
+                            <li>@Html.ActionLink("Upcoming Events", "EventsIndex", "Event")</li>
+                        </ul>
+                    </li>
+
+
                     @if (admin == "Admin" || admin == "admin")
                     {
                         <li class="dropdown">
@@ -50,13 +50,16 @@
                     </li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li class="logoffname" >
+                        <li class="logoffname">
                             Hello @User.Identity.Name
                         </li>
                         <li class="logoff">
                             @Html.ActionLink("Logout", "LogOff", "Account")
                         </li>
                     }
+                    <li class="dropdown">
+                        @Html.ActionLink("Chat Box", "ChatIdex", "Chat")
+                    </li>
 
                 </ul>
             </div>
@@ -68,6 +71,7 @@
                         <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
                         <li>@Html.ActionLink("Support A Cause", "SupportCause", "Support")</li>
                         <li>@Html.ActionLink("Upcoming Events", "UpcomingEvents", "Event")</li>
+                        <li>@Html.ActionLink("Enter Our Chat Room", "ChatIndex", "Chat")</li>
                     </ul>
                 </li>
                 <li class="dropdown">
