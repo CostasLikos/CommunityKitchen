@@ -62,6 +62,7 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -77,6 +78,7 @@
     <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -196,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\APICausesController.cs" />
     <Compile Include="Controllers\API\APIEventsController.cs" />
+    <Compile Include="Controllers\ApplicationUserController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\CauseController.cs" />
     <Compile Include="Controllers\EventController.cs" />
@@ -249,18 +252,18 @@
     <Content Include="Assets\images\background\2.jpg" />
     <Content Include="Assets\images\background\5.png" />
     <Content Include="Assets\images\background\pb.jpg" />
-    <Content Include="Assets\images\blog\14.jpg" />
-    <Content Include="Assets\images\blog\15.jpg" />
-    <Content Include="Assets\images\blog\7.jpg" />
-    <Content Include="Assets\images\blog\c1.png" />
-    <Content Include="Assets\images\blog\c2.png" />
-    <Content Include="Assets\images\blog\p1.jpg" />
-    <Content Include="Assets\images\blog\post-1.jpg" />
-    <Content Include="Assets\images\blog\post-2.jpg" />
-    <Content Include="Assets\images\blog\post-3.jpg" />
-    <Content Include="Assets\images\blog\sb.jpg" />
-    <Content Include="Assets\images\blog\sb1.jpg" />
-    <Content Include="Assets\images\blog\sb2.jpg" />
+    <Content Include="Assets\images\causes\blog\14.jpg" />
+    <Content Include="Assets\images\causes\blog\15.jpg" />
+    <Content Include="Assets\images\causes\blog\7.jpg" />
+    <Content Include="Assets\images\causes\blog\c1.png" />
+    <Content Include="Assets\images\causes\blog\c2.png" />
+    <Content Include="Assets\images\causes\blog\p1.jpg" />
+    <Content Include="Assets\images\causes\blog\post-1.jpg" />
+    <Content Include="Assets\images\causes\blog\post-2.jpg" />
+    <Content Include="Assets\images\causes\blog\post-3.jpg" />
+    <Content Include="Assets\images\causes\blog\sb.jpg" />
+    <Content Include="Assets\images\causes\blog\sb1.jpg" />
+    <Content Include="Assets\images\causes\blog\sb2.jpg" />
     <Content Include="Assets\images\causes\1.jpg" />
     <Content Include="Assets\images\causes\1.png" />
     <Content Include="Assets\images\causes\2.jpg" />
@@ -326,6 +329,8 @@
     <Content Include="Assets\images\missions\1.png" />
     <Content Include="Assets\images\missions\2.png" />
     <Content Include="Assets\images\missions\3.png" />
+    <Content Include="Assets\images\missions\help-getty.jpg" />
+    <Content Include="Assets\images\missions\Love-people-1680x768.jpg" />
     <Content Include="Assets\images\missions\per.jpg" />
     <Content Include="Assets\images\missions\person2.jpg" />
     <Content Include="Assets\images\missions\person3.jpg" />

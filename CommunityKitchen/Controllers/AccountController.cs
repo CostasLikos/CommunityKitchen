@@ -5,12 +5,14 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Windows;
+using System.Windows.Forms;
 using Entities.IdentityModel;
 using Entities.IdentityModel.AccountViewModel;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-
+using MessageBoxOptions = System.Windows.Forms.MessageBoxOptions;
 
 namespace CommunityKitchen.Controllers
 {
@@ -72,7 +74,10 @@ namespace CommunityKitchen.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                string message = "Unable to login. Please try again";
+                System.Windows.Forms.MessageBox.Show(message is string ? message.ToString() : "Empty Message.",
+                                "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, (MessageBoxOptions)4096);
+                return RedirectToAction("Index", "Home");
             }
 
             // This doesn't count login failures towards account lockout
@@ -89,7 +94,11 @@ namespace CommunityKitchen.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+
+                    string message = "Unable to login. Please try again";
+                    System.Windows.Forms.MessageBox.Show(message is string ? message.ToString() : "Empty Message.",
+                                    "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, (MessageBoxOptions)4096);
+                    return RedirectToAction("Index", "Home");
             }
         }
 

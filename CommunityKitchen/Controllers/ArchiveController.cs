@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Dynamic;
 using System.Net;
 using PagedList;
+using Entities;
 
 namespace CommunityKitchen.Controllers
 {
@@ -18,6 +19,7 @@ namespace CommunityKitchen.Controllers
         private EventRepository eventService;
         //private StoryRepository storyService;
 
+        
         public ArchiveController()
         {
             db = new ApplicationDbContext();
@@ -28,6 +30,7 @@ namespace CommunityKitchen.Controllers
 
 
         // GET: Archive
+        [Authorize(Roles = SetRoles.Donator)]
         public ActionResult Index()
         {
             //ViewBag.searchevTitle = searchevTitle;
