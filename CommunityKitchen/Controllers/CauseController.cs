@@ -38,10 +38,9 @@ namespace CommunityKitchen.Controllers
             double convertedAmount = Convert.ToDouble(amount);
 
             cause.CurrentAmmount += convertedAmount;
-            //causeService.Update(Guid.Parse(id));
+
             causeService.Save();
             return RedirectToAction("Cause","CauseIndex");
-            //return View("CauseIndex");
         }
 
         public ActionResult CauseIndex(string sortOrder,string searchString)

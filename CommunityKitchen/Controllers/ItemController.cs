@@ -39,6 +39,15 @@ namespace CommunityKitchen.Controllers
             return View(items);
         }
 
+        public ActionResult EditItemJson(Guid id, string name, string price)
+        {
+            var item = itemService.GetById(id);
+            decimal convertedAmount = Convert.ToDecimal(price);
+            item.ItemName = name;
+            item.Price = convertedAmount;
+            itemService.Save();
+            return RedirectToAction("Item", "Index");
+        }
 
         public ActionResult AddQuantity(Guid id)
         {
