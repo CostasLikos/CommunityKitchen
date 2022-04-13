@@ -4,11 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<div class="container">
-    <table class="table table-hover table-striped ml-5">
-        <tr class="col-12">
+<div class="container p-2">
+    <table id="table" class="table table-hover table-striped ml-5">
+        <tr>
             <th class="m-3">
-                <button class="btn size5 btn-success" onclick="location.href='@Url.Action("Create", "Item")'">Add New Item</button>
+                <button class="btn size5 btn-success col-12 align-self-center" onclick="location.href='@Url.Action("Create", "Item")'">Add New Item</button>
             </th>
             <th></th>
             <th></th>
@@ -20,13 +20,13 @@
                 @Html.DisplayNameFor(model => model.ItemName)
             </th>
             <th class="col-1" style="text-align:center">
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th class="col-1" style="text-align:center">
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
             <th class="col-1" style="text-align:center">
                 Update Quantity
-            </th>
-            <th class="col-1" style="text-align:center">
-                @Html.DisplayNameFor(model => model.Price)
             </th>
             <th class="col-1" style="text-align:center">
                 Actions
@@ -40,6 +40,11 @@
                     @Html.DisplayFor(modelItem => item.ItemName)
                 </td>
                 <td class="col-1" style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+
+
+                <td class="col-1" style="text-align:center">
                     @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
                 <td class="col-1" style="text-align:center">
@@ -47,14 +52,85 @@
                     <button class="btn btn-primary" onclick="location.href='@Url.Action("RemoveQuantity", "Item", new { id = item.Id })'">-</button>
                 </td>
                 <td class="col-1" style="text-align:center">
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td class="col-1" style="text-align:center">
-                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Item", new { id = item.Id })'">Delete</button>
+                    <button class="btn btn-danger mb-1" onclick="location.href='@Url.Action("Delete", "Item", new { id = item.Id })'">Delete</button>
+                    <button id="editBtn" class="btn btn-primary editBtn mb-1">Edit</button>
+                    <button id="saveBtn" class="btn btn-primary saveBtn mb-1" style="visibility:hidden"> Save </button>
+
+                    <button id="itemId" style="visibility:hidden" value="@item.Id"></button>
                 </td>
             </tr>
+
         }
 
 
     </table>
 </div>
+
+@section scripts{
+    <script>
+        $('.editBtn').on('click', function (event) {
+            let row = event.currentTarget.parentElement.parentElement.rowIndex //the row index is needed for toggling individual rows "save" button
+
+            event.currentTarget.parentElement.parentElement.children[0].setAttribute("contenteditable", true);
+            event.currentTarget.parentElement.parentElement.children[1].setAttribute("contenteditable", true);
+
+            showSaveButton(row);
+
+        })
+
+        $('.saveBtn').on('click', function (event) {            
+            let row = event.currentTarget.parentElement.parentElement.rowIndex;
+
+            let itemID = event.currentTarget.parentElement.parentElement.children[4].children[3].value;
+
+            let newName = event.currentTarget.parentElement.parentElement.children[0].innerText;
+            let newPrice = event.currentTarget.parentElement.parentElement.children[1].innerText;
+            newPrice = newPrice.substring(1);   
+
+            console.log(newName.toString());
+            console.log(newPrice);
+
+            event.currentTarget.parentElement.parentElement.children[0].setAttribute("contenteditable", false);
+            event.currentTarget.parentElement.parentElement.children[1].setAttribute("contenteditable", false);
+
+            $.ajax({
+                    type: "put",
+                    url: "@Url.Action("EditItemJson","Item")",
+                    data: JSON.stringify({ "id": itemID, "name": newName, "price": newPrice }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function () {
+                        console.log(" ****** to console log den douleyei edw pera ... kai oute kai to alert aop katw ^^^^^")
+                        alert("Successfully Edite Item");
+                    },
+                    failure: function () {
+                        alert("Did not save");
+                    }
+            });
+            hideSaveButton(row);
+        });
+
+
+
+        function showSaveButton(row) {
+
+            let table = document.getElementById("table");
+            table.rows[row].children[4].children[2].setAttribute("style", "visibility: visible");
+
+            table.rows[row].setAttribute("style","border: 2px solid black;");
+        }
+
+        function hideSaveButton(row) {
+            let table = document.getElementById("table");
+            table.rows[row].children[4].children[2].setAttribute("style", "visibility: hidden");
+
+            table.rows[row].setAttribute("style", "border: none");
+        }
+
+        function saveValues() {
+
+        }
+
+    </script>
+
+}

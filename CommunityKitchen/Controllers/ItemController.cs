@@ -40,6 +40,18 @@ namespace CommunityKitchen.Controllers
         }
 
         [Authorize(Roles = SetRoles.SAdmin)]
+        public ActionResult EditItemJson(Guid id, string name, string price)
+        {
+            var item = itemService.GetById(id);
+            decimal convertedAmount = Convert.ToDecimal(price);
+            item.ItemName = name;
+            item.Price = convertedAmount;
+            itemService.Save();
+            return RedirectToAction("Item", "Index");
+        }
+
+
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult AddQuantity(Guid id)
         {
             if (id == null)
