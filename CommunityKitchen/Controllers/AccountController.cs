@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Windows;
+using System.Windows.Forms;
 using Entities.IdentityModel;
 using Entities.IdentityModel.AccountViewModel;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-
+using MessageBoxOptions = System.Windows.Forms.MessageBoxOptions;
 
 namespace CommunityKitchen.Controllers
 {
@@ -73,7 +74,9 @@ namespace CommunityKitchen.Controllers
         {
             if (!ModelState.IsValid)
             {
-                //edw prepei na mpei error msg
+                string message = "Unable to login. Please try again";
+                System.Windows.Forms.MessageBox.Show(message is string ? message.ToString() : "Empty Message.",
+                                "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, (MessageBoxOptions)4096);
                 return RedirectToAction("Index", "Home");
             }
 
@@ -92,7 +95,9 @@ namespace CommunityKitchen.Controllers
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
 
-                    //edw prepei na mpei error msg
+                    string message = "Unable to login. Please try again";
+                    System.Windows.Forms.MessageBox.Show(message is string ? message.ToString() : "Empty Message.",
+                                    "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, (MessageBoxOptions)4096);
                     return RedirectToAction("Index", "Home");
             }
         }

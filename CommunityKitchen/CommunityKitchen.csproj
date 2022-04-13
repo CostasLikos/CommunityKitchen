@@ -52,6 +52,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -78,6 +84,7 @@
     <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -200,6 +207,7 @@
     <Compile Include="Controllers\ApplicationUserController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\CauseController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
@@ -209,7 +217,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="SignalRSimpleChat\ChatHub.cs" />
+    <Compile Include="SignalRSimpleChat\Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\animate.min.css" />
@@ -251,18 +260,18 @@
     <Content Include="Assets\images\background\2.jpg" />
     <Content Include="Assets\images\background\5.png" />
     <Content Include="Assets\images\background\pb.jpg" />
-    <Content Include="Assets\images\blog\14.jpg" />
-    <Content Include="Assets\images\blog\15.jpg" />
-    <Content Include="Assets\images\blog\7.jpg" />
-    <Content Include="Assets\images\blog\c1.png" />
-    <Content Include="Assets\images\blog\c2.png" />
-    <Content Include="Assets\images\blog\p1.jpg" />
-    <Content Include="Assets\images\blog\post-1.jpg" />
-    <Content Include="Assets\images\blog\post-2.jpg" />
-    <Content Include="Assets\images\blog\post-3.jpg" />
-    <Content Include="Assets\images\blog\sb.jpg" />
-    <Content Include="Assets\images\blog\sb1.jpg" />
-    <Content Include="Assets\images\blog\sb2.jpg" />
+    <Content Include="Assets\images\causes\blog\14.jpg" />
+    <Content Include="Assets\images\causes\blog\15.jpg" />
+    <Content Include="Assets\images\causes\blog\7.jpg" />
+    <Content Include="Assets\images\causes\blog\c1.png" />
+    <Content Include="Assets\images\causes\blog\c2.png" />
+    <Content Include="Assets\images\causes\blog\p1.jpg" />
+    <Content Include="Assets\images\causes\blog\post-1.jpg" />
+    <Content Include="Assets\images\causes\blog\post-2.jpg" />
+    <Content Include="Assets\images\causes\blog\post-3.jpg" />
+    <Content Include="Assets\images\causes\blog\sb.jpg" />
+    <Content Include="Assets\images\causes\blog\sb1.jpg" />
+    <Content Include="Assets\images\causes\blog\sb2.jpg" />
     <Content Include="Assets\images\causes\1.jpg" />
     <Content Include="Assets\images\causes\1.png" />
     <Content Include="Assets\images\causes\2.jpg" />
@@ -328,6 +337,8 @@
     <Content Include="Assets\images\missions\1.png" />
     <Content Include="Assets\images\missions\2.png" />
     <Content Include="Assets\images\missions\3.png" />
+    <Content Include="Assets\images\missions\help-getty.jpg" />
+    <Content Include="Assets\images\missions\Love-people-1680x768.jpg" />
     <Content Include="Assets\images\missions\per.jpg" />
     <Content Include="Assets\images\missions\person2.jpg" />
     <Content Include="Assets\images\missions\person3.jpg" />
@@ -443,6 +454,8 @@
     <Content Include="Assets\fonts\_flaticon.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ChartPie.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.3.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.3.min.js" />
     <Content Include="Scripts\LoginRegister.js" />
     <Content Include="Scripts\MetaLogin.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -514,6 +527,7 @@
     <Content Include="Views\Item\Edit.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\Shared\Components\_Header.cshtml" />
+    <Content Include="Views\Chat\ChatIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
