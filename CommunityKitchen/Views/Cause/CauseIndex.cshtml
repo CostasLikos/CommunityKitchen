@@ -31,11 +31,11 @@
         @if (ViewBag.CurrentSortOrder == "AS")
         {
             @Html.ActionLink("Ascending", "CauseIndex", new { sortOrder = ViewBag.CurrentSortOrder }, new { @class = "thm-btn style-2" })
-            @Html.ActionLink("Descending", "CauseIndex", new { sortOrder = ViewBag.CurrentSortOrder }, new { @class = "thm-btn style-1" })
+            @Html.ActionLink("Descending", "CauseIndex", new { sortOrder = ViewBag.CurrentSortOrder }, new { @class = "thm-btn style-2" })
         }
         else
         {
-            @Html.ActionLink("Ascending", "CauseIndex", new { sortOrder = ViewBag.CurrentSortOrder }, new { @class = "thm-btn style-1" })
+            @Html.ActionLink("Ascending", "CauseIndex", new { sortOrder = ViewBag.CurrentSortOrder }, new { @class = "thm-btn style-2" })
             @Html.ActionLink("Descending", "CauseIndex", new { sortOrder = ViewBag.CurrentSortOrder }, new { @class = "thm-btn style-2" })
         }
 
