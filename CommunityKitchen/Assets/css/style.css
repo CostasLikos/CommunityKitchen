@@ -7260,13 +7260,17 @@ default-form style-three
     object-fit: cover;
     transition: 1s;
     width: auto !important;
+    overflow:hidden!important;
+    margin-left:45px!important;
 }
 
     #imgevent:hover {
         transform: scale(1.1);
-        padding-left: 2% !important;
         width: auto !important;
     }
 
 
+    #imgEventDetails:hover {
+        height:auto!important;
+    }
 
