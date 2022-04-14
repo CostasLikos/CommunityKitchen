@@ -106,10 +106,10 @@
         {
             List<Cause> causes = new List<Cause>()
             {
-              new Cause() {Title = "Help the poor",Description="Help those in need",TargetGoal=150,CurrentAmmount=25 },
-              new Cause() {Title = "Those who have should share",Description="Help your fellow people by giving something, you are going to feel better",TargetGoal=210,CurrentAmmount=75 },
-              new Cause() {Title = "Food for Homeless",Description="Support the feeding needs of those in need",TargetGoal=110,CurrentAmmount=32 },
-              new Cause() {Title = "Clothing for Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110 },
+              new Cause() {Title = "Help the poor",Description="Help those in need",TargetGoal=150,CurrentAmmount=25 , Photo = "106052.jpg"},
+              new Cause() {Title = "Those who have should share",Description="Help your fellow people by giving something, you are going to feel better",TargetGoal=210,CurrentAmmount=75, Photo = "6646987.jpg" },
+              new Cause() {Title = "Food for Homeless",Description="Support the feeding needs of those in need",TargetGoal=110,CurrentAmmount=32 , Photo = "6647128.jpg" },
+              new Cause() {Title = "Clothing for Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110, Photo = "6994869.jpg" },
               new Cause() {Title = "Build a shelter for stray animals",Description="Help us build a warm house for dozens stray animals that need your help now",TargetGoal=23000,CurrentAmmount=5200 },
               new Cause() {Title = "Help victims of wildfires",Description="The Greek arm of the Red Cross is providing financial support and food for those affected by the fires",TargetGoal=10000,CurrentAmmount=50 },
               new Cause() {Title = "Support the Ukrainian war immigrants",Description="Everyday more and more war immigrants need your help, help us gather money and help them stand in their feet",TargetGoal=20000,CurrentAmmount=9850 },
