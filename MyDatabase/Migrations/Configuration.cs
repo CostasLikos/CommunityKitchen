@@ -130,7 +130,7 @@
             List<Event> events = new List<Event>()
             {
               new Event() {Title = "14th Street Charity Meal",Description="Offering meal at 14th Street",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
-                  EventDate=new DateTime(2022,04,05), Photo = Path.GetFullPath("/Assets/images/ImagesSaved/106052.jpg")},
+                  EventDate=new DateTime(2022,04,05), Photo = "106052.jpg"},
               new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",Address="Stratarxou Karaiskaki 22, Athens, Haidari 12461",
                   EventDate=new DateTime(2022,05,07) },
               new Event() {Title = "Bazaar of poor Souls",Description="Open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",
