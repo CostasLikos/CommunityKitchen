@@ -731,7 +731,7 @@ input, textarea {
         font-weight: 600;
         line-height: 50px;
         padding: 30px 0px;
-        margin: 0 20px;
+        margin: 0 6px;
         position: relative;
         text-transform: uppercase;
         transition: all 5000ms ease 0s;
@@ -5882,7 +5882,9 @@ Project styles
         position: relative;
     }
 
-
+    .mpa{
+        justify-content:space-around;
+    }
     .main-footer .section-title p {
         margin-top: 10px;
         font-size: 15px;
@@ -7183,10 +7185,10 @@ default-form style-three
     color: #ffffff;
     margin-left: 73px !important;
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     line-height: 50px;
-    padding: 30px 0px;
+    padding: 30px 0px 0px;
     position: relative;
     text-transform: uppercase;
 }
@@ -7196,7 +7198,7 @@ default-form style-three
     font-size: 14px;
     font-weight: 600;
     line-height: 50px;
-    padding: 30px 0px;
+    padding: 30px 0px 30px 80px;
     margin: 0 0px;
     position: relative;
     text-transform: uppercase;
