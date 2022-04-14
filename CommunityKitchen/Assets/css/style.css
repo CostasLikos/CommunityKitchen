@@ -7282,3 +7282,17 @@ default-form style-three
     #imgDetails:hover {
         height: 500px !important;
     }
+
+#imgcause {
+    object-fit: cover;
+    transition: 1s;
+    width: auto !important;
+    overflow: hidden !important;
+    margin-left: 0px !important;
+}
+
+    #imgcause:hover {
+        transform: scale(1.05);
+        width: auto !important;
+        overflow: hidden !important;
+    }
