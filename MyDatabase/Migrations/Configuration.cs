@@ -29,7 +29,7 @@
             context.Causes.AddRange(causes);
             context.Events.AddRange(events);
             context.Items.AddRange(items);
-            
+
             if (!context.Roles.Any(r => r.Name == "Guest"))
             {
                 var store = new RoleStore<IdentityRole>(context);
@@ -99,18 +99,29 @@
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "Admin");
             }
-          
+
             context.SaveChanges();
         }
         public List<Cause> CauseSeed()
         {
             List<Cause> causes = new List<Cause>()
             {
-              new Cause() {Title = "Poor one Helpers",Description="Get money",TargetGoal=150,CurrentAmmount=25 },
-              new Cause() {Title = "Rich one Helpers",Description="Give money",TargetGoal=210,CurrentAmmount=75 },
-              new Cause() {Title = "Food for Homeless",Description="Support their feedin needs",TargetGoal=110,CurrentAmmount=32 },
+              new Cause() {Title = "Help the poor",Description="Help those in need",TargetGoal=150,CurrentAmmount=25 },
+              new Cause() {Title = "Those who have should share",Description="Help your fellow people by giving something, you are going to feel better",TargetGoal=210,CurrentAmmount=75 },
+              new Cause() {Title = "Food for Homeless",Description="Support the feeding needs of those in need",TargetGoal=110,CurrentAmmount=32 },
               new Cause() {Title = "Clothing for Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110 },
-
+              new Cause() {Title = "Build a shelter for stray animals",Description="Help us build a warm house for dozens stray animals that need your help now",TargetGoal=23000,CurrentAmmount=5200 },
+              new Cause() {Title = "Help victims of wildfires",Description="The Greek arm of the Red Cross is providing financial support and food for those affected by the fires",TargetGoal=10000,CurrentAmmount=50 },
+              new Cause() {Title = "Support the Ukrainian war immigrants",Description="Everyday more and more war immigrants need your help, help us gather money and help them stand in their feet",TargetGoal=20000,CurrentAmmount=9850 },
+              new Cause() {Title = "Help victims of floods",Description="Help us provide for the victims of floods",TargetGoal=350,CurrentAmmount=50 },
+              new Cause() {Title = "Support the organization : Save the children",Description="We strongly support the non-profitable organization save the children",TargetGoal=500,CurrentAmmount=100 },
+              new Cause() {Title = "Support the organization : Hamogelo tou paidiou",Description="We strongly support the non-profitable organization hamogelo tou paidiou",TargetGoal=600,CurrentAmmount=250 },
+              new Cause() {Title = "Provide for those in need",Description="After the resent events more and more come in need, help them to stand in their feet",TargetGoal=500,CurrentAmmount=250 },
+              new Cause() {Title = "Help Elena to beat cancer",Description="Support Elena a true fighter, to overcome her illness, we gather money for her surgery",TargetGoal=870,CurrentAmmount=850 },
+              new Cause() {Title = "George Papanikolaou needs your help",Description="With your help George will soon be able to walk again",TargetGoal=1250,CurrentAmmount=500 },
+              new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=1250,CurrentAmmount=500 },
+              new Cause() {Title = "Help the homeless",Description="Help those with nothing start fresh",TargetGoal=1250,CurrentAmmount=500 },
+              new Cause() {Title = "Support the victims of tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=1250,CurrentAmmount=500 }
             };
             return causes;
         }
