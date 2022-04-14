@@ -2,7 +2,45 @@
 @{
     ViewBag.Title = "_Footer";
 }
+<style>
+    .modalup {
+        display: none;
+        background-color: rgba(0,0,0,0.5);
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+    }
 
+    .animatedtop {
+        background-color: #fff;
+        margin: 20% auto;
+        padding: 20px;
+        width: 35%;
+        box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+        border-radius: 20px;
+    }
+
+    .closemodal {
+        color: #ccc;
+        float: right;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+        .closemodal:hover {
+            color: black;
+        }
+
+    .modalcontainer {
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+</style>
 <footer class="main-footer">
 
     <!--Widgets Section-->
@@ -14,7 +52,9 @@
                     <img src="images/footer/fl.png" alt="">
                 </div>
 
-                <p>Modern concept fot Nonprofit Business</p>
+                <p>CHARITY  SYMPATHY
+                <hr /> ~ Non Profit Commutiny ~
+                </p>
             </div>
 
 
@@ -31,9 +71,9 @@
                                 <div class="widget-content">
                                     <div class="text"><p>Lorem ipsum dolor sit amet, consecttur adipiscing egestas rhoncus Praesent Nunc pretium est placerat congue</p> </div>
                                     <ul class="contact-info">
-                                        <li><span class="fa fa-map-marker"></span>8, Haji Mohshin road, Khulna</li>
-                                        <li><span class="fa fa-envelope-o"></span> support@user.com</li>
-                                        <li><span class="fa fa-phone"></span>1234 - 5678 - 9101</li>
+                                        <li><span class="fa fa-map-marker"></span>Karaoli Dhmhtriou 48, Athens</li>
+                                        <li><span class="fa fa-envelope-o"></span> charitysupport@user.com</li>
+                                        <li><span class="fa fa-phone"></span>+30 010 990 0000</li>
                                     </ul>
                                 </div>
                             </div>
@@ -57,8 +97,6 @@
                                             <p><span> July 29, 2017   BY Donald</span></p>
                                         </li>
                                     </ul>
-
-
                                 </div>
                             </div>
                         </div>
@@ -75,7 +113,7 @@
                                 <h3 class="footer-title">contact us</h3>
                                 <div class="widget-content">
                                     <div class="default-form-area">
-                                        <form id="contact-form2" name="contact_form" class="default-form style-two" action="sendmail.php" method="post">
+                                        <div id="contact-form2" class="default-form style-two">
                                             <div class="row clearfix">
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
 
@@ -85,7 +123,7 @@
                                                 </div>
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <div class="form-group style-two">
-                                                        <input type="email" name="form_email" class="form-control required email" value="" placeholder="Your mail" required="">
+                                                        <input type="email" name="form_email" class="form-control required email" value="" placeholder="Your email" required="">
                                                     </div>
                                                 </div>
 
@@ -98,13 +136,13 @@
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <div class="form-group style-two">
                                                         <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                                                        <button class="thm-btn2" type="submit" data-loading-text="Please wait...">send<i class="fa fa-angle-right"></i></button>
+                                                        <button onclick="document.getElementById('id01').style.display='block'" class="thm-btn2" type="submit" data-loading-text="Please wait...">send<i class="fa fa-angle-right"></i></button>
                                                     </div>
                                                 </div>
 
                                             </div>
-                                        </form>
-                                    </div>
+                                            </div>
+                                        </div>
                                 </div>
 
                             </div>
@@ -112,7 +150,7 @@
 
                         <!--Footer Column-->
                         <!--Footer Column-->
-                        <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                        @*<div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             <div class="footer-widget Instagram-widget">
                                 <h3 class="footer-title">Instagram</h3>
                                 <div class="widget-content">
@@ -197,7 +235,7 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div>*@
 
                     </div>
                 </div>
@@ -210,7 +248,7 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="text">
-                <p><span>charitysympathy</span>2017. All Right Reserved</p>
+                <p><span>charitysympathy</span> 2022. All Rights Reserved</p>
             </div>
         </div><!-- /.container -->
     </div>
@@ -221,3 +259,13 @@
 <button class="scroll-top tran3s color2_bg">
     <span class="fa fa-angle-up"></span>
 </button>
+<div id="id01" class="modalup">
+    <div class="animatedtop">
+        <span onclick="document.getElementById('id01').style.display='none'"
+              class="closemodal">&times;</span>
+        <h5>Thank You!</h5>
+        <div class="modalcontainer">
+            <p>Your message has been sent successfully.</p>
+        </div>
+    </div>
+</div>
