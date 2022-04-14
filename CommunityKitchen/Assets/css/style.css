@@ -736,7 +736,7 @@ input, textarea {
         margin: 0 6px;
         position: relative;
         text-transform: uppercase;
-        transition: all 5000ms ease 0s;
+        transition: all 500ms ease 0s;
     }
 
     .navigation > li:first-child > a {
