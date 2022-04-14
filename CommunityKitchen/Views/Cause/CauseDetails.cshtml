@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="donate-price"><b>@Html.DisplayFor(model => model.CurrentAmmount)€ </b>&nbsp; Raised of  <span> @Html.DisplayFor(model => model.TargetGoal)€ </span> Goal</div>
-                @Html.ActionLink("Back to List", "OrganizeCause","",new {@class= "thm-btn style-2" })
+                <a class="thm-btn style-1" href="javascript:history.go(-1)"> Back to List </a>
             </div>
         </div>
     </section>
