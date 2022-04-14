@@ -106,10 +106,10 @@
         {
             List<Cause> causes = new List<Cause>()
             {
-              new Cause() {Title = "Help the poor",Description="Help those in need",TargetGoal=150,CurrentAmmount=25 },
-              new Cause() {Title = "Those who have should share",Description="Help your fellow people by giving something, you are going to feel better",TargetGoal=210,CurrentAmmount=75 },
-              new Cause() {Title = "Food for Homeless",Description="Support the feeding needs of those in need",TargetGoal=110,CurrentAmmount=32 },
-              new Cause() {Title = "Clothing for Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110 },
+              new Cause() {Title = "Help the poor",Description="Help those in need",TargetGoal=150,CurrentAmmount=25 , Photo = "106052.jpg"},
+              new Cause() {Title = "Those who have should share",Description="Help your fellow people by giving something, you are going to feel better",TargetGoal=210,CurrentAmmount=75, Photo = "6646987.jpg" },
+              new Cause() {Title = "Food for Homeless",Description="Support the feeding needs of those in need",TargetGoal=110,CurrentAmmount=32 , Photo = "6647128.jpg" },
+              new Cause() {Title = "Clothing for Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110, Photo = "6994869.jpg" },
               new Cause() {Title = "Build a shelter for stray animals",Description="Help us build a warm house for dozens stray animals that need your help now",TargetGoal=23000,CurrentAmmount=5200 },
               new Cause() {Title = "Help victims of wildfires",Description="The Greek arm of the Red Cross is providing financial support and food for those affected by the fires",TargetGoal=10000,CurrentAmmount=50 },
               new Cause() {Title = "Support the Ukrainian war immigrants",Description="Everyday more and more war immigrants need your help, help us gather money and help them stand in their feet",TargetGoal=20000,CurrentAmmount=9850 },
@@ -119,9 +119,9 @@
               new Cause() {Title = "Provide for those in need",Description="After the resent events more and more come in need, help them to stand in their feet",TargetGoal=500,CurrentAmmount=250 },
               new Cause() {Title = "Help Elena to beat cancer",Description="Support Elena a true fighter, to overcome her illness, we gather money for her surgery",TargetGoal=870,CurrentAmmount=850 },
               new Cause() {Title = "George Papanikolaou needs your help",Description="With your help George will soon be able to walk again",TargetGoal=1250,CurrentAmmount=500 },
-              new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=1250,CurrentAmmount=500 },
-              new Cause() {Title = "Help the homeless",Description="Help those with nothing start fresh",TargetGoal=1250,CurrentAmmount=500 },
-              new Cause() {Title = "Support the victims of tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=1250,CurrentAmmount=500 }
+              new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=800,CurrentAmmount=500 },
+              new Cause() {Title = "Help the homeless",Description="Help those with nothing start fresh",TargetGoal=550,CurrentAmmount=500 },
+              new Cause() {Title = "Support the victims of tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=950,CurrentAmmount=500 }
             };
             return causes;
         }
@@ -130,26 +130,26 @@
             List<Event> events = new List<Event>()
             {
               new Event() {Title = "14th Street Charity Meal",Description="Offering meal at 14th Street",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
-                  EventDate=new DateTime(2022,04,05), Photo = Path.GetFullPath("/Assets/images/ImagesSaved/106052.jpg")},
+                  EventDate=new DateTime(2022,04,05), Photo = "106052.jpg"},
               new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",Address="Stratarxou Karaiskaki 22, Athens, Haidari 12461",
-                  EventDate=new DateTime(2022,05,07) },
+                  EventDate=new DateTime(2022,05,07), Photo = "9169661.jpg" },
               new Event() {Title = "Bazaar of poor Souls",Description="Open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",
-                  EventDate=new DateTime(2022,04,05) },
+                  EventDate=new DateTime(2022,04,05), Photo = "9168809.jpg" },
               new Event() {Title = "Lending a hand",Description="Free grooming for poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
-                  EventDate=new DateTime(2022,06,05) },
+                  EventDate=new DateTime(2022,06,05), Photo = "9090746.jpg" },
               new Event() {Title = "Lending two hands",Description="Free grooming for extra poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
-                  EventDate=new DateTime(2022,02,05) },
+                  EventDate=new DateTime(2022,02,05), Photo = "8078392.jpg" },
               new Event() {Title = "Soup Kitchen at Iroon Square",Description="Offering free meals at Plateia Iroon in Chaidari from 12:00 to 18:00.",
-                  Address="Pl. Ir. 1940 41, Chaidari 124 61",EventDate=new DateTime(2022,04,05) },
+                  Address="Pl. Ir. 1940 41, Chaidari 124 61",EventDate=new DateTime(2022,06,06), Photo = "7551595.jpg" },
 
               new Event() {Title = "Soup Kitchen at Amerikis Square",Description="Offering free meals at Plateia Amerikis in Athens from 14:00 to 18:00",
-                  Address="Amerikis Square, Athens 112 52",EventDate=new DateTime(2022,05,07) },
+                  Address="Amerikis Square, Athens 112 52",EventDate=new DateTime(2022,09,05), Photo = "7551591.jpg" },
 
               new Event() {Title = "Soup Kitchen at Kanigos Square",Description="Offering free meals at Plateia Kaniggos in Athens from 13:00 to 17:00",
-                  Address="Akadimias 92, Athens 106 77",EventDate=new DateTime(2022,04,08) },
+                  Address="Akadimias 92, Athens 106 77",EventDate=new DateTime(2022,08,05), Photo = "7475725.jpg" },
 
               new Event() {Title = "Soup Kitchen at Omonia Square",Description="Offering free meals at Plateia Omonoias in Athens from 12:00 to 17:00",
-                  Address="Square, District of Freedom 8573311, Athens 104 31",EventDate=new DateTime(2022,02,12) },
+                  Address="Square, District of Freedom 8573311, Athens 104 31",EventDate=new DateTime(2022,10,12) , Photo = "7298844.jpg"},
 
               new Event() {Title = "Soup Kitchen at Exarcheia Square",Description="Offering free meals at Plateia Exarcheion in Athens from 15:00 to 19:00",
                   Address="Stournari 5, Athens 106 83",EventDate=new DateTime(2022,09,02) },
@@ -158,13 +158,13 @@
                   Address="Pl. Karaiskaki, Athens 104 37",EventDate=new DateTime(2022,06,04) },
 
               new Event() {Title = "Soup Kitchen at Kolonaki Square",Description="Offering free meals at Plateia Kolonakiou in Athens from 13:00 to 15:00",
-                  Address="Pl. Filikis Eterias 11, Athens 106 74",EventDate=new DateTime(2022,02,04) },
+                  Address="Pl. Filikis Eterias 11, Athens 106 74",EventDate=new DateTime(2022,08,06) },
 
               new Event() {Title = "Soup Kitchen at Syntagma Square",Description="Offering free meals at Plateia Syntagmatos in Athens from 12:00 to 15:00",
-                  Address="Pl. Sintagmatos, Athens 105 63",EventDate=new DateTime(2022,01,01) },
+                  Address="Pl. Sintagmatos, Athens 105 63",EventDate=new DateTime(2022,06,06) },
 
               new Event() {Title = "Soup Kitchen at Davaki Square",Description="Offering free meals at Plateia Davaki in Kallithea from 13:00 to 17:00",
-                  Address="Mantzagriotaki 68, Kallithea 176 72",EventDate=new DateTime(2022,05,05) },
+                  Address="Mantzagriotaki 68, Kallithea 176 72",EventDate=new DateTime(2022,05,05), Photo = "7475725.jpg"  },
 
               new Event() {Title = "Soup Kitchen at Estavromenos Square",Description="Offering free meals at Plateia Estavromenoy in Egaleo from 12:00 to 18:00",
                   Address="Dimarchiou 1, Egaleo 122 42",EventDate=new DateTime(2022,06,06) }

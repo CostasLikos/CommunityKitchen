@@ -15,13 +15,20 @@
             <div class="content-box">
 
                 <hr />
-                <div style="display: flex; justify-content: center;overflow: hidden;">
-                    <img style="border-radius: 100px; height: 200px; width: 800px; object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
-                </div>
+                @if (Model.Photo == null)
+                {
+                    <div style="display:hidden"></div>
+                }
+                else
+                {
+                    <div style="display: flex; justify-content: center;overflow: hidden;">
+                        <img id="imgDetails" style="border-radius: 100px; height: 200px; width: 800px; object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
+                    </div>
+                }
 
                 @*<div class="icon-box">
-            <img style="object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
-        </div>*@
+                        <img style="object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
+                    </div>*@
                 <div class="title">
                     <h2>@Html.DisplayFor(model => model.Title)</h2>
                 </div>
@@ -30,7 +37,7 @@
                 </div>
 
                 <div class="donate-price"><b>@Html.DisplayFor(model => model.CurrentAmmount)€ </b>&nbsp; Raised of  <span> @Html.DisplayFor(model => model.TargetGoal)€ </span> Goal</div>
-                @Html.ActionLink("Back to List", "OrganizeCause","",new {@class= "thm-btn style-2" })
+                <a class="thm-btn style-1" href="javascript:history.go(-1)"> Back to List </a>
             </div>
         </div>
     </section>
