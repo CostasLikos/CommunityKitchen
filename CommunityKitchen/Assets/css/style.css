@@ -6885,6 +6885,7 @@ default-form style-three
 
     .all-event .content-box {
         padding: 20px 18px 34px;
+        margin-left:5%;
     }
 
         .all-event .content-box .title-area {
@@ -7271,7 +7272,14 @@ default-form style-three
         width: auto !important;
     }
 
+#imgDetails {
+    border-radius: 100px;
+    height: 200px;
+    width: 800px;
+    object-fit: cover;
+    transition:all 500ms ease 0s;
+}
+
     #imgDetails:hover {
-        height: 100% !important;
-        
+        height: 500px !important;
     }
