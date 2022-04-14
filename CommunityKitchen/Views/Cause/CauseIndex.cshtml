@@ -38,82 +38,89 @@
             @Html.ActionLink("Ascending", "CauseIndex", new { sortOrder = ViewBag.CurrentSortOrder }, new { @class = "thm-btn style-1" })
             @Html.ActionLink("Descending", "CauseIndex", new { sortOrder = ViewBag.CurrentSortOrder }, new { @class = "thm-btn style-2" })
         }
-       
-         <div class="default-form-area" style="justify-content: left">
-             <div id="contact-form" class="default-form">
-                 <div class="row clearfix" style="justify-content: left">
-                     <div class="col-md-4 col-sm-12 col-xs-6">
-                         <br />
-                         <form style="display: -webkit-box" action="/Cause/CauseIndex" method="get">
-                             <br />
-                             <input  class="form-control text-box single-line " type="text" name="searchString" value="@ViewBag.searchString" placeholder="search by title" />
-                             <input class="thm-btn style-1 m-1" type="submit" value="Search" />
-                             <input class="thm-btn style-1" id="reset" type="reset" value="Clear" />
-                         </form>
-                     </div>
-                 </div>
-             </div>
-         </div>
-                    @if (Model.Count() > 0)
+
+        <div class="default-form-area" style="justify-content: left">
+            <div id="contact-form" class="default-form">
+                <div class="row clearfix" style="justify-content: left">
+                    <div class="col-md-4 col-sm-12 col-xs-6">
+                        <br />
+                        <form style="display: -webkit-box" action="/Cause/CauseIndex" method="get">
+                            <br />
+                            <input class="form-control text-box single-line " type="text" name="searchString" value="@ViewBag.searchString" placeholder="search by title" />
+                            <input class="thm-btn style-1 m-1" type="submit" value="Search" />
+                            <input class="thm-btn style-1" id="reset" type="reset" value="Clear" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (Model.Count() > 0)
+        {
+
+
+
+            <div class="item-list">
+                <div class="row">
+                    @foreach (var cause in Model)
                     {
-
-
-
-                        <div class="item-list">
-                            <div class="row">
-                                @foreach (var cause in Model)
-                                {
-                                    var res = Math.Round((100 * cause.CurrentAmmount) / cause.TargetGoal);
-                                    <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <div class="item">
-                                            <div class="bg-area">
-                                                <div class="image-box">
-                                                    <img style="max-height: 240px; max-width: 360px; object-fit: cover;" src="~/Assets/images/ImagesSaved/@cause.Photo" alt="No Image found" />
-                                                    <div class="overlay">
-                                                        <div class="box">
-                                                            <div class="content">
-                                                                <a href="CauseDetails/@cause.Id"><i class="fa fa-link"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="content-box">
-                                                    <div class="progress-levels">
-                                                        <!--Skill Box-->
-                                                        <div class="progress-box">
-
-                                                            <div class="inner">
-                                                                <div class="bar">
-                                                                    <div class="bar-innner">
-                                                                        <div data-percent="@res" class="bar-fill">
-                                                                            <span class="percent">@res%</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="donate-price"><b>@cause.CurrentAmmount€ </b>&nbsp;  Raised of <span>@cause.TargetGoal€</span></div>
-                                                    <h4>@cause.Title</h4>
-                                                    <p>@cause.Description</p>
-                                                    <div class="link"><a href="CauseDonate/@cause.Id" class="thm-btn style-2">donate now</a></div>
-
+                        var res = Math.Round((100 * cause.CurrentAmmount) / cause.TargetGoal);
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="item">
+                                <div class="bg-area">
+                                    <div class="image-box">
+                                        @if (cause.Photo == null)
+                                        {
+                                            <div style="display:hidden"></div>
+                                        }
+                                        else
+                                        {
+                                            <img style="max-height: 240px; max-width: 360px; object-fit: cover;" src="~/Assets/images/ImagesSaved/@cause.Photo" alt="No Image found" />
+                                        }
+                                        <div class="overlay">
+                                            <div class="box">
+                                                <div class="content">
+                                                    <a href="CauseDetails/@cause.Id"><i class="fa fa-link"></i></a>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-                                }
+                                    <div class="content-box">
+                                        <div class="progress-levels">
+                                            <!--Skill Box-->
+                                            <div class="progress-box">
+
+                                                <div class="inner">
+                                                    <div class="bar">
+                                                        <div class="bar-innner">
+                                                            <div data-percent="@res" class="bar-fill">
+                                                                <span class="percent">@res%</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="donate-price"><b>@cause.CurrentAmmount€ </b>&nbsp;  Raised of <span>@cause.TargetGoal€</span></div>
+                                        <h4>@cause.Title</h4>
+                                        <p>@cause.Description</p>
+                                        <div class="link"><a href="CauseDonate/@cause.Id" class="thm-btn style-2">donate now</a></div>
+
+                                    </div>
+                                </div>
 
                             </div>
-
                         </div>
                     }
-                    else
-                    {
-                        <h1 style="color:red">No Causes Found</h1>
-                    }
+
                 </div>
+
+            </div>
+        }
+        else
+        {
+            <h1 style="color:red">No Causes Found</h1>
+        }
+    </div>
 </section>
 

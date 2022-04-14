@@ -15,13 +15,20 @@
             <div class="content-box">
 
                 <hr />
-                <div style="display: flex; justify-content: center;overflow: hidden;">
-                    <img style="border-radius: 100px; height: 200px; width: 800px; object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
-                </div>
+                @if (Model.Photo == null)
+                {
+                    <div style="display:hidden"></div>
+                }
+                else
+                {
+                    <div style="display: flex; justify-content: center;overflow: hidden;">
+                        <img id="imgDetails" style="border-radius: 100px; height: 200px; width: 800px; object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
+                    </div>
+                }
 
                 @*<div class="icon-box">
-            <img style="object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
-        </div>*@
+                        <img style="object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
+                    </div>*@
                 <div class="title">
                     <h2>@Html.DisplayFor(model => model.Title)</h2>
                 </div>

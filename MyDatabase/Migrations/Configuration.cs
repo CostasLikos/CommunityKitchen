@@ -132,24 +132,24 @@
               new Event() {Title = "14th Street Charity Meal",Description="Offering meal at 14th Street",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
                   EventDate=new DateTime(2022,04,05), Photo = "106052.jpg"},
               new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",Address="Stratarxou Karaiskaki 22, Athens, Haidari 12461",
-                  EventDate=new DateTime(2022,05,07) },
+                  EventDate=new DateTime(2022,05,07), Photo = "9169661.jpg" },
               new Event() {Title = "Bazaar of poor Souls",Description="Open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",
-                  EventDate=new DateTime(2022,04,05) },
+                  EventDate=new DateTime(2022,04,05), Photo = "9168809.jpg" },
               new Event() {Title = "Lending a hand",Description="Free grooming for poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
-                  EventDate=new DateTime(2022,06,05) },
+                  EventDate=new DateTime(2022,06,05), Photo = "9090746.jpg" },
               new Event() {Title = "Lending two hands",Description="Free grooming for extra poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
-                  EventDate=new DateTime(2022,02,05) },
+                  EventDate=new DateTime(2022,02,05), Photo = "8078392.jpg" },
               new Event() {Title = "Soup Kitchen at Iroon Square",Description="Offering free meals at Plateia Iroon in Chaidari from 12:00 to 18:00.",
-                  Address="Pl. Ir. 1940 41, Chaidari 124 61",EventDate=new DateTime(2022,04,05) },
+                  Address="Pl. Ir. 1940 41, Chaidari 124 61",EventDate=new DateTime(2022,06,06), Photo = "7551595.jpg" },
 
               new Event() {Title = "Soup Kitchen at Amerikis Square",Description="Offering free meals at Plateia Amerikis in Athens from 14:00 to 18:00",
-                  Address="Amerikis Square, Athens 112 52",EventDate=new DateTime(2022,05,07) },
+                  Address="Amerikis Square, Athens 112 52",EventDate=new DateTime(2022,09,05), Photo = "7551591.jpg" },
 
               new Event() {Title = "Soup Kitchen at Kanigos Square",Description="Offering free meals at Plateia Kaniggos in Athens from 13:00 to 17:00",
-                  Address="Akadimias 92, Athens 106 77",EventDate=new DateTime(2022,04,08) },
+                  Address="Akadimias 92, Athens 106 77",EventDate=new DateTime(2022,08,05), Photo = "7475725.jpg" },
 
               new Event() {Title = "Soup Kitchen at Omonia Square",Description="Offering free meals at Plateia Omonoias in Athens from 12:00 to 17:00",
-                  Address="Square, District of Freedom 8573311, Athens 104 31",EventDate=new DateTime(2022,02,12) },
+                  Address="Square, District of Freedom 8573311, Athens 104 31",EventDate=new DateTime(2022,10,12) , Photo = "7298844.jpg"},
 
               new Event() {Title = "Soup Kitchen at Exarcheia Square",Description="Offering free meals at Plateia Exarcheion in Athens from 15:00 to 19:00",
                   Address="Stournari 5, Athens 106 83",EventDate=new DateTime(2022,09,02) },
@@ -158,13 +158,13 @@
                   Address="Pl. Karaiskaki, Athens 104 37",EventDate=new DateTime(2022,06,04) },
 
               new Event() {Title = "Soup Kitchen at Kolonaki Square",Description="Offering free meals at Plateia Kolonakiou in Athens from 13:00 to 15:00",
-                  Address="Pl. Filikis Eterias 11, Athens 106 74",EventDate=new DateTime(2022,02,04) },
+                  Address="Pl. Filikis Eterias 11, Athens 106 74",EventDate=new DateTime(2022,08,06) },
 
               new Event() {Title = "Soup Kitchen at Syntagma Square",Description="Offering free meals at Plateia Syntagmatos in Athens from 12:00 to 15:00",
-                  Address="Pl. Sintagmatos, Athens 105 63",EventDate=new DateTime(2022,01,01) },
+                  Address="Pl. Sintagmatos, Athens 105 63",EventDate=new DateTime(2022,06,06) },
 
               new Event() {Title = "Soup Kitchen at Davaki Square",Description="Offering free meals at Plateia Davaki in Kallithea from 13:00 to 17:00",
-                  Address="Mantzagriotaki 68, Kallithea 176 72",EventDate=new DateTime(2022,05,05) },
+                  Address="Mantzagriotaki 68, Kallithea 176 72",EventDate=new DateTime(2022,05,05), Photo = "7475725.jpg"  },
 
               new Event() {Title = "Soup Kitchen at Estavromenos Square",Description="Offering free meals at Plateia Estavromenoy in Egaleo from 12:00 to 18:00",
                   Address="Dimarchiou 1, Egaleo 122 42",EventDate=new DateTime(2022,06,06) }
