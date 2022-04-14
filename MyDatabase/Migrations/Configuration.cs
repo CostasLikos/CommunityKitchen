@@ -119,9 +119,9 @@
               new Cause() {Title = "Provide for those in need",Description="After the resent events more and more come in need, help them to stand in their feet",TargetGoal=500,CurrentAmmount=250 },
               new Cause() {Title = "Help Elena to beat cancer",Description="Support Elena a true fighter, to overcome her illness, we gather money for her surgery",TargetGoal=870,CurrentAmmount=850 },
               new Cause() {Title = "George Papanikolaou needs your help",Description="With your help George will soon be able to walk again",TargetGoal=1250,CurrentAmmount=500 },
-              new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=1250,CurrentAmmount=500 },
-              new Cause() {Title = "Help the homeless",Description="Help those with nothing start fresh",TargetGoal=1250,CurrentAmmount=500 },
-              new Cause() {Title = "Support the victims of tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=1250,CurrentAmmount=500 }
+              new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=800,CurrentAmmount=500 },
+              new Cause() {Title = "Help the homeless",Description="Help those with nothing start fresh",TargetGoal=550,CurrentAmmount=500 },
+              new Cause() {Title = "Support the victims of tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=950,CurrentAmmount=500 }
             };
             return causes;
         }
