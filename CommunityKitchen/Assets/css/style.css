@@ -159,8 +159,6 @@ input, textarea {
     width: 100%;
     background: #fff;
     overflow-x: hidden;
-    padding-top:10px;
-    padding-bottom:5px;
 }
 
 .clear_fix {
