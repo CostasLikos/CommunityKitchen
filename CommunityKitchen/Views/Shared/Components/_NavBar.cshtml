@@ -1,4 +1,6 @@
-﻿
+﻿@using System.Configuration;
+
+
 @{
     ViewBag.Title = "_NavBar";
     var user = User.Identity.Name;
@@ -22,7 +24,7 @@
                             <ul>
                                 @if (roleDonor)
                                 {
-                               <li><a href="http://localhost:4200/">Archive</a></li>
+                               <li><a href="@ConfigurationManager.AppSettings["Angular"]">Archive</a></li>
                                 }
                                 <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
                                 <li>@Html.ActionLink("Support A Cause", "CauseIndex", "Cause")</li>
