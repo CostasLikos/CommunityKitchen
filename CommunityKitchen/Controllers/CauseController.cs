@@ -43,19 +43,6 @@ namespace CommunityKitchen.Controllers
             causeService.Save();
             return RedirectToAction("Cause","CauseIndex");
         }
-        public JsonResult CheckUsernameAvailability(string userdata)
-        {
-            System.Threading.Thread.Sleep(200);
-            var SearchData = db.Users.Where(x => x.Email == userdata).SingleOrDefault();
-            if (SearchData != null)
-            {
-                return Json(1);
-            }
-            else
-            {
-                return Json(0);
-            }
-        }
 
         public ActionResult CauseIndex(string sortOrder,string searchString)
         {

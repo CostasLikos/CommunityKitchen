@@ -18,6 +18,20 @@ namespace CommunityKitchen.Controllers
         {
             return View(db.Users.ToList());
         }
+        public JsonResult CheckUsernameAvailability(string userdata)
+        {
+            System.Threading.Thread.Sleep(200);
+            var SearchData = db.Users.Where(x => x.Email == userdata).SingleOrDefault();
+            if (SearchData != null)
+            {
+                return Json(1);
+            }
+            else
+            {
+                return Json(0);
+            }
+        }
+
 
         // GET: ApplicationUsers/Details/5
         public ActionResult Details(string id)
