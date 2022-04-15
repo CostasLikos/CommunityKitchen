@@ -60,11 +60,11 @@ namespace CommunityKitchen
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "680616117990-hhorl5lf3fs890sfnieej6ogg4o08k1u.apps.googleusercontent.com",
+                ClientSecret = "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"
+            });
         }
     }
 }
