@@ -106,22 +106,22 @@
         {
             List<Cause> causes = new List<Cause>()
             {
-              new Cause() {Title = "Help the poor",Description="Help those in need",TargetGoal=150,CurrentAmmount=25 , Photo = "106052.jpg"},
-              new Cause() {Title = "Those who have should share",Description="Help your fellow people by giving something, you are going to feel better",TargetGoal=210,CurrentAmmount=75, Photo = "6646987.jpg" },
-              new Cause() {Title = "Food for Homeless",Description="Support the feeding needs of those in need",TargetGoal=110,CurrentAmmount=32 , Photo = "6647128.jpg" },
-              new Cause() {Title = "Clothing for Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110, Photo = "6994869.jpg" },
-              new Cause() {Title = "Build a shelter for stray animals",Description="Help us build a warm house for dozens stray animals that need your help now",TargetGoal=23000,CurrentAmmount=5200 },
-              new Cause() {Title = "Help victims of wildfires",Description="The Greek arm of the Red Cross is providing financial support and food for those affected by the fires",TargetGoal=10000,CurrentAmmount=50 },
-              new Cause() {Title = "Support the Ukrainian war immigrants",Description="Everyday more and more war immigrants need your help, help us gather money and help them stand in their feet",TargetGoal=20000,CurrentAmmount=9850 },
-              new Cause() {Title = "Help victims of floods",Description="Help us provide for the victims of floods",TargetGoal=350,CurrentAmmount=50 },
-              new Cause() {Title = "Support the organization : Save the children",Description="We strongly support the non-profitable organization save the children",TargetGoal=500,CurrentAmmount=100 },
-              new Cause() {Title = "Support the organization : Hamogelo tou paidiou",Description="We strongly support the non-profitable organization hamogelo tou paidiou",TargetGoal=600,CurrentAmmount=250 },
-              new Cause() {Title = "Provide for those in need",Description="After the resent events more and more come in need, help them to stand in their feet",TargetGoal=500,CurrentAmmount=250 },
-              new Cause() {Title = "Help Elena to beat cancer",Description="Support Elena a true fighter, to overcome her illness, we gather money for her surgery",TargetGoal=870,CurrentAmmount=850 },
-              new Cause() {Title = "George Papanikolaou needs your help",Description="With your help George will soon be able to walk again",TargetGoal=1250,CurrentAmmount=500 },
+              new Cause() {Title = "Help The Poor",Description="Raising money for our poor friends",TargetGoal=150,CurrentAmmount=25 , Photo = "106052.jpg"},
+              new Cause() {Title = "Those Who Have Can Share",Description="Help your fellow people by offering them something, you are going to feel better!",TargetGoal=210,CurrentAmmount=75, Photo = "6646987.jpg" },
+              new Cause() {Title = "Food For The Homeless",Description="Help us offer them a warm meal",TargetGoal=110,CurrentAmmount=32 , Photo = "6647128.jpg" },
+              new Cause() {Title = "Clothing For The Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110, Photo = "6994869.jpg" },
+              new Cause() {Title = "Build A Shelter For Stray Animals",Description="Help us build a warm house for dozens of stray animals that need your help now",TargetGoal=23000,CurrentAmmount=5200 },
+              new Cause() {Title = "Help Victims Of Wildfires",Description="The Greek arm of the Red Cross is providing financial support and food for those affected by the fires",TargetGoal=10000,CurrentAmmount=50 },
+              new Cause() {Title = "Support The Ukrainian War Immigrants",Description="Everyday more and more war immigrants need your help, help us gather money and help them stand in their feet",TargetGoal=20000,CurrentAmmount=9850 },
+              new Cause() {Title = "Help Victims Of Floods",Description="Help us provide for the victims of floods",TargetGoal=350,CurrentAmmount=50 },
+              new Cause() {Title = "Support The Organization : Save The Children",Description="We strongly support the non-profitable organization save the children",TargetGoal=500,CurrentAmmount=100 },
+              new Cause() {Title = "Support The Organization : Hamogelo Tou Ppaidiou",Description="We strongly support the non-profitable organization hamogelo tou paidiou",TargetGoal=600,CurrentAmmount=250 },
+              new Cause() {Title = "Provide For Those In Need",Description="After the resent events more and more come in need, help them to stand in their feet",TargetGoal=500,CurrentAmmount=250 },
+              new Cause() {Title = "Help Elena To Beat Cancer",Description="Support Elena a true fighter, to overcome her illness, we gather money for her surgery",TargetGoal=870,CurrentAmmount=850 },
+              new Cause() {Title = "George Papanikolaou Needs Your Help",Description="With your help George will soon be able to walk again",TargetGoal=1250,CurrentAmmount=500 },
               new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=800,CurrentAmmount=500 },
-              new Cause() {Title = "Help the homeless",Description="Help those with nothing start fresh",TargetGoal=550,CurrentAmmount=500 },
-              new Cause() {Title = "Support the victims of tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=950,CurrentAmmount=500 }
+              new Cause() {Title = "Help The Homeless",Description="Help those with nothing start fresh",TargetGoal=550,CurrentAmmount=500 },
+              new Cause() {Title = "Support The Victims Of Tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=950,CurrentAmmount=500 }
             };
             return causes;
         }
@@ -129,17 +129,17 @@
         {
             List<Event> events = new List<Event>()
             {
-              new Event() {Title = "14th Street Charity Meal",Description="Offering meal at 14th Street",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
+              new Event() {Title = "Agiou Meletiou Charity Meal",Description="Offering meal at Agiou Meletiou street",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
                   EventDate=new DateTime(2022,04,05), Photo = "106052.jpg"},
               new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",Address="Stratarxou Karaiskaki 22, Athens, Haidari 12461",
                   EventDate=new DateTime(2022,05,07), Photo = "9169661.jpg" },
-              new Event() {Title = "Bazaar of poor Souls",Description="Open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",
+              new Event() {Title = "Bazaar Of Poor Souls",Description="Open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",
                   EventDate=new DateTime(2022,04,05), Photo = "9168809.jpg" },
-              new Event() {Title = "Lending a hand",Description="Free grooming for poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
+              new Event() {Title = "Lending A Hand",Description="Free grooming for poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
                   EventDate=new DateTime(2022,06,05), Photo = "9090746.jpg" },
-              new Event() {Title = "Lending two hands",Description="Free grooming for extra poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
+              new Event() {Title = "Lending Two Hands",Description="Free grooming for extra poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
                   EventDate=new DateTime(2022,02,05), Photo = "8078392.jpg" },
-              new Event() {Title = "Soup Kitchen at Iroon Square",Description="Offering free meals at Plateia Iroon in Chaidari from 12:00 to 18:00.",
+              new Event() {Title = "Soup Kitchen At Iroon Square",Description="Offering free meals at Plateia Iroon in Chaidari from 12:00 to 18:00.",
                   Address="Pl. Ir. 1940 41, Chaidari 124 61",EventDate=new DateTime(2022,06,06), Photo = "7551595.jpg" },
 
               new Event() {Title = "Soup Kitchen at Amerikis Square",Description="Offering free meals at Plateia Amerikis in Athens from 14:00 to 18:00",
