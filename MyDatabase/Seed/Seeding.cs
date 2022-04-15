@@ -14,10 +14,10 @@ namespace MyDatabase.Seed
         {
             List<Cause> causes = new List<Cause>()
             {
-              new Cause() {Title = "Poor one Helpers",Description="Get money",TargetGoal=150,CurrentAmmount=25 },
-              new Cause() {Title = "Rich one Helpers",Description="Give money",TargetGoal=210,CurrentAmmount=75 },
-              new Cause() {Title = "Food for Homeless",Description="Support their feedin needs",TargetGoal=110,CurrentAmmount=32 },
-              new Cause() {Title = "Clothing for Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110 },
+              new Cause() {Title = "For Those In Need",Description="Get money",TargetGoal=150,CurrentAmmount=25 },
+              new Cause() {Title = "For Those Who Want to Help",Description="Give money",TargetGoal=210,CurrentAmmount=75 },
+              new Cause() {Title = "Food For The Homeless",Description="Help us offer them a warm meal",TargetGoal=110,CurrentAmmount=32 },
+              new Cause() {Title = "Clothing For The Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110 },
             };
             return causes;
         }
@@ -25,9 +25,9 @@ namespace MyDatabase.Seed
         {
             List<Event> events = new List<Event>()
             {
-              new Event() {Title = "14th Street Charity Meal",Description="Offering meal at 14th Street",Address="Agiou Meletiou 32, Athens, Pagrati 12443",EventDate=new DateTime(2022,02,05) },
+              new Event() {Title = "Agiou Meletiou Charity Meal",Description="Offering meal at Agiou Meletiou",Address="Agiou Meletiou 32, Athens, Pagrati 12443",EventDate=new DateTime(2022,02,05) },
               new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",Address="Stratarxou Karaiskaki 22, Athens, Haidari 12461",EventDate=new DateTime(2022,05,07) },
-              new Event() {Title = "Bazaar of poor Souls",Description="Open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",EventDate=new DateTime(2022,04,05) },
+              new Event() {Title = "Bazaar for the poor Souls",Description="Participate to our open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",EventDate=new DateTime(2022,04,05) },
               new Event() {Title = "Lending a hand",Description="Free grooming for poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",EventDate=new DateTime(2022,06,05) }
             };
             return events;
