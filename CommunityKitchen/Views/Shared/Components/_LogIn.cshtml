@@ -24,13 +24,14 @@
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
                 </div>
                 <div class="inputBx">
-                    <input type="email" name="Email" placeholder="Email" required>
+                    <input onchange="UserCheck()" id="Email" type="email" name="Email" placeholder="Email" required>
+                    <p id="stat"></p>
                     <div class="img2">
                         <img src="https://img.icons8.com/external-nawicon-glyph-nawicon/64/000000/external-email-communication-nawicon-glyph-nawicon.png" />
                     </div>
                     <input id="password" type="password" name="Password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$!%*?&])[A-Za-z\d$!%*?&]{6,}$"
-                           title="Must contain at least one number and one uppercase letter and one special character,minimum 6 characters" required >
-                    <input id="confpassword" type="password" name="ConfirmPassword" placeholder="Confirm password" minlength="6"  >
+                           title="Must contain at least one number and one uppercase letter and one special character,minimum 6 characters" required>
+                    <input id="confpassword" type="password" name="ConfirmPassword" placeholder="Confirm password" minlength="6">
                     <div class="img4">
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
@@ -63,7 +64,7 @@
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/password--v1.png" />
                 </div>
 
-                <label class="remeber"><input type="checkbox" value="true"  name="RememberMe">Remember me</label>
+                <label class="remeber"><input type="checkbox" value="true" name="RememberMe">Remember me</label>
 
                 <div class="inputBx">
                     <input id="sub" type="submit" value="Login">
@@ -89,6 +90,29 @@
 
 
     <script>
+
+             function UserCheck() {
+            $("#stat").html("Checking...");
+            $.post("@Url.Action("CheckUsernameAvailability", "Cause")",
+            {
+                    userdata: $("#Email").val()
+            },
+            function (data) {
+                if (data == 0) {
+                    $("#stat").html('<font color="Green">Available !. </font>');
+                }
+                else {
+                    $("#stat").html('<font color="Red">Is Already Exists. </font>');
+                    
+
+                }
+
+                })
+            }
+
+
+
+
         var password = document.getElementById("password");
         var confirmpassword = document.getElementById("confpassword");
         var message = document.getElementById("message");
