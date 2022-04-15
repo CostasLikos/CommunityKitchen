@@ -8,7 +8,7 @@
     <table id="table" class="table table-hover table-striped ml-5">
         <tr>
             <th class="m-3">
-                <button style="width:150px!important;" class="btn size5 btn-success col-12 align-self-center" onclick="location.href='@Url.Action("Create", "Item")'">Add New Item</button>
+                <button style="width:150px!important;" class="btn size5 btn-warning col-12 align-self-center" onclick="location.href='@Url.Action("Create", "Item")'">Add New Item</button>
             </th>
             <th></th>
             <th></th>
@@ -48,8 +48,8 @@
                     @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
                 <td class="col-1" style="text-align:center">
-                    <button class="btn btn-success" onclick="location.href='@Url.Action("AddQuantity", "Item", new { id = item.Id })'">+</button>
-                    <button class="btn btn-primary" onclick="location.href='@Url.Action("RemoveQuantity", "Item", new { id = item.Id })'">-</button>
+                    <button style="width:40px;" class="btn btn-success" onclick="location.href='@Url.Action("AddQuantity", "Item", new { id = item.Id })'">+</button>
+                    <button style="width:40px;" class="btn btn-outline-success" onclick="location.href='@Url.Action("RemoveQuantity", "Item", new { id = item.Id })'">-</button>
                 </td>
                 <td class="col-1" style="text-align:center">
                     <button class="btn btn-danger mb-1" onclick="location.href='@Url.Action("Delete", "Item", new { id = item.Id })'">Delete</button>
