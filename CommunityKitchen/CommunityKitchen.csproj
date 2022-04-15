@@ -375,35 +375,35 @@
     <Content Include="Assets\images\ImagesSaved\9090746.jpg" />
     <Content Include="Assets\images\ImagesSaved\9168809.jpg" />
     <Content Include="Assets\images\ImagesSaved\9169661.jpg" />
+    <Content Include="Assets\images\ImagesSaved\people.jpg" />
     <Content Include="Assets\images\logo\footer.png" />
     <Content Include="Assets\images\logo\logo.png" />
     <Content Include="Assets\images\logo\map-marker.png" />
     <Content Include="Assets\images\missions\1.png" />
     <Content Include="Assets\images\missions\2.png" />
     <Content Include="Assets\images\missions\3.png" />
-    <Content Include="Assets\images\missions\foodcontr.jpeg" />
-    <Content Include="Assets\images\missions\granny.jpg" />
-    <Content Include="Assets\images\missions\halp.jpg" />
-    <Content Include="Assets\images\missions\Help-1024x575.jpg" />
-    <Content Include="Assets\images\missions\help-getty.jpg" />
-    <Content Include="Assets\images\missions\hugs.jpg" />
-    <Content Include="Assets\images\missions\images.jpg" />
-    <Content Include="Assets\images\missions\IMG_3630_JPG 1280x853.jpg" />
-    <Content Include="Assets\images\missions\istockphoto-1194548736-612x612.jpg" />
-    <Content Include="Assets\images\missions\kid1.jpg" />
-    <Content Include="Assets\images\missions\Love-people-1680x768.jpg" />
+    <Content Include="Assets\images\ImagesSaved\foodcontr.jpeg" />
+    <Content Include="Assets\images\ImagesSaved\granny.jpg" />
+    <Content Include="Assets\images\ImagesSaved\halp.jpg" />
+    <Content Include="Assets\images\ImagesSaved\Help-1024x575.jpg" />
+    <Content Include="Assets\images\ImagesSaved\help-getty.jpg" />
+    <Content Include="Assets\images\ImagesSaved\hugs.jpg" />
+    <Content Include="Assets\images\ImagesSaved\images.jpg" />
+    <Content Include="Assets\images\ImagesSaved\IMG_3630_JPG 1280x853.jpg" />
+    <Content Include="Assets\images\ImagesSaved\istockphoto-1194548736-612x612.jpg" />
+    <Content Include="Assets\images\ImagesSaved\kid1.jpg" />
+    <Content Include="Assets\images\ImagesSaved\Love-people-1680x768.jpg" />
     <Content Include="Assets\images\missions\per.jpg" />
     <Content Include="Assets\images\missions\person2.jpg" />
     <Content Include="Assets\images\missions\person3.jpg" />
     <Content Include="Assets\images\missions\person4.jpg" />
     <Content Include="Assets\images\missions\person5.jpg" />
-    <Content Include="Assets\images\missions\pexels-photo-3280130.jpeg" />
-    <Content Include="Assets\images\missions\ph.jpg" />
-    <Content Include="Assets\images\missions\pr.jpg" />
-    <Content Include="Assets\images\missions\staffservingfoodinhomele_509845-2.jpg" />
-    <Content Include="Assets\images\missions\support_0.jpg" />
-    <Content Include="Assets\images\missions\ukraine_get_help_red_cross.jpg" />
-    <Content Include="Assets\images\missions\zmp.jpg" />
+    <Content Include="Assets\images\ImagesSaved\pexels-photo-3280130.jpeg" />
+    <Content Include="Assets\images\ImagesSaved\ph.jpg" />
+    <Content Include="Assets\images\ImagesSaved\pr.jpg" />
+    <Content Include="Assets\images\ImagesSaved\staffservingfoodinhomele_509845-2.jpg" />
+    <Content Include="Assets\images\ImagesSaved\support_0.jpg" />
+    <Content Include="Assets\images\ImagesSaved\ukraine_get_help_red_cross.jpg" />
     <Content Include="Assets\images\news\1.jpg" />
     <Content Include="Assets\images\news\2.jpg" />
     <Content Include="Assets\images\news\3.jpg" />
@@ -509,9 +509,9 @@
     <Content Include="Assets\fonts\revicons.ttf" />
     <Content Include="Assets\fonts\revicons.woff" />
     <Content Include="Assets\fonts\_flaticon.scss" />
-    <Content Include="Assets\images\missions\homeless.webp" />
-    <Content Include="Assets\images\missions\noreason.webp" />
-    <Content Include="Assets\images\missions\people.webp" />
+    <Content Include="Assets\images\ImagesSaved\homeless.webp" />
+    <Content Include="Assets\images\ImagesSaved\noreason.webp" />
+    <Content Include="Assets\images\ImagesSaved\people.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ChartPie.js" />
     <Content Include="Scripts\LoginRegister.js" />
@@ -622,6 +622,9 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\images\favicon\favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
