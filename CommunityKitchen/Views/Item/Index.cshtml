@@ -8,7 +8,7 @@
     <table id="table" class="table table-hover table-striped ml-5">
         <tr>
             <th class="m-3">
-                <button class="btn size5 btn-success col-12 align-self-center" onclick="location.href='@Url.Action("Create", "Item")'">Add New Item</button>
+                <button style="width:150px!important;" class="btn size5 btn-success col-12 align-self-center" onclick="location.href='@Url.Action("Create", "Item")'">Add New Item</button>
             </th>
             <th></th>
             <th></th>
@@ -54,7 +54,7 @@
                 <td class="col-1" style="text-align:center">
                     <button class="btn btn-danger mb-1" onclick="location.href='@Url.Action("Delete", "Item", new { id = item.Id })'">Delete</button>
                     <button id="editBtn" class="btn btn-primary editBtn mb-1">Edit</button>
-                    <button id="saveBtn" class="btn btn-primary saveBtn mb-1" style="visibility:hidden"> Save </button>
+                    <button id="saveBtn" class="btn btn-warning saveBtn mb-1" style="visibility:hidden"> Save </button>
 
                     <button id="itemId" style="visibility:hidden" value="@item.Id"></button>
                 </td>
