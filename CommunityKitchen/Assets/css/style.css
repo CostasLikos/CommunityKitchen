@@ -7301,3 +7301,9 @@ default-form style-three
         width: auto !important;
         overflow: hidden !important;
     }
+#headbar{
+    height:55px!important;
+}
+/*#headrows{
+    padding-bottom:25px!important;
+}*/
