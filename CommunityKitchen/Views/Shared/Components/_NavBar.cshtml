@@ -67,7 +67,7 @@
                 <li class="dropdown active">
                     @Html.ActionLink("Home", "Index", "Home")
                     <ul>
-                        <li><a href="http://localhost:4200/">Archive</a></li>
+                        <li><a href="@ConfigurationManager.AppSettings["Angular"]">Archive</a></li>
                         <li>@Html.ActionLink("Stories", "StoriesIndex", "Story")</li>
                         <li>@Html.ActionLink("Support A Cause", "SupportCause", "Support")</li>
                         <li>@Html.ActionLink("Upcoming Events", "UpcomingEvents", "Event")</li>
