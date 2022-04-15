@@ -24,7 +24,8 @@
                     <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" />
                 </div>
                 <div class="inputBx">
-                    <input type="email" name="Email" placeholder="Email" required>
+                    <input onchange="UserCheck()" id="Email" type="email" name="Email" placeholder="Email" required>
+                    <p id="stat"></p>
                     <div class="img2">
                         <img src="https://img.icons8.com/external-nawicon-glyph-nawicon/64/000000/external-email-communication-nawicon-glyph-nawicon.png" />
                     </div>
@@ -93,6 +94,27 @@
 
 
     <script>
+
+             function UserCheck() {
+            $("#stat").html("Checking...");
+            $.post("@Url.Action("CheckUsernameAvailability", "ApplicationUser")",
+            {
+                    userdata: $("#Email").val()
+            },
+            function (data) {
+                if (data == 0) {
+                    $("#stat").html('<font color="Green">Available !. </font>');
+                }
+                else {
+                    $("#stat").html('<font color="Red">Is Already Exists. </font>');
+                }
+
+                })
+            }
+
+
+
+
         var password = document.getElementById("password");
         var confirmpassword = document.getElementById("confpassword");
         var message = document.getElementById("message");

@@ -43,7 +43,7 @@ namespace CommunityKitchen.Controllers
             causeService.Save();
             return RedirectToAction("Cause","CauseIndex");
         }
-        
+
         public ActionResult CauseIndex(string sortOrder,string searchString)
         {
             ViewBag.CurrentSortOrder = sortOrder == "AS" ? "DE" : "AS";
