@@ -16,7 +16,7 @@
             <ul>
 
                 <li data-transition="fade">
-                    <img src="~/Assets/images/missions/Love-people-1680x768.jpg" alt="" width="1920" height="882" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1">
+                    <img src="~/Assets/images/ImagesSaved/Love-people-1680x768.jpg" alt="" width="1920" height="882" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1">
 
                     <div class="tp-caption tp-resizeme"
                          data-x="center" data-hoffset=""
@@ -58,7 +58,7 @@
                 </li>
 
                 <li data-transition="fade">
-                    <img src="~/Assets/images/missions/Love-people-1680x768.jpg" alt="" width="1920" height="882" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1">
+                    <img src="~/Assets/images/ImagesSaved/Love-people-1680x768.jpg" alt="" width="1920" height="882" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1">
 
                     <div class="tp-caption tp-resizeme"
                          data-x="center" data-hoffset=""
@@ -105,8 +105,9 @@
                     <div class="urgent-cause-slide">
                         @foreach (var cause in Model)
                         {
-
-                            var res = Math.Round((100 * cause.CurrentAmmount) / cause.TargetGoal);
+                            if (cause.Photo!=null)
+                            {
+                                var res = Math.Round((100 * cause.CurrentAmmount) / cause.TargetGoal);
 
                             <div class="item">
                                 <div class="clearfix bg-area">
@@ -114,7 +115,7 @@
                                         <img id="imgkat" src="~/Assets/images/ImagesSaved/@cause.Photo" style="width:1550px; object-fit:cover;" />
                                         <div id="kati2">
 
-                                            <div id="logia"><h4 style="color: black;">@cause.Title</h4><br /><h4 style="color: red;"><span style="color: black;">Descriprion:</span> <br />@cause.Description</h4> </div>
+                                            <div id="logia"><h4 style="color: black;">@cause.Title</h4><br /><h4 style="color: red;"><span style="color: black;">Description:</span> <br />@cause.Description</h4> </div>
 
                                             <div id="kati3">
                                                 <div>
@@ -139,7 +140,8 @@
                                 </div>
 
                             </div>
-                        }
+                                }
+                            }
                     </div>
                 </div>
             </div>
