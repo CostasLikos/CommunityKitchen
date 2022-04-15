@@ -679,8 +679,12 @@ input, textarea {
 /*logo*/
 
 .main-logo {
-    margin: 30px 0 30px;
+    margin: 40px 0 30px!important;
+    transition: transform .2s;
 }
+    .main-logo:hover {
+        transform: scale(1.2);
+    }
 
 .theme_menu .container {
     position: relative;
@@ -731,7 +735,7 @@ input, textarea {
         font-size: 14px;
         font-weight: 600;
         line-height: 50px;
-        padding: 30px 0px;
+        padding: 30px 2px;
         margin: 0 6px;
         position: relative;
         text-transform: uppercase;
@@ -1021,7 +1025,7 @@ input, textarea {
 
 .theme_menu.stricky-fixed {
     margin: 0;
-    background: #252525;
+    background: #272727dd;
     position: fixed;
     top: 0;
     left: 0;
@@ -1030,6 +1034,7 @@ input, textarea {
     animation-name: menu_sticky;
     animation-duration: 0.60s;
     animation-timing-function: ease-out;
+    height:110px;     
 }
 
 /*** 
@@ -7201,7 +7206,7 @@ default-form style-three
     font-size: 14px;
     font-weight: 600;
     line-height: 50px;
-    padding: 30px 0px 30px 80px;
+    padding: 30px 0px 30px 0px;
     margin: 0 0px;
     position: relative;
     text-transform: uppercase;
