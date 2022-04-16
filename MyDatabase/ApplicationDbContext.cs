@@ -22,8 +22,7 @@ namespace MyDataBase
         public DbSet<Event> Events { get; set; }
         public DbSet<Cause> Causes { get; set; }
         public DbSet<Item> Items { get; set; }
-        public DbSet<Inventory> Inventory { get; set; }
-        public DbSet<Story> Stories { get; set; }
+
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
         //    //Configure primary key

@@ -22,6 +22,9 @@ namespace Entities
         public string Photo { get; set; }
         public string Address { get; set; }
 
+        public string ModeratorId { get; set; }
+        public ApplicationUser Moderator { get; set; }
+
         private DateTime date;
 
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

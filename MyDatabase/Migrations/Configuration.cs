@@ -23,6 +23,8 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
+            Random random = new Random();
+
             var causes = CauseSeed();
             var events = EventSeed();
             var items = ItemSeed();
@@ -68,7 +70,6 @@
 
                 manager.Create(role);
             }
-
             if (!context.Users.Any(u => u.UserName == "admin@gmail.com"))
             {
                 var store = new UserStore<ApplicationUser>(context);
@@ -89,6 +90,25 @@
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "Member");
             }
+            if (!context.Users.Any(u => u.UserName == "organizer2@gmail.com"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(store);
+
+                var passwordHash = new PasswordHasher();
+                var user = new ApplicationUser()
+                {
+                    UserName = "organizer2@gmail.com",
+                    Email = "organizer2@gmail.com",
+                    PasswordHash = passwordHash.HashPassword("Organizer21234!")
+                };
+                userManager.Create(user);
+
+                context.SaveChanges();
+
+                userManager.AddToRole(user.Id, "Admin");
+                context.SaveChanges();
+            }
             if (!context.Users.Any(u => u.UserName == "organizer@gmail.com"))
             {
                 var store = new UserStore<ApplicationUser>(context);
@@ -99,6 +119,32 @@
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "Admin");
             }
+
+            List<ApplicationUser> myUsers = new List<ApplicationUser>();
+            myUsers.AddRange(context.Users.Where(x => x.Email == "organizer@gmail.com").ToList());
+            myUsers.AddRange(context.Users.Where(x => x.Email == "organizer2@gmail.com").ToList());
+
+            foreach (var item in events)
+            {
+                var index = random.Next(0, 2);
+
+                item.Moderator = myUsers[index];
+            }
+
+            foreach (var item in causes)
+            {
+                var index = random.Next(0, 2);
+
+                item.Moderator = myUsers[index];
+            }
+
+            foreach (var item in items)
+            {
+                var index = random.Next(0, 2);
+
+                item.Moderator = myUsers[index];
+            }
+
 
             context.SaveChanges();
         }
