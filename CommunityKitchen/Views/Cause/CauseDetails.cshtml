@@ -4,11 +4,27 @@
     ViewBag.Title = "CauseDetails";
 }
 
-<div>
+
+<section class="page-banner" style="padding-top: 100px; padding-bottom: 10px; background-image: url('../Assets/images/ImagesSaved/single-cause.jpg'); ">
+    <div class="container" style="height:100px;">
+        <div class="section-title">
+            <h1>Cause <span>Details</span></h1>
+        </div>
+        <div class="section-title">
+            <h5>Joion us on our Cause</h5>
+            <div class="meet-us">
+                <p style="line-height: 1.7em;">Here are soem more details about the cause you're chacking out.</p>
+                <p style="line-height: 1.7em;">By joining us on a Cause you are helping the team reach those who need help faster and saves lives from danger.</p>
+            </div>
+        </div>
+        <div class="breadcumb-wrapper">
+        </div>
+    </div>
+</section>
+
     <section class="single-event">
-        <div class="container">
+        <div class="container s-cause">
             <h4 style="display:center;">Cause Details</h4>
-            <hr />
             <figure class="image-box">
                 <img src="images/event/8.jpg" alt="" />
             </figure>
@@ -22,7 +38,7 @@
                 else
                 {
                     <div style="display: flex; justify-content: center;overflow: hidden;">
-                        <img id="imgDetails"  src="~/Assets/images/ImagesSaved/@Model.Photo" />
+                        <img id="imgDetails" src="~/Assets/images/ImagesSaved/@Model.Photo" />
                     </div>
                 }
 
@@ -41,4 +57,4 @@
             </div>
         </div>
     </section>
-</div>
+
