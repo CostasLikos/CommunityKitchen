@@ -17,7 +17,7 @@
 
                 <li data-transition="fade">
                     <img src="~/Assets/images/ImagesSaved/Love-people-1680x768.jpg" alt="" width="1920" height="882" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1">
-
+                    <img src="~/Assets/images/ImagesSaved/help-getty.jpg" />
                     <div class="tp-caption tp-resizeme"
                          data-x="center" data-hoffset=""
                          data-y="center" data-voffset="-70"
@@ -31,8 +31,8 @@
                          data-start="500">
                         <div class="slide-content-box center">
                             <h4>Thousands of people could use your help!</h4>
-                            <h1><span>help</span> those in <span>need</span></h1>
-                            <p>It's the first step to realise you can help<br>the next one is, just do it! </p>
+                            <h1><span>help</span> Those in <span>need</span></h1>
+                            <p>It's the first step to realize that you can help..<br>The next one is to do it! </p>
                         </div>
                     </div>
                     <div class="tp-caption tp-resizeme"
@@ -72,9 +72,9 @@
                          data-responsive_offset="on"
                          data-start="500">
                         <div class="slide-content-box center">
-                            <h4>Thousands of people are waiting for help!</h4>
+                            <h4>Reach out to them Now!</h4>
                             <h1>help those in <span>need</span></h1>
-                            <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque la<br>udantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p>
+                            <p>Now is the time to re-imagine a kinder society :) <br> Remember that helping others feels  good! </p>
                         </div>
                     </div>
                     <div class="tp-caption tp-resizeme"
@@ -89,7 +89,10 @@
                          data-start="1500">
                         <div class="slide-content-box">
                             <div class="button">
-                                <a class="thm-btn" href="#">join us today</a>
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <a class="thm-btn" onclick="signupToggle()" href="#">join us today</a>
+                                }
                             </div>
                         </div>
                     </div>
@@ -159,7 +162,8 @@
                     <div id="kati6"><a id="lod" href="/Cause/CauseIndex">donate now</a></div>
                 }
                 <h1>our <span>missions</span></h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                <p> Tons of people are starving and are forced to live a life in the absence of basic amenities. They do not have food, clothes, and homes to live safe and healthy. Whatever caused this situation, these people are humans and it is our duty to help as many as we can. We also target to help animals anyway we can as well!</p>
+                <p>Join us in our effort by one of the following ways :</p>
             </div>
             <div class="item-box">
                 <div class="row">
@@ -170,7 +174,7 @@
                             </div>
                             <div class="content-box">
                                 <h2>Donation</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                                <p>Whether you choose to donate to support people living in poverty, protect the environment or help animals in need, we will happily recieve your help!</p>
                             </div>
                             <div class="link"><a href="#" class="thm-btn style-2">join now</a></div>
                         </div>
@@ -181,8 +185,8 @@
                                 <img src="~/Assets/images/missions/2.png" alt="" />
                             </div>
                             <div class="content-box">
-                                <h2>volunteers</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                                <h2>Become a volunteer</h2>
+                                <p>Depending on where you volunteer, the tasks you’re assigned will be different, but useful for all of us. We're needing any help we can get!</p>
                             </div>
                             <div class="link"><a href="#" class="thm-btn style-2">join now</a></div>
                         </div>
@@ -194,7 +198,7 @@
                             </div>
                             <div class="content-box">
                                 <h2>fundraising</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                                <p>Many patients lose their lives because they cannot afford to pay for medical bills, even though they are notfacing life-threatening diseases. We can provide for them!</p>
                             </div>
                             <div class="link"><a href="#" class="thm-btn style-2">join now</a></div>
                         </div>
@@ -213,16 +217,16 @@
                             <div class="section-title">
 
                                 <h1>WHERE <span> MONEY </span> GOES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                                <p>This is a simple chart to show briefly where the money we recieve from our community goes, based on the categories of the needs.</p>
                             </div>
                             <div class="content-box">
                                 <ul class="default-list">
-                                    <li><i  class="flaticon-check-mark-square-button"></i><span>60% </span>money goes for <span>Food Donation</span> in <span>Syria</span></li>
-                                    <li><i class="flaticon-check-mark-square-button"></i><span>35%</span> money goes for <span>Educational Fund </span>in <span>Bihar</span></li>
-                                    <li><i class="flaticon-check-mark-square-button"></i><span>15%</span> money goes for <span>Health Donation </span>in <span>Bangladesh</span></li>
-                                    <li><i class="flaticon-check-mark-square-button"></i><span>20% </span>money goes for <span>Building house </span>for shelter</li>
+                                    <li><i  class="flaticon-check-mark-square-button"></i><span>60% </span>money goes for <span>Food Donation</span></li>
+                                    <li><i class="flaticon-check-mark-square-button"></i><span>35%</span> money goes for <span>Educational Funds </span></li>
+                                    <li><i class="flaticon-check-mark-square-button"></i><span>15%</span> money goes for <span>Health Donation </span></li>
+                                    <li><i class="flaticon-check-mark-square-button"></i><span>20% </span>money goes for <span>Building Shelters </span></li>
                                 </ul>
-                                <div class="link"><a href="#" class="thm-btn">JOIN TODAY</a></div>
+                                <div class="link"><a href="#" class="thm-btn">JOIN US TODAY</a></div>
                             </div>
                         </div>
 
