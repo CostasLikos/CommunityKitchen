@@ -9,6 +9,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace CommunityKitchen.Controllers
 {
@@ -24,14 +25,16 @@ namespace CommunityKitchen.Controllers
         }
         [Authorize]
         // GET: Cause
-        [Authorize(Roles =SetRoles.SAdminMember)]
+        [Authorize(Roles = SetRoles.SAdminMember)]
         public ActionResult OrganizeCause()
         {
-            //Organizers cause dashboard option
-            var causes = causeService.GetAll();
+            string currentUserId = User.Identity.GetUserId();
+            var userIsSuperAdmin = User.IsInRole("SuperAdmin");
+            List<Cause> causesList = db.Causes.Where(x => x.ModeratorId == currentUserId).ToList();
 
-            return View(causes);
+            return userIsSuperAdmin ? View(db.Causes.ToList()) : View(causesList);
         }
+
         [Authorize(Roles = SetRoles.Admin)]
         public ActionResult EditCauseJson(Guid id, string amount)
         {
@@ -41,10 +44,10 @@ namespace CommunityKitchen.Controllers
             cause.CurrentAmmount += convertedAmount;
 
             causeService.Save();
-            return RedirectToAction("Cause","CauseIndex");
+            return RedirectToAction("Cause", "CauseIndex");
         }
 
-        public ActionResult CauseIndex(string sortOrder,string searchString)
+        public ActionResult CauseIndex(string sortOrder, string searchString)
         {
             ViewBag.CurrentSortOrder = sortOrder == "AS" ? "DE" : "AS";
             ViewBag.SearchString = searchString;
@@ -54,11 +57,11 @@ namespace CommunityKitchen.Controllers
             {
                 causes = causes.Where(x => x.Title.ToUpper().Contains(searchString.ToUpper())).ToList();
             }
-            
+
             switch (sortOrder?.ToUpper())
             {
-                case "AS": causes = causes.OrderBy(x => x.CurrentAmmount).ToList();break;
-                case "DE": causes =causes.OrderByDescending(x => x.CurrentAmmount).ToList(); break;
+                case "AS": causes = causes.OrderBy(x => x.CurrentAmmount).ToList(); break;
+                case "DE": causes = causes.OrderByDescending(x => x.CurrentAmmount).ToList(); break;
             }
 
             //View for organizer with all his events
@@ -118,6 +121,10 @@ namespace CommunityKitchen.Controllers
         [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> CreateCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause, HttpPostedFileBase photo)
         {
+            string currentUserId = User.Identity.GetUserId();
+
+            var user = db.Users.Where(x => x.Id == currentUserId).FirstOrDefault();
+
             if (ModelState.IsValid)
             {
                 if (!(photo == null))
@@ -125,6 +132,8 @@ namespace CommunityKitchen.Controllers
                     cause.Photo = photo.FileName;
                     photo.SaveAs(Server.MapPath("~/Assets/images/ImagesSaved/" + photo.FileName));
                 }
+
+                cause.Moderator = user;
 
                 cause.Id = Guid.NewGuid();
                 db.Causes.Add(cause);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.IdentityModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,7 +22,8 @@ namespace Entities
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal")]
         public decimal Price { get; set; }
-        public List<Inventory> Inventories { get; set; }
+        public string ModeratorId { get; set; }
+        public ApplicationUser Moderator { get; set; }
 
     }
 }
