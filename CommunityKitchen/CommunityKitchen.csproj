@@ -320,6 +320,11 @@
     <Content Include="Assets\images\gallery\6.jpg" />
     <Content Include="Assets\images\icons\bg-progressbar.jpg" />
     <Content Include="Assets\images\icons\icon-select.png" />
+    <Content Include="Assets\images\icons\icons8-mail-24.png" />
+    <Content Include="Assets\images\icons\icons8-mail-48.png" />
+    <Content Include="Assets\images\icons\icons8-mail-96.png" />
+    <Content Include="Assets\images\icons\icons8-name-16.png" />
+    <Content Include="Assets\images\icons\icons8-password-16.png" />
     <Content Include="Assets\images\icons\play.png" />
     <Content Include="Assets\images\icons\preloader.gif" />
     <Content Include="Assets\images\icons\scale.png" />
@@ -589,7 +594,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\MetaLogin\" />
-    <Folder Include="Views\Story\" />
     <Folder Include="Views\Support\" />
   </ItemGroup>
   <ItemGroup>
