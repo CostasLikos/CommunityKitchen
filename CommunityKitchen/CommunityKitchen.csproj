@@ -380,7 +380,27 @@
     <Content Include="Assets\images\ImagesSaved\9090746.jpg" />
     <Content Include="Assets\images\ImagesSaved\9168809.jpg" />
     <Content Include="Assets\images\ImagesSaved\9169661.jpg" />
+    <Content Include="Assets\images\ImagesSaved\bazaar.jpg" />
+    <Content Include="Assets\images\ImagesSaved\children.jpg" />
+    <Content Include="Assets\images\ImagesSaved\doggo.jpg" />
+    <Content Include="Assets\images\ImagesSaved\elena.jpg" />
+    <Content Include="Assets\images\ImagesSaved\fire.jpg" />
+    <Content Include="Assets\images\ImagesSaved\flood.jpg" />
+    <Content Include="Assets\images\ImagesSaved\food-donation.jpg" />
+    <Content Include="Assets\images\ImagesSaved\clothing.jpg" />
+    <Content Include="Assets\images\ImagesSaved\grooming.jpg" />
+    <Content Include="Assets\images\ImagesSaved\grooming2.jpg" />
+    <Content Include="Assets\images\ImagesSaved\grooming3.jpg" />
+    <Content Include="Assets\images\ImagesSaved\helpgreeks2.jpg" />
+    <Content Include="Assets\images\ImagesSaved\homeless.jpg" />
+    <Content Include="Assets\images\ImagesSaved\kostas.jpg" />
     <Content Include="Assets\images\ImagesSaved\people.jpg" />
+    <Content Include="Assets\images\ImagesSaved\soup11.jpg" />
+    <Content Include="Assets\images\ImagesSaved\soup13.jpg" />
+    <Content Include="Assets\images\ImagesSaved\soup6.jpg" />
+    <Content Include="Assets\images\ImagesSaved\soupppp.png" />
+    <Content Include="Assets\images\ImagesSaved\ukraine.jpg" />
+    <Content Include="Assets\images\ImagesSaved\war.jpg" />
     <Content Include="Assets\images\logo\footer.png" />
     <Content Include="Assets\images\logo\logo.png" />
     <Content Include="Assets\images\logo\map-marker.png" />
@@ -517,6 +537,10 @@
     <Content Include="Assets\images\ImagesSaved\homeless.webp" />
     <Content Include="Assets\images\ImagesSaved\noreason.webp" />
     <Content Include="Assets\images\ImagesSaved\people.webp" />
+    <Content Include="Assets\images\ImagesSaved\tornado.webp" />
+    <Content Include="Assets\images\ImagesSaved\foodbox.webp" />
+    <Content Include="Assets\images\ImagesSaved\soup5.webp" />
+    <Content Include="Assets\images\ImagesSaved\soup4.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ChartPie.js" />
     <Content Include="Scripts\LoginRegister.js" />
@@ -531,6 +555,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Assets\images\ImagesSaved\food1.jpg" />
+    <Content Include="Assets\images\ImagesSaved\food2.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

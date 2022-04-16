@@ -2630,6 +2630,12 @@ input, textarea {
 .accordion-box .accordion {
     margin-bottom: 10px;
 }
+
+
+.about-us{
+    padding-top:200px;
+
+}
 /*
 ====================================================================
   15. google map Section
@@ -4695,7 +4701,7 @@ Project styles
 */
 
 .contact_details {
-    padding: 100px 0px 50px;
+    padding: 260px 0px 50px;
 }
 
     .contact_details .item {
