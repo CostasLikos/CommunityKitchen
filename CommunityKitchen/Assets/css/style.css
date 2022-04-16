@@ -5423,7 +5423,7 @@ Project styles
 ==========================================================
 */
 .our-team {
-    padding: 0px 0px 100px;
+    padding: 0px 0px 5000px;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -5575,7 +5575,9 @@ Project styles
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
         transform: rotate(-3deg);
     }
-
+.image-box-team{
+    justify-content:center;
+}
 /*
 ===================================================
   26. our-features

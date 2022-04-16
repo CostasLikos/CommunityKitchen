@@ -394,6 +394,8 @@
     <Content Include="Assets\images\ImagesSaved\homeless.jpg" />
     <Content Include="Assets\images\ImagesSaved\kostas.jpg" />
     <Content Include="Assets\images\ImagesSaved\people.jpg" />
+    <Content Include="Assets\images\ImagesSaved\rangers.jpg" />
+    <Content Include="Assets\images\ImagesSaved\Power-Rangers-Reboot-Universe-Netflix.jpg" />
     <Content Include="Assets\images\ImagesSaved\single-cause.jpg" />
     <Content Include="Assets\images\ImagesSaved\soup11.jpg" />
     <Content Include="Assets\images\ImagesSaved\soup13.jpg" />
@@ -451,9 +453,17 @@
     <Content Include="Assets\images\slider\3.jpg" />
     <Content Include="Assets\images\team\dimitris.jpg" />
     <Content Include="Assets\images\team\doggo2.jpg" />
+    <Content Include="Assets\images\team\greenranger.jpg" />
     <Content Include="Assets\images\team\ioanis.jpg" />
     <Content Include="Assets\images\team\laptop.jpeg" />
+    <Content Include="Assets\images\team\Mmpr-black.jpg" />
+    <Content Include="Assets\images\team\Mmpr-blue.jpg" />
+    <Content Include="Assets\images\team\Mmpr-red.jpg" />
     <Content Include="Assets\images\team\niki.jpg" />
+    <Content Include="Assets\images\team\rangers.jpg" />
+    <Content Include="Assets\images\team\rangersss.jpg" />
+    <Content Include="Assets\images\team\yellow.jpg" />
+    <Content Include="Assets\images\team\yellowranger.jpg" />
     <Content Include="Assets\js\bootstrap-select.min.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\bxslider.js" />
@@ -500,6 +510,7 @@
     <Content Include="Assets\Selection\heartWithHands.jpg" />
     <Content Include="Assets\Selection\lockedhands.jpg" />
     <Content Include="Assets\Selection\Mask-Group-81-1920x500.jpg" />
+    <Content Include="bin\greenranger.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
