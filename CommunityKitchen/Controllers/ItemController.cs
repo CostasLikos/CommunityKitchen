@@ -11,6 +11,7 @@ using Entities;
 using MyDataBase;
 using PersistentLayer.IRepository;
 using PersistentLayer.Repository;
+using Microsoft.AspNet.Identity;
 
 namespace CommunityKitchen.Controllers
 {
@@ -34,9 +35,11 @@ namespace CommunityKitchen.Controllers
         [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult Index()
         {
-            var items = itemService.GetAll();
+            string currentUserId = User.Identity.GetUserId();
+            var userIsSuperAdmin = User.IsInRole("SuperAdmin");
+            List<Item> itemsList = db.Items.Where(x => x.ModeratorId == currentUserId).ToList();
 
-            return View(items);
+            return userIsSuperAdmin ? View(db.Items.ToList()) : View(itemsList);
         }
 
         [Authorize(Roles = SetRoles.SAdmin)]
@@ -116,9 +119,14 @@ namespace CommunityKitchen.Controllers
         [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> Create([Bind(Include = "Id,ItemName,Quantity,Price")] Item item)
         {
+
+            string currentUserId = User.Identity.GetUserId();
+            var user = db.Users.Where(x => x.Id == currentUserId).FirstOrDefault();
+
             if (ModelState.IsValid)
             {
                 item.Id = Guid.NewGuid();
+                item.Moderator = user;
                 db.Items.Add(item);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

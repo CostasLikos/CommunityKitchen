@@ -27,7 +27,7 @@ namespace Entities
         [Range(0, 1000000), DataType(DataType.Currency)]
         public double CurrentAmmount { get; set; }
         //Navigation Properties---Creator Link
-        public Guid ModeratorId { get; set; }
+        public string ModeratorId { get; set; }
         public ApplicationUser Moderator { get; set; }
     }
 }

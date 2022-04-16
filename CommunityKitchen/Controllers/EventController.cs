@@ -1,4 +1,5 @@
 using Entities;
+using Microsoft.AspNet.Identity;
 using MyDataBase;
 using PersistentLayer.Repository;
 using System;
@@ -16,6 +17,7 @@ namespace Controllers
     {
         private ApplicationDbContext db;
         private EventRepository eventService;
+
         public EventController()
         {
             db = new ApplicationDbContext();
@@ -24,10 +26,9 @@ namespace Controllers
 
         public ActionResult EventsIndex()
         {
-            var events = eventService.GetAll();
+            List<Event> eventslist = db.Events.ToList();
 
-            //View for organizer with all his events
-            return View(events);
+            return View(eventslist);
         }
         // GET: Event
         public ActionResult UpcomingEvents()
@@ -60,6 +61,10 @@ namespace Controllers
         [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult CreateEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
         {
+            string currentUserId = User.Identity.GetUserId();
+
+            var user = db.Users.Where(x => x.Id == currentUserId).FirstOrDefault();
+
             if (ModelState.IsValid)
             {
                 if (!(photo == null))
@@ -67,6 +72,8 @@ namespace Controllers
                     eve.Photo = photo.FileName;
                     photo.SaveAs(Server.MapPath("~/Assets/images/ImagesSaved/" + photo.FileName));
                 }
+
+                eve.Moderator = user;
 
                 eventService.Add(eve);
                 eventService.Save();
@@ -111,9 +118,9 @@ namespace Controllers
             Event ev = eventService.GetById(id);
 
             //var fullPath = Path.GetFullPath(ev.Photo);
-            
+
             if (ev == null)
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);            
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             return View(ev);
         }
@@ -121,7 +128,7 @@ namespace Controllers
 
 
         [HttpPost, ActionName("EditEvent")]
-        [Authorize(Roles = SetRoles.SAdmin)] //tODO: edwpera den fernei to photo
+        [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult EditEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
         {
             var tempPhoto = eve.Photo;
@@ -138,8 +145,8 @@ namespace Controllers
                 {
                     eve.Photo = eve.Photo;
                     db.Entry(eve).State = System.Data.Entity.EntityState.Modified;
-                }  
-                
+                }
+
                 db.SaveChangesAsync();
                 return RedirectToAction("OrganizeEvents");
             }
@@ -149,10 +156,21 @@ namespace Controllers
         [Authorize(Roles = SetRoles.SAdmin)]
         public ActionResult OrganizeEvents()
         {
-            //Organizers event dashboard option
-            var events = eventService.GetAll();
+            string currentUserId = User.Identity.GetUserId();
+            var userIsSuperAdmin = User.IsInRole("SuperAdmin");
 
-            return View(events);
+            List<Event> eventslist = db.Events.Where(x => x.ModeratorId == currentUserId).ToList();
+
+            return userIsSuperAdmin ? View(db.Events.ToList()) : View(eventslist);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

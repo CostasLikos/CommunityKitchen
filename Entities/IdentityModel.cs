@@ -36,11 +36,10 @@ namespace Entities.IdentityModel
         public string Address { get; set; }
         //Method to get FullName
         public string FullName => FirstName + " " + LastName;
-        //Navigational Properties
-        public List<Story> Stories { get; set; }
-        public List<Event> Events { get; set; }
-        public List<Cause> Causes { get; set; }
-        public Guid? InventoryId { get; set; }
-        public Inventory Inventory { get; set; }
+
+        ////Navigational Properties
+        //public List<Event> Events { get; set; }
+        //public List<Cause> Causes { get; set; }
+        //public List<Item> Items { get; set; }
     }
 }
