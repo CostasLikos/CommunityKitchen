@@ -189,28 +189,28 @@
                   Address="Pl. Ir. 1940 41, Chaidari 124 61",EventDate=new DateTime(2022,06,06), Photo = "7551595.jpg" },
 
               new Event() {Title = "Share meal-boxes at Amerikis Square",Description="Offering free meal-boxes at Plateia Amerikis in Athens from 14:00 to 18:00",
-                  Address="Amerikis Square, Athens 112 52",EventDate=new DateTime(2022,09,05), Photo = "food-box.jpg" },
+                  Address="Amerikis Square, Athens 112 52",EventDate=new DateTime(2022,09,05), Photo = "foodbox.jpg" },
 
               new Event() {Title = "Soup Kitchen at Kanigos Square",Description="Offering free meals at Plateia Kaniggos in Athens from 13:00 to 17:00",
-                  Address="Akadimias 92, Athens 106 77",EventDate=new DateTime(2022,08,05), Photo = "soup-6.jpg" },
+                  Address="Akadimias 92, Athens 106 77",EventDate=new DateTime(2022,08,05), Photo = "soup1.jpg" },
 
-              new Event() {Title = "Soup Kitchen at Omonia Square",Description="Offering free meals at Plateia Omonoias in Athens from 12:00 to 17:00",
-                  Address="Square, District of Freedom 8573311, Athens 104 31",EventDate=new DateTime(2022,10,12) , Photo = "soup5.jpg"},
+              new Event() {Title = "Open Kitchen at Omonia Square",Description="Offering free meals at Plateia Omonoias in Athens from 12:00 to 17:00",
+                  Address="Square, District of Freedom 8573311, Athens 104 31",EventDate=new DateTime(2022,10,12) , Photo = "openkitchen.jpg"},
 
               new Event() {Title = "Soup Kitchen at Exarcheia Square",Description="Offering free meals at Plateia Exarcheion in Athens from 15:00 to 19:00",
-                  Address="Stournari 5, Athens 106 83",EventDate=new DateTime(2022,09,02), Photo = "soup11.jpg"  },
+                  Address="Stournari 5, Athens 106 83",EventDate=new DateTime(2022,09,02), Photo = "soup2.jpg"  },
 
               new Event() {Title = "Soup Kitchen at Karaiskaki Square",Description="Offering free meals at Plateia Karaiskaki in Athens from 12:00 to 18:00",
-                  Address="Pl. Karaiskaki, Athens 104 37",EventDate=new DateTime(2022,06,04), Photo = "soup4.jpg"  },
+                  Address="Pl. Karaiskaki, Athens 104 37",EventDate=new DateTime(2022,06,04), Photo = "soup3.jpg"  },
 
               new Event() {Title = "Soup Kitchen at Kolonaki Square",Description="Offering free meals at Plateia Kolonakiou in Athens from 13:00 to 15:00",
-                  Address="Pl. Filikis Eterias 11, Athens 106 74",EventDate=new DateTime(2022,08,06), Photo = "soupppp.jpg"  },
+                  Address="Pl. Filikis Eterias 11, Athens 106 74",EventDate=new DateTime(2022,08,06), Photo = "soup4.png"  },
 
               new Event() {Title = "Soup Kitchen at Syntagma Square",Description="Offering free meals at Plateia Syntagmatos in Athens from 12:00 to 15:00",
-                  Address="Pl. Sintagmatos, Athens 105 63",EventDate=new DateTime(2022,06,06), Photo = "soup13.jpg"  },
+                  Address="Pl. Sintagmatos, Athens 105 63",EventDate=new DateTime(2022,06,06), Photo = "soup5.jpg"  },
 
               new Event() {Title = "Soup Kitchen at Davaki Square",Description="Offering free meals at Plateia Davaki in Kallithea from 13:00 to 17:00",
-                  Address="Mantzagriotaki 68, Kallithea 176 72",EventDate=new DateTime(2022,05,05), Photo = "soup15.jpg"  },
+                  Address="Mantzagriotaki 68, Kallithea 176 72",EventDate=new DateTime(2022,05,05), Photo = "soup6.jpg"  },
 
               new Event() {Title = "Lending A Hand At Cross Square",Description="Free grooming for poor people at Plateia Estavromenoy in Egaleo from 12:00 to 18:00",
                   Address="Dimarchiou 1, Egaleo 122 42",EventDate=new DateTime(2022,06,06), Photo = "grooming3.jpg"  }
