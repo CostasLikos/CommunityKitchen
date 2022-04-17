@@ -8,6 +8,6 @@ namespace Entities.IEntities
 {
     public interface IWatcher
     {
-        void Update(DateTime date);
+        void Update(DateTime date,string eventName);
     }
 }

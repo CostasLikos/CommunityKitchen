@@ -11,7 +11,7 @@ namespace Entities.IEntities
     {
         void Register(IWatcher watcher);
         void Unregister(IWatcher watcher);
-        void NotifyRegistredUsers(DateTime date);
+        void NotifyRegisteredUsers(DateTime date);
 
     }
 }

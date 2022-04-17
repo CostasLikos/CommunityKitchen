@@ -121,6 +121,7 @@
     <Compile Include="CompositeFactoryDesign\Factories\IConsumableFactory.cs" />
     <Compile Include="CompositeFactoryDesign\Factories\LiquidFactory.cs" />
     <Compile Include="CompositeFactoryDesign\Factories\SolidFactory.cs" />
+    <Compile Include="EmailDateChangeServices.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="IEntities\ISubject.cs" />
     <Compile Include="Item.cs" />
