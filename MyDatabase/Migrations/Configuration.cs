@@ -7,7 +7,6 @@
     using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
-    using System.IO;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MyDataBase.ApplicationDbContext>
@@ -28,65 +27,56 @@
             var causes = CauseSeed();
             var events = EventSeed();
             var items = ItemSeed();
-            context.Causes.AddRange(causes);
-            context.Events.AddRange(events);
-            context.Items.AddRange(items);
+            if (!context.Causes.Any())
+            {
+                context.Causes.AddRange(causes);
+            }
+            if (!context.Events.Any())
+            {
+                context.Events.AddRange(events);
+            }
+            if (!context.Items.Any())
+            {
+                context.Items.AddRange(items);
+            }
 
-            if (!context.Roles.Any(r => r.Name == "Guest"))
+            if (!context.Roles.Any())
             {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole() { Name = "Guest" };
-                manager.Create(role);
+                var userRoles = UserRoles();
+                foreach (var role in userRoles)
+                {
+                    context.Roles.Add(role);
+                }
             }
-            if (!context.Roles.Any(r => r.Name == "SuperAdmin"))
-            {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole() { Name = "SuperAdmin" };
-                manager.Create(role);
-            }
-            if (!context.Roles.Any(r => r.Name == "Admin"))
-            {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole() { Name = "Admin" };
+           
 
-                manager.Create(role);
-            }
-            if (!context.Roles.Any(r => r.Name == "Member"))
-            {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole() { Name = "Member" };
-
-                manager.Create(role);
-            }
-            if (!context.Roles.Any(r => r.Name == "Donor"))
-            {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole() { Name = "Donor" };
-
-                manager.Create(role);
-            }
-            if (!context.Users.Any(u => u.UserName == "admin@gmail.com"))
+            if (!context.Users.Any(u => u.UserName == "DateChangedInfo@gmail.com"))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(store);
 
                 var passwordHash = new PasswordHasher();
-                var user = new ApplicationUser() { UserName = "admin@gmail.com", Email = "admin@gmail.com", PasswordHash = passwordHash.HashPassword("Admin1234!") };
+                var user = new ApplicationUser()
+                {
+                    UserName = "DateChangedInfo@gmail.com",
+                    Email = "DateChangedInfo@gmail.com",
+                    PasswordHash = passwordHash.HashPassword("321SAdmin!")
+                };
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "SuperAdmin");
             }
-            if (!context.Users.Any(u => u.UserName == "member@gmail.com"))
+            if (!context.Users.Any(u => u.UserName == "IreceiveNotice@gmail.com"))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(store);
 
                 var passwordHash = new PasswordHasher();
-                var user = new ApplicationUser() { UserName = "member@gmail.com", Email = "member@gmail.com", PasswordHash = passwordHash.HashPassword("Member1234!") };
+                var user = new ApplicationUser()
+                {
+                    UserName = "IreceiveNotice@gmail.com",
+                    Email = "IreceiveNotice@gmail.com",
+                    PasswordHash = passwordHash.HashPassword("321Member!")
+                };
                 userManager.Create(user);
                 userManager.AddToRole(user.Id, "Member");
             }
@@ -124,28 +114,32 @@
             myUsers.AddRange(context.Users.Where(x => x.Email == "organizer@gmail.com").ToList());
             myUsers.AddRange(context.Users.Where(x => x.Email == "organizer2@gmail.com").ToList());
 
-            foreach (var item in events)
-            {
-                var index = random.Next(0, 2);
 
-                item.Moderator = myUsers[index];
+            if (context.Events.All(x => x.Moderator == null))
+            {
+                foreach (var eve in events)
+                {
+                    var index = random.Next(0, 2);
+                    eve.Moderator = myUsers[index];
+                }
+            }
+            if (context.Causes.All(x => x.Moderator == null))
+            {
+                foreach (var cau in causes)
+                {
+                    var index = random.Next(0, 2);
+                    cau.Moderator = myUsers[index];
+                }
             }
 
-            foreach (var item in causes)
+            if (context.Items.All(x => x.Moderator == null))
             {
-                var index = random.Next(0, 2);
-
-                item.Moderator = myUsers[index];
+                foreach (var item in items)
+                {
+                    var index = random.Next(0, 2);
+                    item.Moderator = myUsers[index];
+                }
             }
-
-            foreach (var item in items)
-            {
-                var index = random.Next(0, 2);
-
-                item.Moderator = myUsers[index];
-            }
-
-
             context.SaveChanges();
         }
         public List<Cause> CauseSeed()
@@ -364,6 +358,18 @@
             new ApplicationUser() {FirstName="John",LastName="Doe",Address ="3rd Avenue 112,Manhattan",UserName="Foreigner"}
         };
             return users;
+        }
+        public List<IdentityRole> UserRoles()
+        {
+            return new List<IdentityRole>()
+            {
+                new IdentityRole(){ Name = "Guest" },
+                new IdentityRole(){ Name = "SuperAdmin"},
+                new IdentityRole(){ Name = "Admin"},
+                new IdentityRole(){ Name = "Donor"},
+                new IdentityRole(){ Name = "Member"}
+            };
+
         }
     }
 }

@@ -42,37 +42,39 @@ namespace ReposTestArea
 
             //IConsumableFactory solidFactory = new SolidFactory();
 
-            //var store = new UserStore<ApplicationUser>(context);
-            //var userManager = new UserManager<ApplicationUser>(store);
+            var store = new UserStore<ApplicationUser>(context);
+            var userManager = new UserManager<ApplicationUser>(store);
 
-            //var passwordHash = new PasswordHasher();
-            //Event eventTest = new Event()
-            //{
-            //    Title = "Agiou Meletiou Charity Meal",
-            //    Description = "Offering meal at Agiou Meletiou street",
-            //    Address = "Agiou Meletiou 32, Athens, Pagrati 12443",
-            //    EventDate = new DateTime(2022, 04, 05),
-            //    Photo = "food1.jpg"
-            //};
-            //var user = new ApplicationUser()
-            //{
-            //    UserName = "IreceiveNotice@gmail.com",
-            //    Email = "IreceiveNotice@gmail.com",
-            //    PasswordHash = passwordHash.HashPassword("321Member!")
+            var passwordHash = new PasswordHasher();
+            Event eventTest = new Event()
+            {
+                Title = "Agiou Meletiou Charity Meal",
+                Description = "Offering meal at Agiou Meletiou street",
+                Address = "Agiou Meletiou 32, Athens, Pagrati 12443",
+                EventDate = new DateTime(2022, 04, 05),
+                Photo = "food1.jpg"
+            };
+            var user = new ApplicationUser()
+            {
+                UserName = "IreceiveNotice@gmail.com",
+                Email = "IreceiveNotice@gmail.com",
+                FirstName = "Aggouri",
+                LastName = "Marameno",
+                PasswordHash = passwordHash.HashPassword("321Member!")
 
-            //};
-            //var user1 = new ApplicationUser()
-            //{
-            //    UserName = "DateChangedInfo@gmail.com",
-            //    Email = "DateChangedInfo@gmail.com",
-            //    PasswordHash = passwordHash.HashPassword("321SAdmin!")
+            };
+            var user1 = new ApplicationUser()
+            {
+                UserName = "DateChangedInfo@gmail.com",
+                Email = "DateChangedInfo@gmail.com",
+                PasswordHash = passwordHash.HashPassword("321SAdmin!")
 
-            //};
-            //eventTest.observerList.Add(user);
+            };
+            eventTest.observerList.Add(user);
 
-            //Console.WriteLine(eventTest.EventDate.ToShortDateString());
-            //eventTest.EventDate = new DateTime(2022, 04, 08);
-            //Console.WriteLine(eventTest.EventDate.ToShortDateString());
+            Console.WriteLine(eventTest.EventDate.ToShortDateString());
+            eventTest.EventDate = new DateTime(2022, 04, 08);
+            Console.WriteLine(eventTest.EventDate.ToShortDateString());
 
 
 

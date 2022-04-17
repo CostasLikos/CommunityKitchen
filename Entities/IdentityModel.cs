@@ -28,7 +28,11 @@ namespace Entities.IdentityModel
         //Observer Method
         public void Update(DateTime date,string eventName)
         {
-            EmailDateChangeServices.EventDateChangedEmail("IreceiveNotice@gmail.com",eventName,date);
+            EmailDateChangeServices.EventDateChangedEmail("IreceiveNotice@gmail.com",eventName,date,FullName);
+        }
+        public void NewEventCreated(DateTime date, string eventName)
+        {
+            EmailDateChangeServices.NewEventMail("IreceiveNotice@gmail.com", eventName, date, FullName);
         }
         //Additional Properties to IdentityUser
         public string FirstName { get; set; }
