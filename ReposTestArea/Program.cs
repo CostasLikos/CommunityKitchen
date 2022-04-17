@@ -3,6 +3,8 @@ using Entities.CompositeFactoryDesign.Concrete;
 using Entities.CompositeFactoryDesign.Factories;
 using Entities.IdentityModel;
 using Entities.IEntities;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using MyDataBase;
 using PersistentLayer.Repository;
 using PersistentLayer.Repository.GenericRepository;
@@ -19,29 +21,59 @@ namespace ReposTestArea
         static void Main(string[] args)
         {
 
-            ApplicationDbContext db = new ApplicationDbContext();
-            CauseRepository causeService = new CauseRepository(db);
-            EventRepository eventService = new EventRepository(db);
-            
-            Liquid l1 = new Liquid("water",5);
-            Console.WriteLine(l1.ConsumableType);
-            Console.WriteLine(l1.ItemName);
-            Console.WriteLine(l1.Quantity);
-            Solid s1 = new Solid();
-            Console.WriteLine(s1.ConsumableType);
-            
+            ApplicationDbContext context = new ApplicationDbContext();
+            CauseRepository causeService = new CauseRepository(context);
+            EventRepository eventService = new EventRepository(context);
 
-            IConsumableFactory liquidFactory = new LiquidFactory();
-            IConsumable liquid1 = liquidFactory.CreateConsumable("Tea",6);
-            Console.WriteLine(liquid1.ConsumableType);
-            
-            
-            
-            
-            IConsumableFactory solidFactory = new SolidFactory();
-            
-            
-            
+            //Liquid l1 = new Liquid("water",5);
+            //Console.WriteLine(l1.ConsumableType);
+            //Console.WriteLine(l1.ItemName);
+            //Console.WriteLine(l1.Quantity);
+            //Solid s1 = new Solid();
+            //Console.WriteLine(s1.ConsumableType);
+
+
+            //IConsumableFactory liquidFactory = new LiquidFactory();
+            //IConsumable liquid1 = liquidFactory.CreateConsumable("Tea",6);
+            //Console.WriteLine(liquid1.ConsumableType);
+
+
+
+
+            //IConsumableFactory solidFactory = new SolidFactory();
+
+            //var store = new UserStore<ApplicationUser>(context);
+            //var userManager = new UserManager<ApplicationUser>(store);
+
+            //var passwordHash = new PasswordHasher();
+            //Event eventTest = new Event()
+            //{
+            //    Title = "Agiou Meletiou Charity Meal",
+            //    Description = "Offering meal at Agiou Meletiou street",
+            //    Address = "Agiou Meletiou 32, Athens, Pagrati 12443",
+            //    EventDate = new DateTime(2022, 04, 05),
+            //    Photo = "food1.jpg"
+            //};
+            //var user = new ApplicationUser()
+            //{
+            //    UserName = "IreceiveNotice@gmail.com",
+            //    Email = "IreceiveNotice@gmail.com",
+            //    PasswordHash = passwordHash.HashPassword("321Member!")
+
+            //};
+            //var user1 = new ApplicationUser()
+            //{
+            //    UserName = "DateChangedInfo@gmail.com",
+            //    Email = "DateChangedInfo@gmail.com",
+            //    PasswordHash = passwordHash.HashPassword("321SAdmin!")
+
+            //};
+            //eventTest.observerList.Add(user);
+
+            //Console.WriteLine(eventTest.EventDate.ToShortDateString());
+            //eventTest.EventDate = new DateTime(2022, 04, 08);
+            //Console.WriteLine(eventTest.EventDate.ToShortDateString());
+
 
 
             //var causes = causeService.GetAll();
@@ -50,7 +82,7 @@ namespace ReposTestArea
             //    Console.WriteLine($"{item.Title,-40}{item.Description,-40}{item.TargetGoal}{item.CurrentAmmount}");
             //}
             //Console.WriteLine("-------------------------------------------------------------");
-            //Cause NeedMoney = new Cause() { Title="Money Money",Description="Raising Funds",TargetGoal=150,CurrentAmmount=25};
+            //Cause NeedMoney = new Cause() { Title = "Money Money", Description = "Raising Funds", TargetGoal = 150, CurrentAmmount = 25 };
             //causeService.Add(NeedMoney);
             //causeService.Save();
             //foreach (var item in causes)

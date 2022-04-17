@@ -26,9 +26,9 @@ namespace Entities.IdentityModel
         }
 
         //Observer Method
-        public void Update(DateTime date)
+        public void Update(DateTime date,string eventName)
         {
-            Console.WriteLine("The date of an event has changed to {0}",date.ToShortDateString());
+            EmailDateChangeServices.EventDateChangedEmail("IreceiveNotice@gmail.com",eventName,date);
         }
         //Additional Properties to IdentityUser
         public string FirstName { get; set; }
@@ -37,9 +37,9 @@ namespace Entities.IdentityModel
         //Method to get FullName
         public string FullName => FirstName + " " + LastName;
 
-        ////Navigational Properties
-        //public List<Event> Events { get; set; }
-        //public List<Cause> Causes { get; set; }
-        //public List<Item> Items { get; set; }
+        //Navigational Properties
+        public List<Event> Events { get; set; }
+        public List<Cause> Causes { get; set; }
+        public List<Item> Items { get; set; }
     }
 }

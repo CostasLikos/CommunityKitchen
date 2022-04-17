@@ -34,19 +34,19 @@ namespace Entities
             set 
             { 
                 date = value;
-                NotifyRegistredUsers(value);
+                NotifyRegisteredUsers(value);
             }
         }
 
         //Observers
-        List<IWatcher> observerList = new List<IWatcher>();
+        public List<IWatcher> observerList = new List<IWatcher>();
         public void Register(IWatcher watcher)=>observerList.Add(watcher);
         public void Unregister(IWatcher watcher)=>observerList.Remove(watcher);
-        public void NotifyRegistredUsers(DateTime date)
+        public void NotifyRegisteredUsers(DateTime date)
         {
             foreach (IWatcher watcher in observerList)
             {
-                watcher.Update(date);
+                watcher.Update(date,Title);
             }
         }
     }
