@@ -6,7 +6,18 @@
     ViewBag.Title = "OrganizeEvents";
 }
 
-
+<style>
+    .eventimg {
+        border-radius: 20px;
+        height: 179px;
+        transition: all 0.5s ease 0s;
+    }
+        .eventimg:hover {
+            height: 533px !important;
+            transform: scale(1);
+            transition: all 0.5s ease 0s;
+        }
+</style>
 
 <!--start upcoming-event-->
 <section class="all-event">
@@ -49,7 +60,7 @@
                                         else
                                         {
                                             <div>
-                                                <img style="border-radius: 50px; height: 432px; width: 776px; object-fit:cover; " src="~/Assets/images/ImagesSaved/@eve.Photo" alt="Can not load image" />
+                                                <img class="eventimg" src="~/Assets/images/ImagesSaved/@eve.Photo" alt="Can not load image" />
                                             </div>
                                         }
 
