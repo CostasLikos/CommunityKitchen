@@ -10,6 +10,8 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+
 
 namespace Controllers
 {
@@ -24,11 +26,24 @@ namespace Controllers
             eventService = new EventRepository(db);
         }
 
-        public ActionResult EventsIndex()
+        public ActionResult EventsIndex(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
             List<Event> eventslist = db.Events.ToList();
+            
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
-            return View(eventslist);
+            ViewBag.CurrentFilter = searchString;
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            return View(eventslist.ToPagedList(pageNumber, pageSize));
         }
         // GET: Event
         public ActionResult UpcomingEvents()
@@ -154,14 +169,27 @@ namespace Controllers
         }
 
         [Authorize(Roles = SetRoles.SAdmin)]
-        public ActionResult OrganizeEvents()
+        public ActionResult OrganizeEvents(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
             string currentUserId = User.Identity.GetUserId();
             var userIsSuperAdmin = User.IsInRole("SuperAdmin");
 
-            List<Event> eventslist = db.Events.Where(x => x.ModeratorId == currentUserId).ToList();
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
-            return userIsSuperAdmin ? View(db.Events.ToList()) : View(eventslist);
+            ViewBag.CurrentFilter = searchString;
+
+            List<Event> eventslist = db.Events.Where(x => x.ModeratorId == currentUserId).ToList();
+            int pageSize = 4;
+            int pageNumber = (page ?? 1);
+            return userIsSuperAdmin ? View(db.Events.ToList().ToPagedList(pageNumber, pageSize)) : View(eventslist.ToPagedList(pageNumber, pageSize));
         }
 
         protected override void Dispose(bool disposing)

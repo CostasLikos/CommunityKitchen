@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using PagedList;
 
 namespace CommunityKitchen.Controllers
 {
@@ -26,13 +27,26 @@ namespace CommunityKitchen.Controllers
         [Authorize]
         // GET: Cause
         [Authorize(Roles = SetRoles.SAdminMember)]
-        public ActionResult OrganizeCause()
+        public ActionResult OrganizeCause(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
+
             string currentUserId = User.Identity.GetUserId();
             var userIsSuperAdmin = User.IsInRole("SuperAdmin");
-            List<Cause> causesList = db.Causes.Where(x => x.ModeratorId == currentUserId).ToList();
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
-            return userIsSuperAdmin ? View(db.Causes.ToList()) : View(causesList);
+            ViewBag.CurrentFilter = searchString;
+            List<Cause> causesList = db.Causes.Where(x => x.ModeratorId == currentUserId).ToList();
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return userIsSuperAdmin ? View(db.Causes.ToList().ToPagedList(pageNumber, pageSize)) : View(causesList.ToPagedList(pageNumber, pageSize));
         }
 
         [Authorize(Roles = SetRoles.Admin)]
@@ -47,10 +61,23 @@ namespace CommunityKitchen.Controllers
             return RedirectToAction("Cause", "CauseIndex");
         }
 
-        public ActionResult CauseIndex(string sortOrder, string searchString)
+        public ActionResult CauseIndex(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
+
             ViewBag.CurrentSortOrder = sortOrder == "AS" ? "DE" : "AS";
             ViewBag.SearchString = searchString;
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
 
             var causes = causeService.GetAll();
             if (!String.IsNullOrEmpty(searchString))
@@ -64,8 +91,11 @@ namespace CommunityKitchen.Controllers
                 case "DE": causes = causes.OrderByDescending(x => x.CurrentAmmount).ToList(); break;
             }
 
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            return View(causes.ToList().ToPagedList(pageNumber, pageSize));
+
             //View for organizer with all his events
-            return View(causes.ToList());
         }
         // GET: Cause
         public ActionResult UpcomingCauses()   //na mpei filter by current date

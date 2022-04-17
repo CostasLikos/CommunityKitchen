@@ -1,26 +1,43 @@
 ﻿@model IEnumerable<Entities.Item>
 
+
 @{
     ViewBag.Title = "Index";
 }
 
 <div style="margin-top:118px!important;" class="container p-2">
+    <div class="row d-flex justify-content-around m-3">
+        <div>
+            <button style="width:150px!important;" class="btn size5 btn-warning col-12 align-self-center" onclick="location.href='@Url.Action("Create", "Item")'">Add New Item</button>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div style="padding-top:5px">
+                    Find by name:
+
+                </div>
+                <div class="px-1">
+                    @Html.TextBox("SearchString")
+                </div>
+                <div>
+                    <input type="submit" value="Search" />
+                </div>
+            </div>
+        }
+
+
+    </div>
     <table id="table" class="table table-hover table-striped ml-5">
+
         <tr>
-            <th class="m-3">
-                <button style="width:150px!important;" class="btn size5 btn-warning col-12 align-self-center" onclick="location.href='@Url.Action("Create", "Item")'">Add New Item</button>
-            </th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <th class="col-3" style="text-align:center">
-                @Html.DisplayNameFor(model => model.ItemName)
+            <th class="col-3" style="text-align:left">
+                @Html.ActionLink("Item Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+
             </th>
             <th class="col-1" style="text-align:center">
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.ActionLink("Price", "Index", new { sortOrder = ViewBag.PriceSortParm })
             </th>
             <th class="col-1" style="text-align:center">
                 @Html.DisplayNameFor(model => model.Quantity)
@@ -78,14 +95,14 @@
 
         })
 
-        $('.saveBtn').on('click', function (event) {            
+        $('.saveBtn').on('click', function (event) {
             let row = event.currentTarget.parentElement.parentElement.rowIndex;
 
             let itemID = event.currentTarget.parentElement.parentElement.children[4].children[3].value;
 
             let newName = event.currentTarget.parentElement.parentElement.children[0].innerText;
             let newPrice = event.currentTarget.parentElement.parentElement.children[1].innerText;
-            newPrice = newPrice.substring(1);   
+            newPrice = newPrice.substring(1);
 
             console.log(newName.toString());
             console.log(newPrice);

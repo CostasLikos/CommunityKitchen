@@ -33,13 +33,36 @@ namespace CommunityKitchen.Controllers
         //    return View(await db.Items.ToListAsync());
         //}
         [Authorize(Roles = SetRoles.SAdmin)]
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PriceSortParm = sortOrder == "Price" ? "price_desc" : "Price";
+
             string currentUserId = User.Identity.GetUserId();
             var userIsSuperAdmin = User.IsInRole("SuperAdmin");
-            List<Item> itemsList = db.Items.Where(x => x.ModeratorId == currentUserId).ToList();
+            var items = db.Items.AsQueryable();
 
-            return userIsSuperAdmin ? View(db.Items.ToList()) : View(itemsList);
+            if (!userIsSuperAdmin)
+            {
+                items = items.Where(x => x.ModeratorId == currentUserId);
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    items = items.OrderByDescending(s => s.ItemName);
+                    break;
+                case "Price":
+                    items = items.OrderBy(s => s.ItemName);
+                    break;
+                case "price_desc":
+                    items = items.OrderByDescending(s => s.Price);
+                    break;
+                default:
+                    items = items.OrderBy(s => s.ItemName);
+                    break;
+            }
+
+            return  View(items);
         }
 
         [Authorize(Roles = SetRoles.SAdmin)]
