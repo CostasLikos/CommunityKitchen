@@ -33,9 +33,7 @@ namespace Entities
 
                         smtp.Credentials = new NetworkCredential("DateChangedInfo@gmail.com", "321SAdmin!");
                         smtp.EnableSsl = true;
-                        smtp.Send(mail);
-                        
-                        
+                        smtp.Send(mail);                        
                     }
                 }
             }
