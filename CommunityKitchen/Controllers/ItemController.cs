@@ -12,6 +12,8 @@ using MyDataBase;
 using PersistentLayer.IRepository;
 using PersistentLayer.Repository;
 using Microsoft.AspNet.Identity;
+using PagedList;
+
 
 namespace CommunityKitchen.Controllers
 {
@@ -33,10 +35,22 @@ namespace CommunityKitchen.Controllers
         //    return View(await db.Items.ToListAsync());
         //}
         [Authorize(Roles = SetRoles.SAdmin)]
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.PriceSortParm = sortOrder == "Price" ? "price_desc" : "Price";
+            ViewBag.QSortParm = sortOrder == "Quantity" ? "q_desc" : "Quantity";
+            ViewBag.CurrentFilter = searchString;
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
             string currentUserId = User.Identity.GetUserId();
             var userIsSuperAdmin = User.IsInRole("SuperAdmin");
@@ -45,6 +59,13 @@ namespace CommunityKitchen.Controllers
             if (!userIsSuperAdmin)
             {
                 items = items.Where(x => x.ModeratorId == currentUserId);
+            }
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(s => s.ItemName.Contains(searchString)
+                                       || s.Price.ToString().Contains(searchString)
+                                       || s.Quantity.ToString().Contains(searchString));
             }
             switch (sortOrder)
             {
@@ -57,12 +78,19 @@ namespace CommunityKitchen.Controllers
                 case "price_desc":
                     items = items.OrderByDescending(s => s.Price);
                     break;
+                case "Quantity":
+                    items = items.OrderBy(s => s.Quantity);
+                    break;
+                case "q_desc":
+                    items = items.OrderByDescending(s => s.Quantity);
+                    break;
                 default:
                     items = items.OrderBy(s => s.ItemName);
                     break;
             }
-
-            return  View(items);
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(items.ToPagedList(pageNumber, pageSize));
         }
 
         [Authorize(Roles = SetRoles.SAdmin)]
