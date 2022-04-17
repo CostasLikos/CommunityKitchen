@@ -16,6 +16,14 @@
                 </ul>
             </div>
             <div class="column right">
+                @if (true)
+                {
+                    <ul class="top-bar-text">
+                        <li><button><i class="icon fa fa-pencil"></i>Subscribe to our newsletter</button></li>
+                    </ul>
+                }
+            </div>
+            <div class="column right">
                 <ul class="login-info">
                     @if (!User.Identity.IsAuthenticated)
                     {
