@@ -41,6 +41,8 @@ namespace Entities.IdentityModel
         //Method to get FullName
         public string FullName => FirstName + " " + LastName;
 
+        public bool IsSubscribed { get; set; }
+
         //Navigational Properties
         public List<Event> Events { get; set; }
         public List<Cause> Causes { get; set; }
