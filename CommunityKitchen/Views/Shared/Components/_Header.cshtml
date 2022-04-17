@@ -1,4 +1,4 @@
-﻿@model  Entities.IdentityModel.ApplicationUser
+﻿@*@model  Entities.IdentityModel.ApplicationUser*@
 @using Microsoft.Owin.Security
 <div class="boxed_wrapper" style="margin-bottom: 10px; margin-top: 10px; ">
     <header class="top-bar">
@@ -16,14 +16,7 @@
                     <li><a href="https://google.com"><i class="fa fa-google"></i></a></li>
                 </ul>
             </div>
-            <div class="column right">
-                @if (true)
-                {
-                    <ul class="top-bar-text">
-                        <li><button><i class="icon fa fa-pencil"></i>Subscribe to our newsletter</button></li>
-                    </ul>
-                }
-            </div>
+
             <div class="column right">
                 <ul class="login-info">
                     @if (!User.Identity.IsAuthenticated)
@@ -31,6 +24,14 @@
                         <li><a onclick="loginToggle()" id="logi" href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
                         <li><a onclick="signupToggle()" id="logi" href="#"><i class="icon fa fa-user"></i>signup</a></li>
                     }
+                        <li>
+                            @if (true)
+                            {
+                                <button><i class="icon fa fa-pencil"></i>Subscribe to our newsletter</button>
+                            }
+                    </li>
+                    
+                
                 </ul>
             </div>
 
