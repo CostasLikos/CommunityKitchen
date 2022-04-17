@@ -39,20 +39,11 @@ namespace Entities
         }
 
         //Observers
+        //observe this event
         public List<IWatcher> observerList = new List<IWatcher>();
-        public List<IWatcher> newsLetterList = new List<IWatcher>();
         public void Register(IWatcher watcher)=>observerList.Add(watcher);
         public void Unregister(IWatcher watcher)=>observerList.Remove(watcher);
-        public void SubscribeToNewsLetter(IWatcher watcher) => newsLetterList.Add(watcher);
-        public void UnsubscribeToNewsLetter(IWatcher watcher) => newsLetterList.Remove(watcher);
         public void NotifyRegisteredUsers(DateTime date)
-        {
-            foreach (IWatcher watcher in observerList)
-            {
-                watcher.Update(date,Title);
-            }
-        }
-        public void NewEventNotification()
         {
             foreach (IWatcher watcher in observerList)
             {

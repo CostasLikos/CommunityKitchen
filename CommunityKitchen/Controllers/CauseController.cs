@@ -152,6 +152,8 @@ namespace CommunityKitchen.Controllers
         public async Task<ActionResult> CreateCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause, HttpPostedFileBase photo)
         {
             string currentUserId = User.Identity.GetUserId();
+            //var usersSubscribed = db.Users.Where(x => x.IsSubscribed == true).ToList();
+
 
             var user = db.Users.Where(x => x.Id == currentUserId).FirstOrDefault();
 
@@ -168,6 +170,12 @@ namespace CommunityKitchen.Controllers
                 cause.Id = Guid.NewGuid();
                 db.Causes.Add(cause);
                 await db.SaveChangesAsync();
+
+                //foreach (var us in usersSubscribed)
+                //{
+                //    us.NewEventCreated(cause.date, eve.Title);
+                //}
+
                 return RedirectToAction("OrganizeCause");
             }
 
