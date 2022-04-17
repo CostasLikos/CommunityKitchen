@@ -397,10 +397,10 @@
     <Content Include="Assets\images\ImagesSaved\rangers.jpg" />
     <Content Include="Assets\images\ImagesSaved\Power-Rangers-Reboot-Universe-Netflix.jpg" />
     <Content Include="Assets\images\ImagesSaved\single-cause.jpg" />
-    <Content Include="Assets\images\ImagesSaved\soup11.jpg" />
-    <Content Include="Assets\images\ImagesSaved\soup13.jpg" />
+    <Content Include="Assets\images\ImagesSaved\soup1.jpg" />
+    <Content Include="Assets\images\ImagesSaved\soup2.jpg" />
     <Content Include="Assets\images\ImagesSaved\soup6.jpg" />
-    <Content Include="Assets\images\ImagesSaved\soupppp.png" />
+    <Content Include="Assets\images\ImagesSaved\soup3.png" />
     <Content Include="Assets\images\ImagesSaved\ukraine.jpg" />
     <Content Include="Assets\images\ImagesSaved\war.jpg" />
     <Content Include="Assets\images\logo\footer.png" />
@@ -428,7 +428,7 @@
     <Content Include="Assets\images\ImagesSaved\pexels-photo-3280130.jpeg" />
     <Content Include="Assets\images\ImagesSaved\ph.jpg" />
     <Content Include="Assets\images\ImagesSaved\pr.jpg" />
-    <Content Include="Assets\images\ImagesSaved\staffservingfoodinhomele_509845-2.jpg" />
+    <Content Include="Assets\images\ImagesSaved\openkitchen.jpg" />
     <Content Include="Assets\images\ImagesSaved\support_0.jpg" />
     <Content Include="Assets\images\ImagesSaved\ukraine_get_help_red_cross.jpg" />
     <Content Include="Assets\images\news\1.jpg" />
@@ -550,7 +550,7 @@
     <Content Include="Assets\images\ImagesSaved\noreason.jpg" />
     <Content Include="Assets\images\ImagesSaved\people.webp" />
     <Content Include="Assets\images\ImagesSaved\tornado.jpg" />
-    <Content Include="Assets\images\ImagesSaved\foodbox.webp" />
+    <Content Include="Assets\images\ImagesSaved\foodbox.jpg" />
     <Content Include="Assets\images\ImagesSaved\soup5.jpg" />
     <Content Include="Assets\images\ImagesSaved\soup4.jpg" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
