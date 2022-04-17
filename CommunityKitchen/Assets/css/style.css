@@ -1148,8 +1148,8 @@ input, textarea {
 
 #kati3 {
     position: absolute;
-    top: 87px;
-    left: 0;
+    top: 12px;
+    left: 54px;
     width: 75%;
     height: 75%;
     display: flex;
@@ -1223,12 +1223,12 @@ input, textarea {
 
 #imgkat {
     height: 410px;
-    margin: -55px 10px -333px -87px;
+    margin: -55px 10px -336px -87px;
     opacity: 0.7;
 }
 
 #imgdi {
-    width: 1166px;
+    width: 1219px;
 }
 
 #lett {
@@ -1302,6 +1302,7 @@ input, textarea {
 }
 
 .urgent-cause .item:after {
+    border-radius: 50px;
     z-index: 9;
     position: absolute;
     content: "";
@@ -1316,6 +1317,7 @@ input, textarea {
 }
 
 .urgent-cause .item:before {
+    border-radius: 50px;
     z-index: 9;
     position: absolute;
     content: "";
@@ -1335,6 +1337,9 @@ input, textarea {
     background: #fff;
     margin-bottom: 20px;
     z-index: 99;
+    border-radius: 50px;
+    overflow: hidden;
+    padding-left: 10px
 }
 
 .urgent-cause .img-box {
@@ -1355,7 +1360,7 @@ input, textarea {
         text-transform: uppercase;
         margin-bottom: 12px;
         position: relative;
-        top: -8px;
+        top: -102px;
     }
 
         .urgent-cause .content h4 span {

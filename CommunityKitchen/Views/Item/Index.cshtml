@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Entities.Item>
+﻿@model PagedList.IPagedList<Entities.Item>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
 
 
 @{
@@ -14,15 +17,12 @@
         @using (Html.BeginForm())
         {
             <div class="row">
-                <div style="padding-top:5px">
-                    Find by name:
 
-                </div>
                 <div class="px-1">
                     @Html.TextBox("SearchString")
                 </div>
                 <div>
-                    <input type="submit" value="Search" />
+                    <input class="btn btn-block" type="submit" value="Search" />
                 </div>
             </div>
         }
@@ -40,7 +40,7 @@
                 @Html.ActionLink("Price", "Index", new { sortOrder = ViewBag.PriceSortParm })
             </th>
             <th class="col-1" style="text-align:center">
-                @Html.DisplayNameFor(model => model.Quantity)
+                @Html.ActionLink("Quantity", "Index", new { sortOrder = ViewBag.QSortParm })
             </th>
             <th class="col-1" style="text-align:center">
                 Update Quantity
@@ -81,6 +81,11 @@
 
 
     </table>
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 </div>
 
 @section scripts{
