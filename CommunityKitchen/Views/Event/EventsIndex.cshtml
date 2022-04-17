@@ -14,6 +14,7 @@
         object-fit: cover;
         transition: all 500ms ease 0s;
     }
+
         .eventimg:hover {
             height: 500px !important;
         }
@@ -45,60 +46,59 @@
                         @foreach (var eve in Model.OrderBy(x => x.EventDate))
                         {
 
-                            if (eve.EventDate >= DateTime.Now)
-                            {
 
 
-                                <div class="title-area ">
-                                    <div class="flex-container;">
+                            <div class="title-area ">
+                                <div class="flex-container;">
 
 
-                                        @if (eve.Photo == null)
-                                        {
-                                            <div style="display:hidden"></div>
-                                        }
-                                        else
-                                        {
-                                            <div>
-                                                <img class="eventimg" src="~/Assets/images/ImagesSaved/@eve.Photo" alt="Can not load image" />
-                                            </div>
-                                        }
 
-                                        <div>
-                                            <a href="@Url.Action("EventDetails","Event",new {id = @eve.Id})"> <h3 class="RedTitle">@eve.Title</h3></a>
-                                        </div>
-
-
-                                        <div class="date">
-                                            @eve.EventDate.Day<br><span>@eve.EventDate.ToString("MMM")</span>
-                                        </div>
+                                    <div>
+                                        <a href="@Url.Action("EventDetails","Event",new {id = @eve.Id})"> <h3 class="RedTitle">@eve.Title</h3></a>
                                     </div>
 
 
-
-                                    <ul class="event-info">
-                                        <li><span class="fa fa-calendar"></span> <span style="color: #fe5a5a ">@eve.EventDate.ToLongDateString()</span></li>
-                                        <li> &emsp; <span class="fa fa-map-marker"></span> <span style="color: #fe5a5a ">@eve.Address</span></li>
-                                    </ul>
-
-                                    @if (eve.Description.Length > 1500)
-                                    {
-                                        <div class="flex-container">
-
-                                            <div style="border-radius: 6px; margin: 5px; padding: 10px; overflow: auto; width: 795px; height: 400px; color: white; background-color: #808080; ">@eve.Description</div>
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="flex-container">
-                                            <div style=" border-radius: 6px; margin: 5px; padding: 10px; width: 768px; height: auto; color: white; background-color: #808080; ">@eve.Description</div>
-                                        </div>
-                                    }
-
-
-
+                                    <div class="date">
+                                        @eve.EventDate.Day<br><span>@eve.EventDate.ToString("MMM")</span>
+                                    </div>
                                 </div>
-                            }
+
+
+
+                                <ul class="event-info">
+                                    <li><span class="fa fa-calendar"></span> <span style="color: #fe5a5a ">@eve.EventDate.ToLongDateString()</span></li>
+                                    <li> &emsp; <span class="fa fa-map-marker"></span> <span style="color: #fe5a5a ">@eve.Address</span></li>
+                                </ul>
+
+                                @if (eve.Description.Length > 1500)
+                                {
+                                    <div class="flex-container">
+
+                                        <div style="border-radius: 6px; margin: 5px; padding: 10px; overflow: auto; width: 795px; height: 400px; color: white; background-color: #808080; ">@eve.Description</div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="flex-container">
+                                        <div style=" border-radius: 6px; margin: 5px; padding: 10px; width: 768px; height: auto; color: white; background-color: #808080; ">@eve.Description</div>
+                                    </div>
+                                }
+
+                                @if (eve.Photo == null)
+                                {
+                                    <div style="display:hidden"></div>
+                                }
+                                else
+                                {
+                                    <div>
+                                        <img class="eventimg" src="~/Assets/images/ImagesSaved/@eve.Photo" alt="Can not load image" />
+                                    </div>
+                                }
+
+
+
+                            </div>
+
                         }
 
 

@@ -29,7 +29,7 @@ namespace Controllers
         public ActionResult EventsIndex(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
-            List<Event> eventslist = db.Events.ToList();
+            List<Event> eventslist = db.Events.Where(x => x.EventDate >= DateTime.Now).OrderBy(x => x.EventDate).ToList();
             
             if (searchString != null)
             {
