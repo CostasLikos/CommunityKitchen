@@ -369,6 +369,7 @@
                 new IdentityRole(){ Name = "Donor"},
                 new IdentityRole(){ Name = "Member"}
             };
+
         }
     }
 }
