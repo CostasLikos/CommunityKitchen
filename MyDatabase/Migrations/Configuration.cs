@@ -159,7 +159,7 @@
               new Cause() {Title = "Provide For Those In Need",Description="After the resent events more and more come in need, help them to stand on their feet",TargetGoal=500,CurrentAmmount=250, Photo = "helpgreeks2.jpg"  },
               new Cause() {Title = "Help Elena To Beat Cancer",Description="Support Elena a true fighter, to overcome her illness, we gather money for her surgery",TargetGoal=870,CurrentAmmount=850, Photo = "elena.jpg"  },
               new Cause() {Title = "Volunteer in sharing clothing At Melenikou St, Thessaloniki",Description="Help us efficiently distribute clothing to those in need and get warm smiles in return!",TargetGoal=1250,CurrentAmmount=500, Photo = "6994869.jpg"  },
-              new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=800,CurrentAmmount=500, Photo = "war.jpg"  },
+              new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=800,CurrentAmmount=500, Photo = "ukraine_get_help_red_cross.jpg"  },
               new Cause() {Title = "Help The Homeless",Description="Help those with nothing start fresh",TargetGoal=550,CurrentAmmount=500, Photo = "homeless.jpg"  },
               new Cause() {Title = "Support The Victims Of Tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=950,CurrentAmmount=500, Photo = "tornado.jpg"  }
             };
