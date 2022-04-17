@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
-
+using Entities.IEntities;
 
 namespace Controllers
 {
@@ -77,6 +77,7 @@ namespace Controllers
         public ActionResult CreateEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
         {
             string currentUserId = User.Identity.GetUserId();
+            var usersSubscribed = db.Users.Where(x => x.IsSubscribed == true).ToList();
 
             var user = db.Users.Where(x => x.Id == currentUserId).FirstOrDefault();
 
@@ -92,7 +93,15 @@ namespace Controllers
 
                 eventService.Add(eve);
                 eventService.Save();
+
+
+                foreach (var us in usersSubscribed)
+                {
+                    us.NewEventCreated(eve.EventDate,eve.Title);
+                }
+
                 return RedirectToAction("EventsIndex");
+
             }
             return View("EventsIndex");
         }
