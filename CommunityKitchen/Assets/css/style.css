@@ -7339,3 +7339,12 @@ default-form style-three
 /*#headrows{
     padding-bottom:25px!important;
 }*/
+.ourPaging {
+    text-align: center;
+    color: #ff2e3d !important;
+}
+    .ourPaging a {
+        color: black !important;
+        text-decoration: none;
+        background-color: transparent;
+    }
