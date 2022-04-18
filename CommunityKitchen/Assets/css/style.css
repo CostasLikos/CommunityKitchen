@@ -7369,3 +7369,8 @@ default-form style-three
         transform: scale(1.50);
         overflow: hidden !important;
     }
+
+
+.google-email-form{
+    padding:10px 0px 30px;
+}
