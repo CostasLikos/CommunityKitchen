@@ -49,7 +49,9 @@
                     <h2>@Html.DisplayFor(model => model.Title)</h2>
                 </div>
                 <div class="text">
-                    <p>@Html.DisplayFor(model => model.Description)</p>
+                    <h3>@Html.DisplayFor(model => model.Description)</h3>
+                    <hr />
+                    <p>@Html.DisplayFor(model => model.FullDescription)</p>
                 </div>
 
                 <div class="donate-price"><b>@Html.DisplayFor(model => model.CurrentAmmount)€ </b>&nbsp; Raised of  <span> @Html.DisplayFor(model => model.TargetGoal)€ </span> Goal</div>
