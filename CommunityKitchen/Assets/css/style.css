@@ -737,8 +737,8 @@ input, textarea {
         font-size: 14px;
         font-weight: 600;
         line-height: 50px;
-        padding: 30px 2px;
-        margin: 0 6px;
+        padding: 30px 5px;
+        margin: 0 0px;
         position: relative;
         text-transform: uppercase;
         transition: all 500ms ease 0s;
