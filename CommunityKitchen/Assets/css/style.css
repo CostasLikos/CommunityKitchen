@@ -505,7 +505,6 @@ input, textarea {
     background: #fff;
     position: relative;
     z-index: 9;
-    
 }
 
     .top-bar .column {
@@ -680,9 +679,10 @@ input, textarea {
 /*logo*/
 
 .main-logo {
-    margin: 40px 0 30px!important;
+    margin: 40px 0 30px !important;
     transition: transform .2s;
 }
+
     .main-logo:hover {
         transform: scale(1.2);
     }
@@ -703,7 +703,7 @@ input, textarea {
 
 .theme_menu {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    margin-bottom:-126px;
+    margin-bottom: -126px;
     position: relative;
     z-index: 2;
     background: rgba(0, 0, 0, 0.17);
@@ -1036,7 +1036,7 @@ input, textarea {
     animation-name: menu_sticky;
     animation-duration: 0.60s;
     animation-timing-function: ease-out;
-    height:110px;     
+    height: 110px;
 }
 
 /*** 
@@ -2636,24 +2636,23 @@ input, textarea {
 }
 
 
-.about-us{
-    padding-top:200px;
-
+.about-us {
+    padding-top: 200px;
 }
 
-.meet-us{
-    padding-top:20px;
-    padding-bottom:20px;
+.meet-us {
+    padding-top: 20px;
+    padding-bottom: 20px;
     line-break: loose;
 }
 
-.our-pics{
+.our-pics {
     justify-content: space-around;
 }
 
 
 ====================================================================
-  15. google map Section
+15. google map Section
 ====================================================================
 */
 .home-google-map #contact-google-map {
@@ -5451,14 +5450,14 @@ Project styles
 
             .our-team .item-box .item .image-box img {
                 width: 100%;
-                height:360px;
-                border-radius:3px;
+                height: 360px;
+                border-radius: 3px;
             }
 
             .our-team .item-box .item .content-box {
                 padding: 25px 22px 26px;
                 border: 1px solid #ececec;
-                border-radius:5px;
+                border-radius: 5px;
             }
 
                 .our-team .item-box .item .content-box h4 {
@@ -5580,8 +5579,9 @@ Project styles
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
         transform: rotate(-3deg);
     }
-.image-box-team{
-    justify-content:center;
+
+.image-box-team {
+    justify-content: center;
 }
 /*
 ===================================================
@@ -6786,7 +6786,7 @@ Project styles
             position: relative;
         }
 
-        /*            .single-cause .content-box .title h2:after {
+/*            .single-cause .content-box .title h2:after {
                 position: absolute;
                 content: "";
                 left: 50%;
@@ -6797,70 +6797,71 @@ Project styles
                 background: url(../images/resources/noksha.png) center left no-repeat;
             }
 */
-        .s-cause{
-            padding-top:100px;
+.s-cause {
+    padding-top: 100px;
+}
+
+.single-cause .content-box .title span {
+    color: #ff2e3d;
+}
+
+.single-cause .content-box .text {
+    margin: 35px 10px 40px;
+}
+
+.single-cause .progress-levels {
+    max-width: 333px;
+    margin: 0 auto;
+}
+
+.single-cause .content-box .donate-price {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    .single-cause .content-box .donate-price b {
+        font-weight: 700;
+        font-size: 22px;
+        color: #ff3040;
+    }
+
+    .single-cause .content-box .donate-price span {
+        font-size: 16px;
+        color: #ff3040;
+    }
+
+.single-cause .donate-amount {
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    max-width: 390px;
+}
+
+    .single-cause .donate-amount .title {
+        padding: 20px 0px;
+        background: #1e1d1d;
+    }
+
+        .single-cause .donate-amount .title h5 {
+            color: #fff;
         }
-        .single-cause .content-box .title span {
-            color: #ff2e3d;
+
+        .single-cause .donate-amount .title i {
+            margin-right: 5px;
         }
 
-    .single-cause .content-box .text {
-        margin: 35px 10px 40px;
-    }
+.single-cause .default-form-area {
+    padding: 36px 26px 10px;
+}
 
-    .single-cause .progress-levels {
-        max-width: 333px;
-        margin: 0 auto;
-    }
+.single-cause .donate-amount .checkbox {
+    margin-bottom: 30px;
+}
 
-    .single-cause .content-box .donate-price {
-        margin-bottom: 20px;
-        font-weight: 400;
-        font-size: 12px;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-        .single-cause .content-box .donate-price b {
-            font-weight: 700;
-            font-size: 22px;
-            color: #ff3040;
-        }
-
-        .single-cause .content-box .donate-price span {
-            font-size: 16px;
-            color: #ff3040;
-        }
-
-    .single-cause .donate-amount {
-        border: 1px solid #ccc;
-        margin: 0 auto;
-        max-width: 390px;
-    }
-
-        .single-cause .donate-amount .title {
-            padding: 20px 0px;
-            background: #1e1d1d;
-        }
-
-            .single-cause .donate-amount .title h5 {
-                color: #fff;
-            }
-
-            .single-cause .donate-amount .title i {
-                margin-right: 5px;
-            }
-
-    .single-cause .default-form-area {
-        padding: 36px 26px 10px;
-    }
-
-    .single-cause .donate-amount .checkbox {
-        margin-bottom: 30px;
-    }
-
-    .single-cause .default-form-area .thm-btn {
-        margin-top: 20px;
-    }
+.single-cause .default-form-area .thm-btn {
+    margin-top: 20px;
+}
 /*
 default-form style-three
 */
@@ -6921,7 +6922,7 @@ default-form style-three
 
     .all-event .content-box {
         padding: 20px 18px 34px;
-        margin-left:5%;
+        margin-left: 5%;
     }
 
         .all-event .content-box .title-area {
@@ -7313,7 +7314,7 @@ default-form style-three
     height: 200px;
     width: 800px;
     object-fit: cover;
-    transition:all 500ms ease 0s;
+    transition: all 500ms ease 0s;
 }
 
     #imgDetails:hover {
@@ -7333,8 +7334,9 @@ default-form style-three
         width: auto !important;
         overflow: hidden !important;
     }
-#headbar{
-    height:55px!important;
+
+#headbar {
+    height: 55px !important;
 }
 /*#headrows{
     padding-bottom:25px!important;
@@ -7343,8 +7345,22 @@ default-form style-three
     text-align: center;
     color: #ff2e3d !important;
 }
+
     .ourPaging a {
         color: black !important;
         text-decoration: none;
         background-color: transparent;
+    }
+
+
+#donateimg img {
+    border-radius: 50%;
+    height: 160px;
+    margin-top: 1px;
+    transition: 1s;
+}
+
+    #donateimg img:hover {
+        transform: scale(1.50);
+        overflow: hidden !important;
     }

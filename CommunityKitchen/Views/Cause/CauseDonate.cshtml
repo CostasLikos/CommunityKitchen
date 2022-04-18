@@ -7,7 +7,7 @@
     var res = Math.Round((100 * Model.CurrentAmmount) / Model.TargetGoal);
 }
 
-<section class="page-banner">
+@*<section class="page-banner">
     <div class="container">
         <div class="title">
             <h1>Single <span>Cause</span></h1>
@@ -23,19 +23,16 @@
             </ul>
         </div>
     </div>
-</section>
+</section>*@
 
-<section class="single-cause">
+<section style="margin-top: 180px; margin-bottom: 100px;" class="single-cause">
     <div class="container">
-        <figure class="image-box">
-            <img src="images/causes/s1.jpg" alt="" />
-        </figure>
         <div class="content-box">
-            <div class="icon-box">
-                <img src="images/causes/1.png" alt="" />
+            <div id="donateimg" class="icon-box">
+                <img src="~/Assets/images/ImagesSaved/@Model.Photo" alt="" />
             </div>
             <div class="title">
-                <h2> @Html.DisplayFor(model => model.Title)</h2>
+                <h2 class="RedTitle"> @Html.DisplayFor(model => model.Title)</h2>
             </div>
             <div class="text">
                 <p>  @Html.DisplayFor(model => model.Description)</p>
@@ -54,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="donate-price"><b> @Html.DisplayFor(model => model.CurrentAmmount)€ </b>&nbsp; Raised of  <span>  @Html.DisplayFor(model => model.TargetGoal)€ </span> Goal</div>
+            <div class="donate-price"><b> @Html.DisplayFor(model => model.CurrentAmmount) </b>&nbsp; Raised of  <span>  @Html.DisplayFor(model => model.TargetGoal) </span> Goal</div>
 
             <div class="donate-amount">
                 <div class="title">
