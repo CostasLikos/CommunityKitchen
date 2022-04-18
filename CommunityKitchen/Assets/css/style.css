@@ -2640,11 +2640,11 @@ input, textarea {
     padding-top: 200px;
 }
 
-.meet-us {
-    padding-top: 20px;
-    padding-bottom: 20px;
+/*.meet-us{
+    padding-top:20px;
+    padding-bottom:20px;
     line-break: loose;
-}
+}*/
 
 .our-pics {
     justify-content: space-around;
@@ -5432,7 +5432,8 @@ Project styles
 }
 
     .our-team.style-two {
-        padding: 100px 0px 118px;
+       padding: 0px 100px 140px;
+        
     }
 
     .our-team .section-title {

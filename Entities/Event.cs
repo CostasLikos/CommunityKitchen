@@ -19,6 +19,7 @@ namespace Entities
 
         public string Title { get; set; }
         public string Description { get; set; }
+        public string FullDescription { get; set; }
         public string Photo { get; set; }
         public string Address { get; set; }
 
