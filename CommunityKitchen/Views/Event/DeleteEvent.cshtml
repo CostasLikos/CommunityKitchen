@@ -3,34 +3,25 @@
 @{
     ViewBag.Title = "DeleteEvent";
 }
-<style>
-    .description {
-        color: black !important;
-        background-color: #fff;
-        width: 785px;
-        height: 226px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        margin-left: 151px;
-    }
-</style>
+
 <section>
     <div class="container">
         <div class="default-form-area" style="display: flex; justify-content: center; padding-top:100px">
             <div id="contact-form" class="default-form">
-                <div class="section-title" style="padding-bottom:10px;">
-                    <h3 style=" text-align:center;">Are you sure you want to <span>delete</span> this Event?</h3>
+                <div class="section-title" style="padding-bottom:40px;">
+                    <h3 style=" text-align:center;"><strong>ARE YOU <em>SURE</em> YOU WANT TO <span>DELETE</span> THIS EVENT?</strong></h3>
                 </div>
                 <div class="row clearfix">
-
                     <hr />
                     <div class="form-group" style="text-align:left;">
-                        <h3><em>@Html.DisplayFor(model => model.Title)</em></h3>
-                        @*<div>
-                            <p>@Html.DisplayFor(model => model.Photo)</p>
-                        </div>*@
+                        <div style=" padding-bottom: 40px;">
+                            <h3><strong>@Html.DisplayFor(model => model.Title)</strong></h3>
+                            @*<div>
+                                    <p>@Html.DisplayFor(model => model.Photo)</p>
+                                </div>*@
+                        </div>
                         <div style="padding-bottom: 30px;">
-                            <h3>@Html.DisplayFor(model => model.Description)</h3>
+                            <h4><em>@Html.DisplayFor(model => model.Description)</em></h4>
                         </div>
                         <div>
                             <p style="color:black;">DESCRIPTION: @Html.DisplayFor(model => model.FullDescription)</p>
@@ -39,7 +30,7 @@
                             <p style="color:black;">Address: @Html.DisplayFor(model => model.Address)</p>
                             <p style="color:black;">Date: @Html.DisplayFor(model => model.EventDate)</p>
                         </div>
-                        <div> </div>
+                        
                         @using (Html.BeginForm())
                         {
                             @Html.AntiForgeryToken()
