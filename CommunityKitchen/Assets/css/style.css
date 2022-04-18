@@ -1155,8 +1155,8 @@ input, textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(219, 8, 8, 0.637);
-    box-shadow: 0 15px 35px rgba(251,0,0,0.5);
+    background: rgb(219 8 8 / 47%);
+    box-shadow: 0 15px 35px #828d92;
     backdrop-filter: blur(15px);
     border: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 10;
@@ -1224,7 +1224,7 @@ input, textarea {
 #imgkat {
     height: 410px;
     margin: -55px 10px -336px -87px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 #imgdi {
@@ -1233,12 +1233,14 @@ input, textarea {
 
 #lett {
     position: absolute;
+    color: #0e0d0de4;
 }
 
 #lett1 {
     position: absolute;
     font-size: 25px;
     margin-left: 66px;
+    color: #0e0d0de4;
 }
 
 .tama {
@@ -1258,7 +1260,7 @@ input, textarea {
     }
 
         .tama circle:nth-child(1) {
-            stroke: #2d584481;
+            stroke: #f4f4f45c;
             stroke-dasharray: 440px;
             stroke-dashoffset: 440px;
         }
@@ -1377,12 +1379,13 @@ input, textarea {
 
     .urgent-cause .donate-price b {
         font-size: 22px;
-        color: #fe2e3c;
+        color: #f7f7f7;
     }
 
     .urgent-cause .donate-price span {
-        font-size: 16px;
+        font-size: 24px;
         color: #fe2e3c;
+        margin-bottom:10px;
     }
 
 .urgent-cause-slide .owl-nav {
@@ -1428,6 +1431,7 @@ input, textarea {
     .urgent-cause-slide .owl-nav .owl-prev {
         left: -20px;
     }
+
 
 /*** 
 ====================================================================
