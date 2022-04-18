@@ -737,8 +737,8 @@ input, textarea {
         font-size: 14px;
         font-weight: 600;
         line-height: 50px;
-        padding: 30px 2px;
-        margin: 0 6px;
+        padding: 30px 0px;
+        margin: 0 7px;
         position: relative;
         text-transform: uppercase;
         transition: all 500ms ease 0s;
@@ -7374,3 +7374,4 @@ default-form style-three
 .google-email-form{
     padding:10px 0px 30px;
 }
+
