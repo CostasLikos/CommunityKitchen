@@ -4,72 +4,79 @@
     ViewBag.Title = "DeleteCause";
 }
 
-<div class="default-form-area" style="margin-top: 34px !important; display: flex; justify-content: center">
-    <div id="contact-form" class="default-form">
-        <div class="section-title">
-            <h1 style="margin-left:45px">Are you sure you want to <span>delete</span> this Cause?</h1>
-        </div>
-        <div class="row clearfix" style="justify-content: center">
-            <div class="col-md-12 col-sm-12 col-xs-6">
-                <hr />
-                <div class="form-group">
-                    <div class="section-title">
-                        <h2>Title</h2>
-                    </div>
-                    @Html.DisplayFor(model => model.Title)
+<section>
+    <div class="container-fluid">
+        <div class="default-form-area" style="margin-top: 34px !important; display: flex; justify-content: center">
+            <div id="contact-form" class="default-form">
+                <div class="section-title">
+                    <h1 style="margin-left:45px">Are you sure you want to <span>delete</span> this Cause?</h1>
                 </div>
-
-                <div class="form-group">
-                    <div class="section-title">
-                        <h2>Description</h2>
-                    </div>
-                    @Html.DisplayFor(model => model.Description)
-                </div>
-
-                <div class="form-group">
-                    <div class="section-title">
-                        <h2>Photo</h2>
-                    </div>
-                    @Html.DisplayFor(model => model.Photo)
-                </div>
-
-                <div class="form-group">
-                    <div class="section-title">
-                        <h2>Target Goal</h2>
-                    </div>
-                    @Html.DisplayFor(model => model.TargetGoal)
-                </div>
-
-                <div class="form-group">
-                    <div class="section-title">
-                        <h2>Current Amount</h2>
-                    </div>
-                    @Html.DisplayFor(model => model.CurrentAmmount)
-                </div>
-
-                @*<div class="form-group">
-                        <div class="section-title">
-                            <h2>ModeratorId</h2>
-                        </div>
-                        @Html.DisplayFor(model => model.ModeratorId)
-                    </div>*@
-                <div class="form-group">
-                    @using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()
+                <div class="row clearfix" style="justify-content: center">
+                    <div class="col-md-12 col-sm-12 col-xs-6">
+                        <hr />
                         <div class="form-group">
-                            <div>
-                                <input type="submit" value="Delete" class="thm-btn style-1" />
+                            <div class="section-title">
+                                <h2>Title</h2>
                             </div>
+                            @Html.DisplayFor(model => model.Title)
                         </div>
 
-                        <div>
-
-                            @Html.ActionLink("Back to List", "OrganizeCause")
+                        <div class="form-group">
+                            <div class="section-title">
+                                <h2>Decription</h2>
+                            </div>
+                            @Html.DisplayFor(model => model.Description)
                         </div>
-                    }
+                        <div class="form-group">
+                            @Html.DisplayFor(model => model.FullDescription)
+                        </div>
+
+                        <div class="form-group">
+                            <div class="section-title">
+                                <h2>Photo</h2>
+                            </div>
+                            @Html.DisplayFor(model => model.Photo)
+                        </div>
+
+                        <div class="form-group">
+                            <div class="section-title">
+                                <h2>Target Goal</h2>
+                            </div>
+                            @Html.DisplayFor(model => model.TargetGoal)
+                        </div>
+
+                        <div class="form-group">
+                            <div class="section-title">
+                                <h2>Current Amount</h2>
+                            </div>
+                            @Html.DisplayFor(model => model.CurrentAmmount)
+                        </div>
+
+                        @*<div class="form-group">
+                            <div class="section-title">
+                                <h2>ModeratorId</h2>
+                            </div>
+                            @Html.DisplayFor(model => model.ModeratorId)
+                        </div>*@
+                        <div class="form-group">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-group">
+                                    <div>
+                                        <input type="submit" value="Delete" class="thm-btn style-1" />
+                                    </div>
+                                </div>
+
+                                <div>
+
+                                    @Html.ActionLink("Back to List", "OrganizeCause")
+                                </div>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
