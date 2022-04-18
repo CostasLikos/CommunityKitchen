@@ -16,9 +16,7 @@
                     <div class="form-group" style="text-align:left;">
                         <div style=" padding-bottom: 40px;">
                             <h3><strong>@Html.DisplayFor(model => model.Title)</strong></h3>
-                            @*<div>
-                                    <p>@Html.DisplayFor(model => model.Photo)</p>
-                                </div>*@
+                            <img id="imgDetails" style="border-radius:50px; height: 200px; width: 800px; object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
                         </div>
                         <div style="padding-bottom: 30px;">
                             <h4><em>@Html.DisplayFor(model => model.Description)</em></h4>
