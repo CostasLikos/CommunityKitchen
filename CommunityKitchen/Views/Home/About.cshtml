@@ -3,19 +3,27 @@
 }
 @*@model IEnumerable<Entities.Cause>
 
-        @{
-            ViewBag.Title = "CauseIndex";
-    <img src="~/Assets/images/team/rangersss.jpg" />
-        }*@
-
-<section class="page-banner" style="padding-top: 180px; padding-bottom: 20px; background-image: url('../Assets/images/team/rangersss.jpg'); ">
-    <div class="container" style="height:90px;">
+    @{
+        ViewBag.Title = "CauseIndex";
+    }*@
+@*.section-title {
+    position: relative;
+    margin-bottom: 3px;
+    padding-top: :30px;
+    margin-top: 61px;
+}*@
+<section class="page-banner" style="background-image: url('../Assets/images/ImagesSaved/4.jpg'); padding:120px 0px 195px;">
+    <div class="container" style="height:80px;">
         <div class="section-title">
-            <h1><span style="color: #fff;">about </span> <span style="font-style:italic;">us</span></h1>
+            <h1><span style="font-size: 48px; color: #fff;">about </span> <span style="font-style: italic;font-size: 48px; ">us</span></h1>
         </div>
-        <div class="section-title" style="padding-top:30px;">
-            <h5>meet our team today</h5>
-            <div class="meet-us" style="padding-bottom:20px;">
+    </div>
+</section>
+<section class="recent-causes" style="padding-top:50px;">
+    <div class="section-title">
+        <div class="section-title">
+            <h3>MEET OUR TEAM TODAY</h3>
+            <div class="meet-us" style="padding-top:50px;">
                 <p style="line-height: 1.7em;">We work together, we design, we create and produce web app environments that target on improving the society efficiently.</p>
             </div>
         </div>
@@ -24,18 +32,18 @@
     </div>
 </section>
 <!--start our-team-->
-<section class="our-team style-two" style="margin-top:80px;">
-    <div class="container">
+<section class="our-team style-two">
         <div class="item-box">
             <div class="row d-flex justify-content-start" style="display:inline;">
-                <div class="col-2 col-md-3 col-xs-12">
+                <div class="col">
                     <div class="item">
                         <div class="bg-area">
                             <div class="image-box-team" style="padding-left:30px;">
                                 <img src="~/Assets/images/team/Mmpr-red.jpg" style="height: 380px; width: 200px; padding-bottom: 20px" />
                             </div>
                             <div class="content-box">
-                                <h4>Dimitris Stratsianis</h4>
+                                <h4>Karakasidis</h4>
+                                <h4>Ioannis</h4>
                                 <div class="text">
                                     <p>Full Stack .Net Developer</p>
                                 </div>
@@ -48,14 +56,15 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-3  col-xs-12">
+                <div class="col">
                     <div class="item">
                         <div class="bg-area">
                             <div class="image-box-team" style="padding-left:30px;">
                                 <img src="~/Assets/images/team/Mmpr-blue.jpg" style="height:380px;width:200px; padding-bottom:20px" />
                             </div>
                             <div class="content-box">
-                                <h4>Ioannis Karakasidis</h4>
+                                <h4>Stratsianis</h4>
+                                <h4>Dimitris</h4>
                                 <div class="text">
                                     <p>Full Stack .Net Developer</p>
                                 </div>
@@ -68,14 +77,15 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-3  col-xs-12">
+                <div class="col">
                     <div class="item">
                         <div class="bg-area">
                             <div class="image-box-team" style="padding-left:30px;">
                                 <img src="~/Assets/images/team/Mmpr-black.jpg" style="height:380px;width:200px; padding-bottom:20px" />
                             </div>
                             <div class="content-box">
-                                <h4>Giannis</h4><h4> Mihailidis</h4>
+                                <h4>Mihailidis</h4>
+                                <h4>Giannis</h4>
                                 <div class="text">
                                     <p>Full Stack .Net Developer</p>
                                 </div>
@@ -88,14 +98,15 @@
                     </div>
                 </div>
 
-                <div class="col-4 col-md-3  col-xs-12">
+                <div class="col">
                     <div class="item">
                         <div class="bg-area">
                             <div class="image-box-team" style="padding-left:30px;">
                                 <img src="~/Assets/images/team/yellow.jpg" style="height:380px;width:200px; padding-bottom:20px" />
                             </div>
                             <div class="content-box">
-                                <h4>Theofilaktidou Niki</h4>
+                                <h4>Theofilaktidou</h4>
+                                <h4>Niki</h4>
                                 <div class="text">
                                     <p>Full Stack .Net Developer</p>
                                 </div>
@@ -107,14 +118,15 @@
                         </div>
                     </div>
                 </div>
-                <div style="margin-left:38%!important" class="col-4 col-md-3  col-xs-12">
+                <div class="col">
                     <div class="item">
                         <div class="bg-area">
                             <div class="image-box-team" style="padding-left:30px;">
                                 <img src="~/Assets/images/team/greenranger.jpg" style="height:380px;width:200px; padding-bottom:20px" />
                             </div>
                             <div class="content-box">
-                                <h4>Likos</h4><h4> Costas</h4>
+                                <h4>Likos</h4>
+                                <h4> Costas</h4>
                                 <div class="text">
                                     <p>Full Stack .Net Developer</p>
                                 </div>
@@ -129,7 +141,7 @@
 
             </div>
         </div>
-    </div>
-    
+   
+
 </section>
 <!--end our-team-->

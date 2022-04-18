@@ -330,6 +330,7 @@
     <Content Include="Assets\images\ImagesSaved\106052.jpg" />
     <Content Include="Assets\images\ImagesSaved\1595391.jpg" />
     <Content Include="Assets\images\ImagesSaved\3959485.jpg" />
+    <Content Include="Assets\images\ImagesSaved\4.jpg" />
     <Content Include="Assets\images\ImagesSaved\6347750.jpg" />
     <Content Include="Assets\images\ImagesSaved\6348119.jpg" />
     <Content Include="Assets\images\ImagesSaved\6348123.jpg" />
@@ -395,7 +396,7 @@
     <Content Include="Assets\images\ImagesSaved\kostas.jpg" />
     <Content Include="Assets\images\ImagesSaved\people.jpg" />
     <Content Include="Assets\images\ImagesSaved\rangers.jpg" />
-    <Content Include="Assets\images\ImagesSaved\Power-Rangers-Reboot-Universe-Netflix.jpg" />
+    <Content Include="Assets\images\ImagesSaved\rangerteam.jpg" />
     <Content Include="Assets\images\ImagesSaved\single-cause.jpg" />
     <Content Include="Assets\images\ImagesSaved\soup1.jpg" />
     <Content Include="Assets\images\ImagesSaved\soup2.jpg" />
