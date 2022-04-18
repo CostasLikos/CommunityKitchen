@@ -17,21 +17,21 @@
             <div class="row">
                 <ul class="navigation clearfix">
 
-                    
-                        <li class="dropdown">
-                            @Html.ActionLink("Home", "Index", "Home")
 
-                            <ul>
-                                @if (roleDonor)
-                                {
-                               <li><a href="@ConfigurationManager.AppSettings["Angular"]">Archive</a></li>
-                                }
-                                <li>@Html.ActionLink("Support A Cause", "CauseIndex", "Cause")</li>
-                                <li>@Html.ActionLink("Upcoming Events", "EventsIndex", "Event")</li>
-                            </ul>
-                        </li>
-                    
-                    
+                    <li class="dropdown">
+                        @Html.ActionLink("Home", "Index", "Home")
+
+                        <ul>
+                            @if (roleDonor)
+                            {
+                                <li><a href="@ConfigurationManager.AppSettings["Angular"]">Archive</a></li>
+                            }
+                            <li>@Html.ActionLink("Support A Cause", "CauseIndex", "Cause")</li>
+                            <li>@Html.ActionLink("Upcoming Events", "EventsIndex", "Event")</li>
+                        </ul>
+                    </li>
+
+
                     @if (roleAdmin)
                     {
                         <li class="dropdown">
@@ -43,18 +43,17 @@
                             </ul>
                         </li>
                     }
-
-                    <li class="dropdown">
-                        @Html.ActionLink("About Us", "About", "Home")
-                    </li>
                     <li class="dropdown">
                         @Html.ActionLink("Contact Us", "Contact", "Home")
                     </li>
+                    <li class="dropdown">
+                        @Html.ActionLink("About Us", "About", "Home")
+                    </li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                <li class="logoffname">
-                    <span>Hello&nbsp;</span> @User.Identity.Name.Split('@')[0]
-                </li>
+                        <li class="logoffname">
+                            <span>Hello&nbsp;</span> @User.Identity.Name.Split('@')[0]
+                        </li>
                         <li class="logoff">
                             @Html.ActionLink("Logout", "LogOff", "Account")
                         </li>
@@ -80,10 +79,10 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    @Html.ActionLink("About Us", "About", "Home")
+                    @Html.ActionLink("Contact Us", "Contact", "Home")
                 </li>
                 <li class="dropdown">
-                    @Html.ActionLink("Contact Us", "Contact", "Home")
+                    @Html.ActionLink("About Us", "About", "Home")
                 </li>
             </ul>
         </div>
