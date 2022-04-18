@@ -25,7 +25,7 @@ namespace Entities
                     mail.SubjectEncoding = System.Text.Encoding.UTF8;
 
                     mail.Body = $"  <div><h4>Dear {userName},</h4><br/>" +
-                        $"<p> We would like to inform you that your pennis has shrunk by 11 inches, please contact us for CHEAP pennis enlargemt methods.</p>" +
+                        $"<p> We would like to inform you that your  please contact us for CHEAP .</p>" +
                         $"<p> Please visit us on {eventName} at the new date for further enlargement {date}</p>" +
                         "<p> Also the date  of your event has cahnged</p><p> With regards,</p><p> Money makes your pick bigger</p></div>";
 

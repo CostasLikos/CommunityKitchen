@@ -229,7 +229,6 @@ namespace CommunityKitchen.Controllers
         // POST: Causes/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = SetRoles.SAdmin)]
         public async Task<ActionResult> EditCause([Bind(Include = "Id,Title,Description,Photo,TargetGoal,CurrentAmmount,ModeratorId")] Cause cause, HttpPostedFileBase photo)
         {
             if (ModelState.IsValid)
@@ -238,6 +237,13 @@ namespace CommunityKitchen.Controllers
                 {
                     cause.Photo = photo.FileName;
                     photo.SaveAs(Server.MapPath("~/Assets/images/ImagesSaved/" + photo.FileName));
+                }
+                else
+                {
+                    var existingCause = db.Causes.FirstOrDefault(x => x.Id == cause.Id);
+                    db.Entry(existingCause).State = EntityState.Detached;
+                    cause.Photo = existingCause.Photo;
+                    db.Entry(cause).State = EntityState.Modified;
                 }
 
                 db.Entry(cause).State = EntityState.Modified;

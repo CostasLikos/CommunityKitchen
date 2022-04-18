@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using Entities.IEntities;
+using System.Data.Entity;
 
 namespace Controllers
 {
@@ -107,7 +108,6 @@ namespace Controllers
         }
 
         // GET: Event/Delete
-        [Authorize(Roles = SetRoles.SuperAdmin)]
         public ActionResult DeleteEvent(Guid id)
         {
 
@@ -127,13 +127,15 @@ namespace Controllers
         // POST: Edit/Delete/5
         [HttpPost, ActionName("DeleteEvent")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = SetRoles.SuperAdmin)]
         public ActionResult DeleteConfirmed(Guid id)
         {
             eventService.Delete(id);
             eventService.Save();
             return RedirectToAction("OrganizeEvents");
         }
+
+
+
 
         // GET: Event/Edit
         [Authorize(Roles = SetRoles.SAdmin)]
@@ -152,26 +154,29 @@ namespace Controllers
 
 
         [HttpPost, ActionName("EditEvent")]
-        [Authorize(Roles = SetRoles.SAdmin)]
-        public ActionResult EditEvent([Bind(Include = "Id,Title,Description,Photo,Address,date,EventDate")] Event eve, HttpPostedFileBase photo)
+        public async Task<ActionResult> EditEvent([Bind(Include = "Id,Title,Description,Photo,Address,EventDate,ModeratorId")] Event eve, HttpPostedFileBase photo)
         {
-            var tempPhoto = eve.Photo;
-
+            
             if (ModelState.IsValid)
             {
+                //var existingEvent = db.Events.Find(eve.Id);
+
+
                 if (photo != null)
                 {
                     eve.Photo = photo.FileName;
                     photo.SaveAs(Server.MapPath("~/Assets/images/ImagesSaved/" + photo.FileName));
-                    db.Entry(eve).State = System.Data.Entity.EntityState.Modified;
+                    db.Entry(eve).State = EntityState.Modified;
                 }
                 else
                 {
-                    eve.Photo = eve.Photo;
-                    db.Entry(eve).State = System.Data.Entity.EntityState.Modified;
+                    var existingEvent = db.Events.FirstOrDefault(x=>x.Id==eve.Id);
+                    db.Entry(existingEvent).State = EntityState.Detached;
+                    eve.Photo = existingEvent.Photo;
+                    db.Entry(eve).State = EntityState.Modified;
                 }
 
-                db.SaveChangesAsync();
+                await db.SaveChangesAsync();
                 return RedirectToAction("OrganizeEvents");
             }
             return View(eve);
