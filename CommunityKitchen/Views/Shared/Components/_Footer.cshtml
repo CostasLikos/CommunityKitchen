@@ -1,4 +1,4 @@
-﻿
+﻿@*@using System.Configuration*@
 @{
     ViewBag.Title = "_Footer";
 }
@@ -111,141 +111,165 @@
                                     <div id="contact-form2" class="default-form style-two">
                                         <div class="row clearfix">
                                             <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <form class="form-group style-two" action="https://formsubmit.co/c29d73f38ba9b83db72e3c22d384aaf9" method="POST">
+                                                    <input type="hidden" name="_captcha" value="false" />
+                                                    <input type="hidden" name="_next" value="https://localhost:44342/Home/Contact" />
+                                                    <div class="form-group style-two">
+                                                        <input type="text" name="form_name" class="form-control" value="" placeholder="Your name" required="">
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="form-group style-two">
+                                                            <input type="email" name="form_email" class="form-control required email" value="" placeholder="Your email" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="form-group style-two">
+                                                            <textarea name="form_message" class="form-control textarea required" placeholder="Text..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="form-group style-two">
+                                                            @*<input type="submit" name="" class="form-control" value="SUBMIT MESSAGE">*@
+                                                            <button onclick="document.getElementById('id01').style.display='block'" name="" class="thm-btn2" type="submit" data-loading-text="Please wait...">Send<i class="fa fa-angle-right"></i></button>
 
-                                                <div class="form-group style-two">
-                                                    <input type="text" name="form_name" class="form-control" value="" placeholder="Your name" required="">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="form-group style-two">
-                                                    <input type="email" name="form_email" class="form-control required email" value="" placeholder="Your email" required="">
-                                                </div>
-                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                                @*<div class="form-group style-two">
+                                                            <input type="text" name="form_name" class="form-control" value="" placeholder="Your name" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="form-group style-two">
+                                                            <input type="email" name="form_email" class="form-control required email" value="" placeholder="Your email" required="">
+                                                        </div>
+                                                    </div>
 
 
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="form-group style-two">
-                                                    <textarea name="form_message" class="form-control textarea required" placeholder="Text..."></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="form-group style-two">
-                                                    <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                                                    <button onclick="document.getElementById('id01').style.display='block'" class="thm-btn2" type="submit" data-loading-text="Please wait...">send<i class="fa fa-angle-right"></i></button>
-                                                </div>
-                                            </div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="form-group style-two">
+                                                            <textarea name="form_message" class="form-control textarea required" placeholder="Text..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="form-group style-two">
+                                                            <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                                            <button onclick="document.getElementById('id01').style.display='block'" class="thm-btn2" type="submit" data-loading-text="Please wait...">send<i class="fa fa-angle-right"></i></button>
+                                                        </div>
+                                                    </div>*@
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
-
                         </div>
-                    </div>
 
-                    <!--Footer Column-->
-                    <!--Footer Column-->
-                    @*<div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-widget Instagram-widget">
-                                <h3 class="footer-title">Instagram</h3>
-                                <div class="widget-content">
-                                    <ul class="instagram">
-                                        <li>
-                                            <div class="img-holder">
-                                                <img src="images/footer/1.jpg" alt="Awesome Image">
-                                                <div class="overlay">
-                                                    <div class="box">
-                                                        <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                        <!--Footer Column-->
+                        <!--Footer Column-->
+                        @*<div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                                <div class="footer-widget Instagram-widget">
+                                    <h3 class="footer-title">Instagram</h3>
+                                    <div class="widget-content">
+                                        <ul class="instagram">
+                                            <li>
+                                                <div class="img-holder">
+                                                    <img src="images/footer/1.jpg" alt="Awesome Image">
+                                                    <div class="overlay">
+                                                        <div class="box">
+                                                            <div class="content">
+                                                                <a href="#"><i class="fa fa-link"></i></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </li>
+                                            </li>
 
-                                        <li>
-                                            <div class="img-holder">
-                                                <img src="images/footer/2.jpg" alt="Awesome Image">
-                                                <div class="overlay">
-                                                    <div class="box">
-                                                        <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <li>
+                                                <div class="img-holder">
+                                                    <img src="images/footer/2.jpg" alt="Awesome Image">
+                                                    <div class="overlay">
+                                                        <div class="box">
+                                                            <div class="content">
+                                                                <a href="#"><i class="fa fa-link"></i></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </li>
+                                            </li>
 
-                                        <li>
-                                            <div class="img-holder">
-                                                <img src="images/footer/3.jpg" alt="Awesome Image">
-                                                <div class="overlay">
-                                                    <div class="box">
-                                                        <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <li>
+                                                <div class="img-holder">
+                                                    <img src="images/footer/3.jpg" alt="Awesome Image">
+                                                    <div class="overlay">
+                                                        <div class="box">
+                                                            <div class="content">
+                                                                <a href="#"><i class="fa fa-link"></i></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="img-holder">
-                                                <img src="images/footer/4.jpg" alt="Awesome Image">
-                                                <div class="overlay">
-                                                    <div class="box">
-                                                        <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            </li>
+                                            <li>
+                                                <div class="img-holder">
+                                                    <img src="images/footer/4.jpg" alt="Awesome Image">
+                                                    <div class="overlay">
+                                                        <div class="box">
+                                                            <div class="content">
+                                                                <a href="#"><i class="fa fa-link"></i></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="img-holder">
-                                                <img src="images/footer/5.jpg" alt="Awesome Image">
-                                                <div class="overlay">
-                                                    <div class="box">
-                                                        <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            </li>
+                                            <li>
+                                                <div class="img-holder">
+                                                    <img src="images/footer/5.jpg" alt="Awesome Image">
+                                                    <div class="overlay">
+                                                        <div class="box">
+                                                            <div class="content">
+                                                                <a href="#"><i class="fa fa-link"></i></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="img-holder">
-                                                <img src="images/footer/6.jpg" alt="Awesome Image">
-                                                <div class="overlay">
-                                                    <div class="box">
-                                                        <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            </li>
+                                            <li>
+                                                <div class="img-holder">
+                                                    <img src="images/footer/6.jpg" alt="Awesome Image">
+                                                    <div class="overlay">
+                                                        <div class="box">
+                                                            <div class="content">
+                                                                <a href="#"><i class="fa fa-link"></i></a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </li>
+                                            </li>
 
-                                    </ul>
+                                        </ul>
+
+                                    </div>
 
                                 </div>
+                            </div>*@
 
-                            </div>
-                        </div>*@
-
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
 
-    <!--Footer Bottom-->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="text">
-                <p><span>Charity Sympathy</span> 2022. All Rights Reserved</p>
-            </div>
-        </div><!-- /.container -->
-    </div>
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="text">
+                    <p><span>Charity Sympathy</span> 2022. All Rights Reserved</p>
+                </div>
+            </div><!-- /.container -->
+        </div>
 
 </footer>
 

@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Contact";
 }
 @*<h2>@ViewBag.Title.</h2>
@@ -81,10 +82,11 @@
             <h2>Leave us a message</h2>
         </div>
         <div class="default-form-area">
-            <form id="contact-form" name="contact_form" class="default-form" method="POST">
+            <form id="contact-form"  action="https://formsubmit.co/c29d73f38ba9b83db72e3c22d384aaf9" name="contact_form" class="default-form" method="POST">
                 <div class="row clearfix">
                     <div class="col-md-6 col-sm-6 col-xs-12">
-
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input type="hidden" name="_next" value="https://localhost:44342/Home/Contact" />
                         <div class="form-group">
                             <input id="reqname" type="text" name="form_name" class="form-control" value="" placeholder="Your Name" required="">
                         </div>
@@ -113,7 +115,7 @@
                         <div class="form-group">
                             <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
 
-                            <button id="butt" onclick="document.getElementById('id01').style.display='block'" class="thm-btn" type="submit" data-loading-text="Please wait..." disabled>send message</button>
+                            <button onclick="document.getElementById('id01').style.display='block'" name="" class="thm-btn" type="submit" data-loading-text="Please wait...">Send message</i></button>
 
                         </div>
                     </div>
