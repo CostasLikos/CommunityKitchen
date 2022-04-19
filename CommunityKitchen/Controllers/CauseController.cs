@@ -183,7 +183,7 @@ namespace CommunityKitchen.Controllers
         }
 
         // GET: Causes/Delete
-        [Authorize(Roles = SetRoles.SuperAdmin)]
+        
         public async Task<ActionResult> DeleteCause(Guid? id)
         {
             if (id == null)
@@ -201,7 +201,7 @@ namespace CommunityKitchen.Controllers
         // POST: Causes/Delete
         [HttpPost, ActionName("DeleteCause")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = SetRoles.SuperAdmin)]
+        
         public async Task<ActionResult> DeleteConfirmed(Guid id)
         {
             Cause cause = await db.Causes.FindAsync(id);
