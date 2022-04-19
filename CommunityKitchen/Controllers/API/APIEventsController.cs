@@ -27,7 +27,7 @@ namespace CommunityKitchen.Controllers.API
             return db.Events;
         }
 
-        // GET: api/APIEvents/5
+        // GET: api/APIEvents/
         [ResponseType(typeof(Event))]
         public async Task<IHttpActionResult> GetEvent(Guid id)
         {
@@ -40,7 +40,7 @@ namespace CommunityKitchen.Controllers.API
             return Ok(@event);
         }
 
-        // PUT: api/APIEvents/5
+        // PUT: api/APIEvents/
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutEvent(Guid id, Event @event)
         {
@@ -90,7 +90,7 @@ namespace CommunityKitchen.Controllers.API
             return CreatedAtRoute("DefaultApi", new { id = @event.Id }, @event);
         }
 
-        // DELETE: api/APIEvents/5
+        // DELETE: api/APIEvents/
         [ResponseType(typeof(Event))]
         public async Task<IHttpActionResult> DeleteEvent(Guid id)
         {
