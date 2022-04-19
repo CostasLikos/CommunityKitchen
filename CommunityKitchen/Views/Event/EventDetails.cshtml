@@ -3,42 +3,35 @@
 @{
     ViewBag.Title = "EventDetails";
 }
-
-
 <section class="single-event">
     <div class="container">
         <figure class="image-box">
             <img src="images/event/8.jpg" alt="" />
         </figure>   
         <div class="content-box" >
-
             <hr />
             <div style="display: flex; justify-content: center;overflow: hidden;">
+                @if (Model.Photo != null) {
                 <img id="imgDetails" style="border-radius: 100px; height: 200px; width: 800px; object-fit: cover;" src="~/Assets/images/ImagesSaved/@Model.Photo" />
+                }
             </div>
             <div class="title">
                 <h2>@Model.Title</h2>
             </div>  
-
             <ul class="event-info">
                 <li><span class="fa fa-calendar"></span>@Model.EventDate.ToLongDateString()</li>
                 <li> &emsp; <span class="fa fa-map-marker"></span>@Model.Address</li>
-
             </ul>
-
             <div class="text">
                 <h3>@Model.Description</h3>
                 <hr />
                 <p>@Model.FullDescription</p>
             </div>
-
             <div>
                 <div>
                     <a class="thm-btn style-1" href="javascript:history.go(-1)"> Back to List </a>
                 </div>
             </div>
-
-
         </div>
     </div>
 </section>
