@@ -453,11 +453,14 @@
     <Content Include="Assets\images\slider\1.jpg" />
     <Content Include="Assets\images\slider\2.jpg" />
     <Content Include="Assets\images\slider\3.jpg" />
+    <Content Include="Assets\images\team\aboutus1.jpg" />
     <Content Include="Assets\images\team\dimitris.jpg" />
-    <Content Include="Assets\images\team\doggo2.jpg" />
+    <Content Include="Assets\images\team\Giannis.png" />
     <Content Include="Assets\images\team\greenranger.jpg" />
-    <Content Include="Assets\images\team\ioanis.jpg" />
+    <Content Include="Assets\images\team\ioannis.png" />
+    <Content Include="Assets\images\team\Kostas.png" />
     <Content Include="Assets\images\team\laptop.jpeg" />
+    <Content Include="Assets\images\team\Niki.png" />
     <Content Include="Assets\images\team\Mmpr-black.jpg" />
     <Content Include="Assets\images\team\Mmpr-blue.jpg" />
     <Content Include="Assets\images\team\Mmpr-red.jpg" />

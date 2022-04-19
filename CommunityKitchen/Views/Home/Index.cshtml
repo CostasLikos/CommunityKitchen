@@ -177,7 +177,7 @@
                                 <h2>Donation</h2>
                                 <p>Whether you choose to donate to support people living in poverty, protect the environment or help animals in need, we will happily recieve your help!</p>
                             </div>
-                            <div class="link"><a href="#" class="thm-btn style-2">join now</a></div>
+                            <div class="link"><a href="/Cause/CauseIndex" class="thm-btn style-2">join now</a></div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -189,7 +189,12 @@
                                 <h2>Become a volunteer</h2>
                                 <p>Depending on where you volunteer, the tasks you’re assigned will be different, but useful for all of us. We're needing any help we can get!</p>
                             </div>
-                            <div class="link"><a href="#" class="thm-btn style-2">join now</a></div>
+                            <div class="link">
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <a class="thm-btn style-2" onclick="signupToggle()" href="#">join us today</a>
+                                }
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -201,7 +206,7 @@
                                 <h2>fundraising</h2>
                                 <p>Many patients lose their lives because they cannot afford to pay for medical bills, even though they are notfacing life-threatening diseases. We can provide for them!</p>
                             </div>
-                            <div class="link"><a href="#" class="thm-btn style-2">join now</a></div>
+                            <div class="link"><a href="/Cause/CauseIndex" class="thm-btn style-2">join now</a></div>
                         </div>
                     </div>
                 </div>
@@ -227,7 +232,12 @@
                                     <li><i class="flaticon-check-mark-square-button"></i><span>15%</span> money goes for <span>Health Donation </span></li>
                                     <li><i class="flaticon-check-mark-square-button"></i><span>20% </span>money goes for <span>Building Shelters </span></li>
                                 </ul>
-                                <div class="link"><a href="#" class="thm-btn">JOIN US TODAY</a></div>
+                                <div class="link">
+                                    @if (!User.Identity.IsAuthenticated)
+                                    {
+                                        <a class="thm-btn" onclick="signupToggle()" href="#">join us today</a>
+                                    }
+                                </div>
                             </div>
                         </div>
 
