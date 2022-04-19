@@ -48,7 +48,7 @@
                     context.Roles.Add(role);
                 }
             }
-           
+
 
             if (!context.Users.Any(u => u.UserName == "DateChangedInfo@gmail.com"))
             {
@@ -191,11 +191,11 @@
         {
             List<Event> events = new List<Event>()
             {
-              new Event() {Title = "Agiou Meletiou Charity Meal",Description="Offering meal at Agiou Meletiou Street",FullDescription="We are happy to announce that a new event is organized for the help of the hungry people of any age and ethnicity, on Thursday, 12th of May, at Agiou Meletiou Street in Pagrati, Athens" +
+              new Event() {Title = "Agiou Meletiou Charity Meal",Description="Offering meals at Agiou Meletiou Street",FullDescription="We are happy to announce that a new event is organized for the help of the hungry people of any age and ethnicity, on Thursday, 12th of May, at Agiou Meletiou Street in Pagrati, Athens. " +
               "Warm food will be served by the money we gathered through our causes and every available volunteer from our team. Any help, even in the form of your simple presence in there, will be welcome and greatly appreciated. The food needs to be " +
-              "distributed to the needy ones with love and aa healthy attitude of encouragementand as we always say, the more the merrier!",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
+              "distributed to the needy ones with love and a healthy attitude of encouragement. As we always say, the more the merrier!",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
                   EventDate=new DateTime(2022,05,12), Photo = "food1.jpg"},
-              new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",FullDescription="St. Nicolas Church is opening its doors on May, Saturday the 7th, a day before the Easter Day! We would like to invite all of you to this amazing" +
+              new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meals at St.Nicolas Church",FullDescription="St. Nicolas Church is opening its doors on May, Saturday the 7th! We would like to invite all of you to this amazing" +
               " and selfless action, a community gathering with one goal. Feed as many people as we can! We will happily accept any sort of help, while your participation will keep our team encouraged and support the will of the event openers to organize more" +
               " heart-warming and thoughtful festivals such as this! Make sure you're there!",Address="Stratarxou Karaiskaki 22, Athens, Haidari 12461",
                   EventDate=new DateTime(2022,05,07), Photo = "food2.jpg" },
@@ -254,78 +254,78 @@
             };
             return events;
         }
-    
-    //public List<Cause> CauseSeed()
-    //{
-    //    List<Cause> causes = new List<Cause>()
-    //    {
-    //      new Cause() {Title = "Help The Poor",Description="Raising money for our poor friends",TargetGoal=150,CurrentAmmount=25 , Photo = "106052.jpg"},
-    //      new Cause() {Title = "Those Who Have Can Share",Description="Help your fellow people by offering them something, you are going to feel better!",TargetGoal=210,CurrentAmmount=75, Photo = "6646987.jpg" },
-    //      new Cause() {Title = "Food For The Homeless",Description="Help us offer them a warm meal",TargetGoal=110,CurrentAmmount=32 , Photo = "food-donation.jpg" },
-    //      new Cause() {Title = "Clothing For The Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110, Photo = "clothing.jpg" },
-    //      new Cause() {Title = "Build A Shelter For Stray Animals",Description="Help us build a warm house for dozens of stray animals that need your help now",TargetGoal=23000,CurrentAmmount=5200, Photo = "doggo.jpg" },
-    //      new Cause() {Title = "Help Victims Of Wildfires",Description="The Greek arm of the Red Cross is providing financial support and food for those affected by the fires",TargetGoal=10000,CurrentAmmount=50, Photo = "fire.jpg"  },
-    //      new Cause() {Title = "Support The Ukrainian War Immigrants",Description="Everyday more and more war immigrants need your help, help us gather money and help them stand in their feet",TargetGoal=20000,CurrentAmmount=9850, Photo = "war.jpg"  },
-    //      new Cause() {Title = "Help Victims Of Floods",Description="Help us provide for the victims of floods",TargetGoal=350,CurrentAmmount=50, Photo = "flood.jpg"  },
-    //      new Cause() {Title = "Support The Organization: Save The Children",Description="We strongly support the non-profitable organization save the children",TargetGoal=500,CurrentAmmount=100, Photo = "children.jpg"  },
-    //      new Cause() {Title = "Support The Organization: Hamogelo Tou Ppaidiou",Description="We strongly support the non-profitable organization hamogelo tou paidiou",TargetGoal=600,CurrentAmmount=250, Photo = "kostas.jpg"  },
-    //      new Cause() {Title = "Provide For Those In Need",Description="After the resent events more and more come in need, help them to stand on their feet",TargetGoal=500,CurrentAmmount=250, Photo = "helpgreeks2.jpg"  },
-    //      new Cause() {Title = "Help Elena To Beat Cancer",Description="Support Elena a true fighter, to overcome her illness, we gather money for her surgery",TargetGoal=870,CurrentAmmount=850, Photo = "elena.jpg"  },
-    //      new Cause() {Title = "Volunteer in sharing clothing At Melenikou St, Thessaloniki",Description="Help us efficiently distribute clothing to those in need and get warm smiles in return!",TargetGoal=1250,CurrentAmmount=500, Photo = "6994869.jpg"  },
-    //      new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=800,CurrentAmmount=500, Photo = "ukraine_get_help_red_cross.jpg"  },
-    //      new Cause() {Title = "Help The Homeless",Description="Help those with nothing start fresh",TargetGoal=550,CurrentAmmount=500, Photo = "homeless.jpg"  },
-    //      new Cause() {Title = "Support The Victims Of Tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=950,CurrentAmmount=500, Photo = "tornado.jpg"  }
-    //    };
-    //    return causes;
-    //}
-    //public List<Event> EventSeed()
-    //{
-    //    List<Event> events = new List<Event>()
-    //    {
-    //      new Event() {Title = "Agiou Meletiou Charity Meal",Description="Offering meal at Agiou Meletiou street",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
-    //          EventDate=new DateTime(2022,04,05), Photo = "food1.jpg"},
-    //      new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",Address="Stratarxou Karaiskaki 22, Athens, Haidari 12461",
-    //          EventDate=new DateTime(2022,05,07), Photo = "food2.jpg" },
-    //      new Event() {Title = "Bazaar Of Poor Souls",Description="Open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",
-    //          EventDate=new DateTime(2022,04,05), Photo = "bazaar.jpg" },
-    //      new Event() {Title = "Lending A Hand At Dervenakion St",Description="Free grooming for poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
-    //          EventDate=new DateTime(2022,06,05), Photo = "grooming2.jpg" },
-    //      new Event() {Title = "Lending A Hand At Iroon Politehniou St ",Description="Free grooming for poor people",Address="Iroon Politehniou 27, Athens, Hilioupolis 12452",
-    //          EventDate=new DateTime(2022,02,05), Photo = "grooming.jpg" },
-    //      new Event() {Title = "Soup Kitchen At Iroon Square",Description="Offering free meals at Plateia Iroon in Chaidari from 12:00 to 18:00.",
-    //          Address="Pl. Ir. 1940 41, Chaidari 124 61",EventDate=new DateTime(2022,06,06), Photo = "7551595.jpg" },
 
-    //      new Event() {Title = "Share meal-boxes at Amerikis Square",Description="Offering free meal-boxes at Plateia Amerikis in Athens from 14:00 to 18:00",
-    //          Address="Amerikis Square, Athens 112 52",EventDate=new DateTime(2022,09,05), Photo = "foodbox.jpg" },
+        //public List<Cause> CauseSeed()
+        //{
+        //    List<Cause> causes = new List<Cause>()
+        //    {
+        //      new Cause() {Title = "Help The Poor",Description="Raising money for our poor friends",TargetGoal=150,CurrentAmmount=25 , Photo = "106052.jpg"},
+        //      new Cause() {Title = "Those Who Have Can Share",Description="Help your fellow people by offering them something, you are going to feel better!",TargetGoal=210,CurrentAmmount=75, Photo = "6646987.jpg" },
+        //      new Cause() {Title = "Food For The Homeless",Description="Help us offer them a warm meal",TargetGoal=110,CurrentAmmount=32 , Photo = "food-donation.jpg" },
+        //      new Cause() {Title = "Clothing For The Poor",Description="Raise money to buy clothes for the poor",TargetGoal=350,CurrentAmmount=110, Photo = "clothing.jpg" },
+        //      new Cause() {Title = "Build A Shelter For Stray Animals",Description="Help us build a warm house for dozens of stray animals that need your help now",TargetGoal=23000,CurrentAmmount=5200, Photo = "doggo.jpg" },
+        //      new Cause() {Title = "Help Victims Of Wildfires",Description="The Greek arm of the Red Cross is providing financial support and food for those affected by the fires",TargetGoal=10000,CurrentAmmount=50, Photo = "fire.jpg"  },
+        //      new Cause() {Title = "Support The Ukrainian War Immigrants",Description="Everyday more and more war immigrants need your help, help us gather money and help them stand in their feet",TargetGoal=20000,CurrentAmmount=9850, Photo = "war.jpg"  },
+        //      new Cause() {Title = "Help Victims Of Floods",Description="Help us provide for the victims of floods",TargetGoal=350,CurrentAmmount=50, Photo = "flood.jpg"  },
+        //      new Cause() {Title = "Support The Organization: Save The Children",Description="We strongly support the non-profitable organization save the children",TargetGoal=500,CurrentAmmount=100, Photo = "children.jpg"  },
+        //      new Cause() {Title = "Support The Organization: Hamogelo Tou Ppaidiou",Description="We strongly support the non-profitable organization hamogelo tou paidiou",TargetGoal=600,CurrentAmmount=250, Photo = "kostas.jpg"  },
+        //      new Cause() {Title = "Provide For Those In Need",Description="After the resent events more and more come in need, help them to stand on their feet",TargetGoal=500,CurrentAmmount=250, Photo = "helpgreeks2.jpg"  },
+        //      new Cause() {Title = "Help Elena To Beat Cancer",Description="Support Elena a true fighter, to overcome her illness, we gather money for her surgery",TargetGoal=870,CurrentAmmount=850, Photo = "elena.jpg"  },
+        //      new Cause() {Title = "Volunteer in sharing clothing At Melenikou St, Thessaloniki",Description="Help us efficiently distribute clothing to those in need and get warm smiles in return!",TargetGoal=1250,CurrentAmmount=500, Photo = "6994869.jpg"  },
+        //      new Cause() {Title = "Support Ukraine",Description="In co-operation with the Greek embassy in Ukraine we provide help to the non-profitable org. Support Ukraine",TargetGoal=800,CurrentAmmount=500, Photo = "ukraine_get_help_red_cross.jpg"  },
+        //      new Cause() {Title = "Help The Homeless",Description="Help those with nothing start fresh",TargetGoal=550,CurrentAmmount=500, Photo = "homeless.jpg"  },
+        //      new Cause() {Title = "Support The Victims Of Tornado Martha",Description="We support the victims of tornado to recover from this hardship",TargetGoal=950,CurrentAmmount=500, Photo = "tornado.jpg"  }
+        //    };
+        //    return causes;
+        //}
+        //public List<Event> EventSeed()
+        //{
+        //    List<Event> events = new List<Event>()
+        //    {
+        //      new Event() {Title = "Agiou Meletiou Charity Meal",Description="Offering meal at Agiou Meletiou street",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
+        //          EventDate=new DateTime(2022,04,05), Photo = "food1.jpg"},
+        //      new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meal St.Nicolas Church",Address="Stratarxou Karaiskaki 22, Athens, Haidari 12461",
+        //          EventDate=new DateTime(2022,05,07), Photo = "food2.jpg" },
+        //      new Event() {Title = "Bazaar Of Poor Souls",Description="Open Market to support the poor",Address="Dwdwkanisou 62, Athens, Egaleo 12364",
+        //          EventDate=new DateTime(2022,04,05), Photo = "bazaar.jpg" },
+        //      new Event() {Title = "Lending A Hand At Dervenakion St",Description="Free grooming for poor people",Address="Dervenakiwn 87, Athens, Peristeri 12452",
+        //          EventDate=new DateTime(2022,06,05), Photo = "grooming2.jpg" },
+        //      new Event() {Title = "Lending A Hand At Iroon Politehniou St ",Description="Free grooming for poor people",Address="Iroon Politehniou 27, Athens, Hilioupolis 12452",
+        //          EventDate=new DateTime(2022,02,05), Photo = "grooming.jpg" },
+        //      new Event() {Title = "Soup Kitchen At Iroon Square",Description="Offering free meals at Plateia Iroon in Chaidari from 12:00 to 18:00.",
+        //          Address="Pl. Ir. 1940 41, Chaidari 124 61",EventDate=new DateTime(2022,06,06), Photo = "7551595.jpg" },
 
-    //      new Event() {Title = "Soup Kitchen at Kanigos Square",Description="Offering free meals at Plateia Kaniggos in Athens from 13:00 to 17:00",
-    //          Address="Akadimias 92, Athens 106 77",EventDate=new DateTime(2022,08,05), Photo = "soup1.jpg" },
+        //      new Event() {Title = "Share meal-boxes at Amerikis Square",Description="Offering free meal-boxes at Plateia Amerikis in Athens from 14:00 to 18:00",
+        //          Address="Amerikis Square, Athens 112 52",EventDate=new DateTime(2022,09,05), Photo = "foodbox.jpg" },
 
-    //      new Event() {Title = "Open Kitchen at Omonia Square",Description="Offering free meals at Plateia Omonoias in Athens from 12:00 to 17:00",
-    //          Address="Square, District of Freedom 8573311, Athens 104 31",EventDate=new DateTime(2022,10,12) , Photo = "openkitchen.jpg"},
+        //      new Event() {Title = "Soup Kitchen at Kanigos Square",Description="Offering free meals at Plateia Kaniggos in Athens from 13:00 to 17:00",
+        //          Address="Akadimias 92, Athens 106 77",EventDate=new DateTime(2022,08,05), Photo = "soup1.jpg" },
 
-    //      new Event() {Title = "Soup Kitchen at Exarcheia Square",Description="Offering free meals at Plateia Exarcheion in Athens from 15:00 to 19:00",
-    //          Address="Stournari 5, Athens 106 83",EventDate=new DateTime(2022,09,02), Photo = "soup2.jpg"  },
+        //      new Event() {Title = "Open Kitchen at Omonia Square",Description="Offering free meals at Plateia Omonoias in Athens from 12:00 to 17:00",
+        //          Address="Square, District of Freedom 8573311, Athens 104 31",EventDate=new DateTime(2022,10,12) , Photo = "openkitchen.jpg"},
 
-    //      new Event() {Title = "Soup Kitchen at Karaiskaki Square",Description="Offering free meals at Plateia Karaiskaki in Athens from 12:00 to 18:00",
-    //          Address="Pl. Karaiskaki, Athens 104 37",EventDate=new DateTime(2022,06,04), Photo = "soup3.jpg"  },
+        //      new Event() {Title = "Soup Kitchen at Exarcheia Square",Description="Offering free meals at Plateia Exarcheion in Athens from 15:00 to 19:00",
+        //          Address="Stournari 5, Athens 106 83",EventDate=new DateTime(2022,09,02), Photo = "soup2.jpg"  },
 
-    //      new Event() {Title = "Soup Kitchen at Kolonaki Square",Description="Offering free meals at Plateia Kolonakiou in Athens from 13:00 to 15:00",
-    //          Address="Pl. Filikis Eterias 11, Athens 106 74",EventDate=new DateTime(2022,08,06), Photo = "soup4.png"  },
+        //      new Event() {Title = "Soup Kitchen at Karaiskaki Square",Description="Offering free meals at Plateia Karaiskaki in Athens from 12:00 to 18:00",
+        //          Address="Pl. Karaiskaki, Athens 104 37",EventDate=new DateTime(2022,06,04), Photo = "soup3.jpg"  },
 
-    //      new Event() {Title = "Soup Kitchen at Syntagma Square",Description="Offering free meals at Plateia Syntagmatos in Athens from 12:00 to 15:00",
-    //          Address="Pl. Sintagmatos, Athens 105 63",EventDate=new DateTime(2022,06,06), Photo = "soup5.jpg"  },
+        //      new Event() {Title = "Soup Kitchen at Kolonaki Square",Description="Offering free meals at Plateia Kolonakiou in Athens from 13:00 to 15:00",
+        //          Address="Pl. Filikis Eterias 11, Athens 106 74",EventDate=new DateTime(2022,08,06), Photo = "soup4.png"  },
 
-    //      new Event() {Title = "Soup Kitchen at Davaki Square",Description="Offering free meals at Plateia Davaki in Kallithea from 13:00 to 17:00",
-    //          Address="Mantzagriotaki 68, Kallithea 176 72",EventDate=new DateTime(2022,05,05), Photo = "soup6.jpg"  },
+        //      new Event() {Title = "Soup Kitchen at Syntagma Square",Description="Offering free meals at Plateia Syntagmatos in Athens from 12:00 to 15:00",
+        //          Address="Pl. Sintagmatos, Athens 105 63",EventDate=new DateTime(2022,06,06), Photo = "soup5.jpg"  },
 
-    //      new Event() {Title = "Lending A Hand At Cross Square",Description="Free grooming for poor people at Plateia Estavromenoy in Egaleo from 12:00 to 18:00",
-    //          Address="Dimarchiou 1, Egaleo 122 42",EventDate=new DateTime(2022,06,06), Photo = "grooming3.jpg"  }
-    //    };
-    //    return events;
-    //}
+        //      new Event() {Title = "Soup Kitchen at Davaki Square",Description="Offering free meals at Plateia Davaki in Kallithea from 13:00 to 17:00",
+        //          Address="Mantzagriotaki 68, Kallithea 176 72",EventDate=new DateTime(2022,05,05), Photo = "soup6.jpg"  },
 
-    public List<Item> ItemSeed()
+        //      new Event() {Title = "Lending A Hand At Cross Square",Description="Free grooming for poor people at Plateia Estavromenoy in Egaleo from 12:00 to 18:00",
+        //          Address="Dimarchiou 1, Egaleo 122 42",EventDate=new DateTime(2022,06,06), Photo = "grooming3.jpg"  }
+        //    };
+        //    return events;
+        //}
+
+        public List<Item> ItemSeed()
         {
             List<Item> items = new List<Item>()
             {

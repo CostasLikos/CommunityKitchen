@@ -230,6 +230,7 @@
     <Content Include="Assets\css\jquery.fancybox.css" />
     <Content Include="Assets\css\layers.css" />
     <Content Include="Assets\css\magnific-popup.css" />
+    <Content Include="Assets\css\map-rolund.jpg" />
     <Content Include="Assets\css\navigation.css" />
     <Content Include="Assets\css\nouislider.css" />
     <Content Include="Assets\css\nouislider.pips.css" />
