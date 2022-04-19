@@ -3,52 +3,45 @@
 @{
     ViewBag.Title = "Delete";
 }
-<div class="default-form-area" style="margin-top: 34px !important; display: flex; justify-content: center">
-    <div id="contact-form" class="default-form">
-        <div class="section-title">
-            <h1 style="margin-left:45px">Are you sure you want to <span>delete</span> this Cause?</h1>
-        </div>
-        <div class="row clearfix" style="justify-content: center">
-            <div class="col-md-12 col-sm-12 col-xs-6">
-                <hr />
-                <div class="form-group">
-                    <div class="section-title">
-                        <h2>Title</h2>
-                    </div>
-                    @Html.DisplayFor(model => model.ItemName)
+<section>
+    <div class="container">
+        <div class="default-form-area" style="display: flex; justify-content: center; padding-top:100px">
+            <div id="contact-form" class="default-form">
+                <div class="section-title" style="padding-bottom:40px;">
+                    <h3 style=" text-align:center;"><strong>ARE YOU <em>SURE</em> YOU WANT TO <span>DELETE</span> THIS ITEM?</strong></h3>
                 </div>
-
-                <div class="form-group">
-                    <div class="section-title">
-                        <h2>Description</h2>
-                    </div>
-                    @Html.DisplayFor(model => model.Quantity)
-                </div>
-
-                <div class="form-group">
-                    <div class="section-title">
-                        <h2>Photo</h2>
-                    </div>
-                    @Html.DisplayFor(model => model.Price)
-                </div>
-                <div class="form-group">
-
-                    @using (Html.BeginForm())
-                    {
-                        @Html.AntiForgeryToken()
-                        <div class="form-group">
-                            <div>
-                                <input type="submit" value="Delete" class="thm-btn style-1" />
-                            </div>
+                
+                    <hr />
+                    <div class="form-group" style="text-align:left; justify-content: center">
+                        <div style=" padding-bottom: 40px;">
+                            <h3><strong>@Html.DisplayFor(model => model.ItemName)</strong></h3>
                         </div>
-
                         <div>
-
-                            @Html.ActionLink("Back to List", "OrganizeCause")
+                            <p style="color:black;">QUANTITY: @Html.DisplayFor(model => model.Quantity)</p>
                         </div>
-                    }
+                        <div>
+                            <p style="color:black;">PRICE: @Html.DisplayFor(model => model.Price)</p>
+                        </div>
+                    </div>
+                        <div class="form-group">
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-group">
+                                    <div>
+                                        <input type="submit" value="Delete" class="thm-btn style-1" />
+                                    </div>
+                                </div>
+
+                                <div>
+
+                                    @Html.ActionLink("Back to List", "")
+                                </div>
+                            }
+                        </div>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
-</div>
+    </section>
