@@ -192,7 +192,9 @@
             List<Event> events = new List<Event>()
             {
               new Event() {Title = "Agiou Meletiou Charity Meal",Description="Offering meals at Agiou Meletiou Street",FullDescription="We are happy to announce that a new event is organized for the help of the hungry people of any age and ethnicity, on Thursday, 12th of May, at Agiou Meletiou Street in Pagrati, Athens. " +
-              "Warm food will be served by the money we gathered through our causes and every available volunteer from our team. Any help, even in the form of your simple presence in there, will be welcome and greatly appreciated. The food needs to be " +
+
+              "Warm food will be served with the money we gathered through our Causes and every available volunteer from our team. Any help, even in the form of your simple presence in there, will be welcome and greatly appreciated. The food needs to be " +
+
               "distributed to the needy ones with love and a healthy attitude of encouragement. As we always say, the more the merrier!",Address="Agiou Meletiou 32, Athens, Pagrati 12443",
                   EventDate=new DateTime(2022,05,12), Photo = "food1.jpg"},
               new Event() {Title = "St.Nicolas Church Food Festival",Description="Offering meals at St.Nicolas Church",FullDescription="St. Nicolas Church is opening its doors on May, Saturday the 7th! We would like to invite all of you to this amazing" +
