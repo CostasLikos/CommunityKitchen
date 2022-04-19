@@ -16,7 +16,7 @@ using System.Web.Http.Cors;
 
 namespace CommunityKitchen.Controllers.API
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")] // PREPRODUCTION STAGE <----EDITABLE!!!!
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class APICausesController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -27,7 +27,7 @@ namespace CommunityKitchen.Controllers.API
             return db.Causes;
         }
 
-        // GET: api/APICauses/5
+        // GET: api/APICauses/
         [ResponseType(typeof(Cause))]
         public async Task<IHttpActionResult> GetCause(Guid id)
         {
@@ -40,7 +40,7 @@ namespace CommunityKitchen.Controllers.API
             return Ok(cause);
         }
 
-        // PUT: api/APICauses/5
+        // PUT: api/APICauses/
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutCause(Guid id, Cause cause)
         {
@@ -90,7 +90,7 @@ namespace CommunityKitchen.Controllers.API
             return CreatedAtRoute("DefaultApi", new { id = cause.Id }, cause);
         }
 
-        // DELETE: api/APICauses/5
+        // DELETE: api/APICauses/
         [ResponseType(typeof(Cause))]
         public async Task<IHttpActionResult> DeleteCause(Guid id)
         {
